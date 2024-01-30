@@ -27,6 +27,7 @@ public class OverworldCombatInit : MonoBehaviour
 
         yield return new WaitForSeconds(2f);
         sc.CombatSceneLoad("StaticCombat");
+        Destroy(this.gameObject);
     }
 
 }

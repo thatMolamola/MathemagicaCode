@@ -7,6 +7,8 @@ public enum BattleState { START, PLAYERT, ENEMYT, WON, LOST, FLED, WAITING}
 
 public class BattleSystem : MonoBehaviour
 {
+    public SceneControl sc;
+
     //state change variables
     public BattleState state; 
 
@@ -153,6 +155,7 @@ public class BattleSystem : MonoBehaviour
         } else if (state == BattleState.FLED) {
             dialogueText.text = "You fled the Battle...";
         }
+        sc.CombatSceneUnload();
     }
     /*
     private IEnumerator TypeDialogueText(string p)
