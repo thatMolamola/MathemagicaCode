@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public abstract class NPCInteract : MonoBehaviour, IInteractable
+public abstract class OWInteract : MonoBehaviour, IInteractable
 {
     [SerializeField] private SpriteRenderer interactSprite;
 
