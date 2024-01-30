@@ -18,6 +18,8 @@ public abstract class Weapon : MonoBehaviour
     public bool real;
     public bool damagingDown;
 
+    public bool startOnEnemy;
+
     //TO-DO Weapons should be able to affect enemy Unit HP in many ways more than addition and subtraction
     public virtual void Attack(Unit enemyUnit){}
 
