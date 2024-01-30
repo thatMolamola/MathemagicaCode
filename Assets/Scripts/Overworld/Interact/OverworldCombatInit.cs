@@ -6,10 +6,15 @@ public class OverworldCombatInit : MonoBehaviour
 {
     public SceneControl sc;
 
+    private GameObject combatant;
+    private CombatPrefabRefer combatantReference;
+
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        combatantReference = Resources.Load<CombatPrefabRefer>("SOs/CombatRefer");
+        combatant = this.gameObject;
     }
 
     // Update is called once per frame
@@ -19,8 +24,10 @@ public class OverworldCombatInit : MonoBehaviour
     }
 
     void OnTriggerEnter2D (Collider2D col) {
-        StartCoroutine (BattleLaunch());
-        
+        if (col.tag == "Player") {
+            combatantReference.enemyRefer = combatant.GetComponent<EnemyUnit>().unitPrefab;
+            StartCoroutine (BattleLaunch());
+        }
     }
 
     IEnumerator BattleLaunch() {

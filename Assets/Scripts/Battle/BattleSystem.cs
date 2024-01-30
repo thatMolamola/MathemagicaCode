@@ -22,6 +22,8 @@ public class BattleSystem : MonoBehaviour
     PlayerUnit playerUnit;
     EnemyUnit enemyUnit;
 
+    private CombatPrefabRefer combatantReference;
+
     public BattleHUD playerHUD;
     public BattleHUD enemyHUD;
 
@@ -37,6 +39,8 @@ public class BattleSystem : MonoBehaviour
     void Start()
     {
         state = BattleState.START;
+        combatantReference = Resources.Load<CombatPrefabRefer>("SOs/CombatRefer");
+        enemyPrefab = combatantReference.enemyRefer;
         StartCoroutine(SetupBattle());
     }
 
@@ -129,11 +133,15 @@ public class BattleSystem : MonoBehaviour
 
         yield return new WaitForSeconds(2f);
         bool isDead = false;
-        if (enemyUnit.numTurnsLeft == 0) {
+        if (enemyUnit.numTurnsLeftSpecial == 0) {
             isDead = enemyUnit.specialAttack(playerUnit);
         } else {
             isDead = enemyUnit.standardAttack(playerUnit);
         }
+
+        if (enemyUnit.numTurnsLeftStandardTwo == 0) {
+            dialogueText.text = enemyUnit.secondStandardAttack(enemyUnit);
+        } 
 
         playerHUD.SetHP(playerUnit.currentHPReal);
         playerHUD.HPSliderAngle(playerUnit);

@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b2fdd2bf481d4d0c8b76bd5f0a30392, type: 3}
+  m_Name: combatRefer
+  m_EditorClassIdentifier: 
+  enemyRefer: {fileID: 1260556011927268901, guid: 6b4fd1d6f34964f7c81b128dda7227ff, type: 3}

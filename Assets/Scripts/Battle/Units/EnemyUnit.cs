@@ -12,19 +12,25 @@ public class EnemyUnit : Unit
     public SpriteRenderer EnemySprite;
     public Sprite[] sprites;
 
-    //Weapon Variables
+    //Damage Variables
     public int standardDmg;
+    public bool hasSecondStand;
     public int specialDmg;
 
     public float darkMultiplier;
 
     //Special Counter
+    public int numTurnsToStandardTwo;
+    public int numTurnsLeftStandardTwo;
     public int numTurnsToSpecial;
-    public int numTurnsLeft;
+    public int numTurnsLeftSpecial;
+
+    public GameObject unitPrefab;
 
     public void Start() {
         Image heartImage = heartRender.GetComponent<Image>();
-        numTurnsLeft = numTurnsToSpecial;
+        numTurnsLeftSpecial = numTurnsToSpecial;
+        numTurnsLeftStandardTwo = numTurnsToStandardTwo;
     }
 
     public void HealthFlip() {
@@ -44,13 +50,27 @@ public class EnemyUnit : Unit
 
     public bool standardAttack(Unit enemyUnit){
         enemyUnit.currentHPReal -= standardDmg;
-        numTurnsLeft -= 1;
+        numTurnsLeftSpecial -= 1;
+        numTurnsLeftStandardTwo -= 1;
         return deathCheck(enemyUnit);
+    }
+
+    public string secondStandardAttack(Unit enemyUnit){
+        numTurnsLeftStandardTwo = numTurnsToStandardTwo;
+        if (enemyID == 2) {
+            float randValue1 = Random.value;
+            float randHeal = Mathf.FloorToInt(100 * randValue1) / 100;
+            enemyUnit.currentHPReal += randHeal;
+            return "The Wraithmetic blurs its form!";
+        } else {
+            return "";
+        }
+
     }
 
     public bool specialAttack(Unit enemyUnit){
         specialDmgCalc(enemyUnit);
-        numTurnsLeft = numTurnsToSpecial;
+        numTurnsLeftSpecial = numTurnsToSpecial;
         return deathCheck(enemyUnit);
     }
 
