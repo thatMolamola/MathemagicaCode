@@ -128,8 +128,12 @@ public class BattleSystem : MonoBehaviour
         dialogueText.text = enemyUnit.unitName + " attacks!"; 
 
         yield return new WaitForSeconds(2f);
-
-        bool isDead = enemyUnit.attackNoWeapon(playerUnit);
+        bool isDead = false;
+        if (enemyUnit.numTurnsLeft == 0) {
+            isDead = enemyUnit.specialAttack(playerUnit);
+        } else {
+            isDead = enemyUnit.standardAttack(playerUnit);
+        }
 
         playerHUD.SetHP(playerUnit.currentHPReal);
         playerHUD.HPSliderAngle(playerUnit);
