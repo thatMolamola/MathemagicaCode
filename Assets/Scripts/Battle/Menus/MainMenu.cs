@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class MainMenu : MonoBehaviour
 {
-    public void onAttackPress() {
-       MenuManage.OpenMenu(Menu.ATTACK, gameObject);
+
+    public void onAttack1Press() {
+       MenuManage.OpenMenu(Menu.ATTACK1, gameObject);
+    }
+
+    public void onAttack2Press() {
+       MenuManage.OpenMenu(Menu.ATTACK2, gameObject);
     }
 
     public void onCraftPress() {

@@ -7,9 +7,35 @@ public class PlayerUnit : Unit
     public Weapon[] weaponList;
     public int selectedWeapon;
 
-    public bool selectedWeaponAttack(Unit enemyUnit){
-        weaponList[selectedWeapon].Attack(enemyUnit);
+    public bool executeAction(Action selectAction) {
+        if (selectAction.actionChoice == "ATTACK") {
+            return selectedWeaponAttack(selectAction.weaponChoice, selectAction.targetUnit);
+        }
+
+        if (selectAction.actionChoice == "CRAFT") {
+            selectedCraft();
+            return false;
+        }
+
+        if (selectAction.actionChoice == "FLEE") {
+            selectedFlee();
+            return false;
+        }
+
+        return false;
+    }
+
+    public bool selectedWeaponAttack(Weapon weapon, Unit enemyUnit){
+        weapon.Attack(enemyUnit);
         return deathCheck(enemyUnit);
+    }
+
+    public void selectedCraft(){
+        //TODO
+    }
+
+    public void selectedFlee(){
+        //TODO
     }
 
     public override bool deathCheck(Unit enemyUnit) {

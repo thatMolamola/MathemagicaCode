@@ -49,10 +49,14 @@ public class BattleHUD : MonoBehaviour
     }
 
     public void setHeartColor(Unit unit) {
-        if (unit.currentHPReal >= 0) {
+        if (unit.currentHPReal >= 0 && unit.currentHPImag >= 0) {
             heartRender.sprite = heartSprite1;
-        } else if (unit.currentHPReal < 0) {
+        } else if (unit.currentHPReal < 0 && unit.currentHPImag >= 0) {
             heartRender.sprite = heartSprite2;
+        } else if (unit.currentHPReal >= 0 && unit.currentHPImag < 0) {
+            heartRender.sprite = heartSprite3;
+        } else if (unit.currentHPReal < 0 && unit.currentHPImag >= 0) {
+            heartRender.sprite = heartSprite4;
         }
     }
 

@@ -19,14 +19,24 @@ public class BattleSystem : MonoBehaviour
     public Transform[] playerLocs;
     public Transform enemyLoc;
 
-    List<PlayerUnit> playerUnits;
+    public GameObject buttonsAccess;
+
+    public List<PlayerUnit> playerUnits = new List<PlayerUnit>();
     EnemyUnit enemyUnit;
+    public Unit unitSelect; 
 
     private CombatPrefabRefer combatantReference;
 
     public BattleHUD[] playerHUDs;
     public BattleHUD enemyHUD;
 
+    public Queue<Action> actionQueue = new Queue<Action>();
+    public Action currentAction;
+    public bool setUp;
+
+    public Unit exampleUnit;
+    public string exampleString;
+    public Weapon exampleWeapon;
 
     //text display variables
     public Text dialogueText;
@@ -45,10 +55,17 @@ public class BattleSystem : MonoBehaviour
         StartCoroutine(SetupBattle());
     }
 
+    void Update() {
+        if (state != BattleState.PLAYERT) {
+            buttonsAccess.SetActive(false);
+        } else {
+            buttonsAccess.SetActive(true);
+        }
+    }
+
     // Instantiation and Set Up Coroutine
     IEnumerator SetupBattle()
     {
-        List<PlayerUnit> playerUnits = new List<PlayerUnit>();
         int playerCount = 0;
         foreach (var playerPrefab in playerTeamPrefabs) {
             GameObject playGO = Instantiate(playerPrefab, playerLocs[playerCount]);
@@ -72,71 +89,67 @@ public class BattleSystem : MonoBehaviour
 
         yield return new WaitForSeconds(2f);
 
-        state= BattleState.PLAYERT;
+        state = BattleState.PLAYERT;
+        setUp = true;
         PlayerTurn();
     }
 
     // PLAYER TURN OPTIONS 
     void PlayerTurn() {
-        dialogueText.text = "Choose an action!";
+        dialogueText.text = "Choose an action!"; 
+    }
+
+    public void onAttackButton(int weaponNum){
+        int playerNum = actionQueue.Count;
+        Action currentAction = new Action(playerUnits[playerNum].weaponList[weaponNum], enemyUnit, "ATTACK");
+        actionQueue.Enqueue(currentAction);
+        OnActionButton();
+    }
+
+    public void onCraftButton(int weaponNum){
+        int playerNum = actionQueue.Count;
+        Action currentAction = new Action(playerUnits[playerNum].weaponList[weaponNum], null, "CRAFT");
+        actionQueue.Enqueue(currentAction);
+        OnActionButton();
+    }
+
+    public void onFleeButton(){
+        Action currentAction = new Action(null, null, "FLEE");
+        actionQueue.Enqueue(currentAction);
+        OnActionButton();
     }
 
     //ATTACK
-    public void OnWeaponButton(int weaponNum) {
+    public void OnActionButton() {
+        //Weapon weaponChoice, int target, string actionCategory
         if (state != BattleState.PLAYERT) {
             return;
         }
-        int playerNum = 1;
-        playerUnits[playerNum].selectedWeapon = weaponNum;
-        StartCoroutine (PlayerAttack(playerUnits[playerNum]));
+
+        if (actionQueue.Count == playerUnits.Count) {
+            StartCoroutine (PlayerActs());
+        } 
     }
 
-    IEnumerator PlayerAttack(PlayerUnit playerUnit) {
+    IEnumerator PlayerActs() {
+        Debug.Log("Arrived");
         state = BattleState.WAITING;
-        bool isDead = playerUnit.selectedWeaponAttack(enemyUnit);
-        // Update VisualDamage to Enemy
-        enemyHUD.SetHP(enemyUnit.currentHPReal);
-        enemyHUD.HPSliderAngle(enemyUnit);
+        yield return new WaitForSeconds(1f);
+        int queueCounter = 0;
+        while (actionQueue.Count != 0) {
+            bool isDead = playerUnits[queueCounter].executeAction(actionQueue.Dequeue());
+            // Update VisualDamage to Enemy
+            enemyHUD.SetHP(enemyUnit.currentHPReal);
+            enemyHUD.HPSliderAngle(enemyUnit);
+            queueCounter += 1;
 
-        yield return new WaitForSeconds(2f);
-
-        if (isDead) {
-            state = BattleState.WON;
-            EndBattle();
-        } else {
-            state = BattleState.ENEMYT;
-            StartCoroutine(EnemyTurn());
+            if (isDead) {
+                state = BattleState.WON;
+                StartCoroutine(EndBattle());
+                yield break;
+            } 
         }
-    }
-
-    //CRAFT
-    public void OnCraftButton() {
-        if (state != BattleState.PLAYERT) {
-            return;
-        }
-        StartCoroutine (PlayerCraft());
-    }
-
-    IEnumerator PlayerCraft() {
-        yield return new WaitForSeconds(2f);
-
-        StartCoroutine(EnemyTurn());
-        }
-    
-
-    //FLEE
-    public void OnFleeButton() {
-        if (state != BattleState.PLAYERT) {
-            return;
-        }
-        StartCoroutine (PlayerFlee());
-    }
-
-    IEnumerator PlayerFlee() {
-        //Flee probability
-        dialogueText.text = "It's too soon to run away!";
-        yield return new WaitForSeconds(2f);
-
+        state = BattleState.ENEMYT;
         StartCoroutine(EnemyTurn());
     }
 
@@ -147,7 +160,10 @@ public class BattleSystem : MonoBehaviour
         state = BattleState.WAITING;
         dialogueText.text = enemyUnit.unitName + " attacks!"; 
 
-        yield return new WaitForSeconds(2f);
+        randNum = 1 - randNum;
+        playerHUDs[randNum].setTop(playerHUDs[randNum].transform);
+
+        yield return new WaitForSeconds(.5f);
         bool isDead = false;
         if (enemyUnit.numTurnsLeftSpecial == 0) {
             isDead = enemyUnit.specialAttack(playerUnit);
@@ -159,6 +175,7 @@ public class BattleSystem : MonoBehaviour
             dialogueText.text = enemyUnit.secondStandardAttack(enemyUnit);
         } 
 
+        randNum = 1 - randNum;
         playerHUDs[randNum].SetHP(playerUnit.currentHPReal);
         playerHUDs[randNum].HPSliderAngle(playerUnit);
 
@@ -175,7 +192,7 @@ public class BattleSystem : MonoBehaviour
     }
 
     //End Battle Conditions
-    void EndBattle() {
+    IEnumerator EndBattle() {
         if (state == BattleState.WON) {
             dialogueText.text = "You won the Battle!";
         } else if (state == BattleState.LOST) {
@@ -183,6 +200,7 @@ public class BattleSystem : MonoBehaviour
         } else if (state == BattleState.FLED) {
             dialogueText.text = "You fled the Battle...";
         }
+        yield return new WaitForSeconds(2f);
         sc.CombatSceneUnload();
     }
 
