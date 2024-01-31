@@ -6,14 +6,16 @@ using UnityEngine.UI;
 public abstract class Weapon : MonoBehaviour
 {
     //Weapon-Specific Variable stats
-    public int currentDmgModifier;
+    public int currentRealDmgModifier;
+    public int currentImagDmgModifier;
     public int ModDurationLeft;
     public bool modded;
 
     //Weapon-Specific Constant Stats
     public bool permMod;
     public bool modable;
-    public int baseDmgModifier;
+    public int baseRealDmgModifier;
+    public int baseImagDmgModifier;
     public int MaxModDuration;
     public bool real;
     public bool damagingDown;

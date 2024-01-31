@@ -12,7 +12,7 @@ public class AddSubWeapon : Weapon
         modable = true;
 
         //Weapon Attack Variety
-        baseDmgModifier = 5;
+        baseRealDmgModifier = 5;
         damagingDown = false; 
         real = true;
     }
@@ -20,15 +20,15 @@ public class AddSubWeapon : Weapon
     public override void Attack (Unit enemyUnit){
         if (real) {
             if (!damagingDown) {
-                enemyUnit.currentHPReal += currentDmgModifier;
+                enemyUnit.currentHPReal += currentRealDmgModifier;
             } else {
-                enemyUnit.currentHPReal -= currentDmgModifier;
+                enemyUnit.currentHPReal -= currentRealDmgModifier;
             }
         } else {
             if (!damagingDown) {
-                enemyUnit.currentHPImag += currentDmgModifier;
+                enemyUnit.currentHPImag += currentImagDmgModifier;
             } else {
-                enemyUnit.currentHPImag -= currentDmgModifier;
+                enemyUnit.currentHPImag -= currentImagDmgModifier;
             }
         }
 
@@ -36,7 +36,7 @@ public class AddSubWeapon : Weapon
             if (modded) {
                 ModDurationLeft -= 1; 
                 if (ModDurationLeft == 0) {
-                    currentDmgModifier = baseDmgModifier;
+                    currentRealDmgModifier = baseRealDmgModifier;
                     ModDurationLeft = MaxModDuration;
                     modded = false;
                 }
@@ -44,6 +44,7 @@ public class AddSubWeapon : Weapon
         }
     }
 
+    //fix for imaginary weapons
     public override void MinAttack (Unit enemyUnit){
         enemyUnit.currentHPReal += 1;
         return;

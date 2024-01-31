@@ -43,13 +43,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 786f2c295774849639e522df16e01a4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentDmgModifier: -1
+  currentRealDmgModifier: -1
+  currentImagDmgModifier: 0
   ModDurationLeft: 0
   modded: 0
   permMod: 0
   modable: 0
-  baseDmgModifier: -1
+  baseRealDmgModifier: -1
+  baseImagDmgModifier: 0
   MaxModDuration: 0
   real: 1
   damagingDown: 0
   startOnEnemy: 1
+  weaponDescription: 

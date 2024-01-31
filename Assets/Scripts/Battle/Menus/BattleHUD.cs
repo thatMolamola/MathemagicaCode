@@ -62,6 +62,5 @@ public class BattleHUD : MonoBehaviour
 
     public void setTop(Transform allyHUD) {
         allyHUD.SetAsFirstSibling();
-        Debug.Log("click");
     }
 }

@@ -132,16 +132,24 @@ public class BattleSystem : MonoBehaviour
     }
 
     IEnumerator PlayerActs() {
-        Debug.Log("Arrived");
         state = BattleState.WAITING;
         yield return new WaitForSeconds(1f);
         int queueCounter = 0;
         while (actionQueue.Count != 0) {
-            bool isDead = playerUnits[queueCounter].executeAction(actionQueue.Dequeue());
+            int damageDone = playerUnits[queueCounter].executeAction(actionQueue.Dequeue());
+            bool isDead = playerUnits[queueCounter].deathCheck(enemyUnit);
+            
             // Update VisualDamage to Enemy
             enemyHUD.SetHP(enemyUnit.currentHPReal);
             enemyHUD.HPSliderAngle(enemyUnit);
+
+            Debug.Log(damageDone);
+            if (damageDone != 0) {
+                dialogueText.text = enemyUnit.unitName + " took " + damageDone + " damage from " + playerUnits[queueCounter].unitName + "!";
+            }
+            
             queueCounter += 1;
+            yield return new WaitForSeconds(2f);
 
             if (isDead) {
                 state = BattleState.WON;
@@ -162,20 +170,24 @@ public class BattleSystem : MonoBehaviour
 
         randNum = 1 - randNum;
         playerHUDs[randNum].setTop(playerHUDs[randNum].transform);
+        randNum = 1 - randNum;
 
         yield return new WaitForSeconds(.5f);
+        
         bool isDead = false;
         if (enemyUnit.numTurnsLeftSpecial == 0) {
             isDead = enemyUnit.specialAttack(playerUnit);
         } else {
             isDead = enemyUnit.standardAttack(playerUnit);
         }
+        dialogueText.text = playerUnit.unitName + " took damage from " + enemyUnit.unitName + "!";
+
 
         if (enemyUnit.numTurnsLeftStandardTwo == 0) {
             dialogueText.text = enemyUnit.secondStandardAttack(enemyUnit);
         } 
 
-        randNum = 1 - randNum;
+        
         playerHUDs[randNum].SetHP(playerUnit.currentHPReal);
         playerHUDs[randNum].HPSliderAngle(playerUnit);
 

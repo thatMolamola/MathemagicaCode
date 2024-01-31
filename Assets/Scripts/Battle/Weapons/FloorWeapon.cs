@@ -10,7 +10,6 @@ public class FloorWeapon : Weapon
         modable = false;
 
         //Weapon Attack Variety
-        baseDmgModifier = 0;
         damagingDown = false; 
         real = true;
     }

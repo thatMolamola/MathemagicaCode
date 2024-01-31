@@ -12,7 +12,7 @@ public class MultDivWeapon : Weapon
         modable = true;
 
         //Weapon Attack Variety
-        baseDmgModifier = 5;
+        baseRealDmgModifier = 5;
         damagingDown = false; 
         real = true;
     }
@@ -20,15 +20,15 @@ public class MultDivWeapon : Weapon
     public override void Attack (Unit enemyUnit){
         if (real) {
             if (!damagingDown) {
-                enemyUnit.currentHPReal *= currentDmgModifier;
+                enemyUnit.currentHPReal *= currentRealDmgModifier;
             } else {
-                enemyUnit.currentHPReal /= currentDmgModifier;
+                enemyUnit.currentHPReal /= currentRealDmgModifier;
             }
         } else {
             if (!damagingDown) {
-                enemyUnit.currentHPImag *= currentDmgModifier;
+                enemyUnit.currentHPImag *= currentRealDmgModifier;
             } else {
-                enemyUnit.currentHPImag /= currentDmgModifier;
+                enemyUnit.currentHPImag /= currentRealDmgModifier;
             }
         }
 
@@ -36,7 +36,7 @@ public class MultDivWeapon : Weapon
             if (modded) {
                 ModDurationLeft -= 1; 
                 if (ModDurationLeft == 0) {
-                    currentDmgModifier = baseDmgModifier;
+                    currentRealDmgModifier = baseRealDmgModifier;
                     ModDurationLeft = MaxModDuration;
                     modded = false;
                 }

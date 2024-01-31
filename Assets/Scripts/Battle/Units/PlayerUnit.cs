@@ -7,27 +7,27 @@ public class PlayerUnit : Unit
     public Weapon[] weaponList;
     public int selectedWeapon;
 
-    public bool executeAction(Action selectAction) {
+    public int executeAction(Action selectAction) {
         if (selectAction.actionChoice == "ATTACK") {
-            return selectedWeaponAttack(selectAction.weaponChoice, selectAction.targetUnit);
+            selectedWeaponAttack(selectAction.weaponChoice, selectAction.targetUnit);
+            return selectAction.weaponChoice.currentRealDmgModifier;  //will need to be fixed later
         }
 
         if (selectAction.actionChoice == "CRAFT") {
             selectedCraft();
-            return false;
+            return 0;
         }
 
         if (selectAction.actionChoice == "FLEE") {
             selectedFlee();
-            return false;
+            return 0;
         }
 
-        return false;
+        return 0;
     }
 
-    public bool selectedWeaponAttack(Weapon weapon, Unit enemyUnit){
+    public void selectedWeaponAttack(Weapon weapon, Unit enemyUnit){
         weapon.Attack(enemyUnit);
-        return deathCheck(enemyUnit);
     }
 
     public void selectedCraft(){
