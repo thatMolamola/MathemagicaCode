@@ -14,6 +14,10 @@ public class DialogueController : MonoBehaviour
 
     private string p;
 
+    public void Start() {
+        conversationEnded = false;
+    }
+
     public void DisplayNextParagraph(DialogueText dialogueText) {
         if (paragraphs.Count == 0) {
             if (!conversationEnded) {
@@ -48,8 +52,8 @@ public class DialogueController : MonoBehaviour
     private void EndConversation(){
         paragraphs.Clear();
         conversationEnded = false;
-        if (!gameObject.activeSelf) {
-            gameObject.SetActive(true);
+        if (gameObject.activeSelf) {
+            gameObject.SetActive(false);
         }
     }
 }

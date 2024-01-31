@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb;
 
+    private bool canMove;
+
     Vector2 moveBy;
 
     private float moveFactor = 5f;
@@ -27,6 +29,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        canMove = true;
     }
 
     void OnEnable() {
@@ -37,17 +40,14 @@ public class PlayerController : MonoBehaviour
         pControls.Gameplay.Disable();
     }
 
-    void Update() {
-        if (moveBy.x != 0 || moveBy.y != 0) {
-            animator.SetBool("isMoving", true);
-            Facing();
-        } 
-    }
-    
-
     void FixedUpdate() {
-        rb.MovePosition(rb.position + moveBy * moveFactor * Time.deltaTime);
-            
+        if (canMove) {
+            rb.MovePosition(rb.position + moveBy * moveFactor * Time.deltaTime);
+            if (moveBy.x != 0 || moveBy.y != 0) {
+                animator.SetBool("isMoving", true);
+                Facing();
+            } 
+        }     
     }
     
     void Facing (){  
@@ -62,6 +62,18 @@ public class PlayerController : MonoBehaviour
         } else if (moveBy.y < 0) {
             animator.SetFloat("Facing", 1);
         }
+    }
+
+    void OnTriggerEnter2D (Collider2D col) {
+        if (col.tag == "Enemy") {
+            canMove = false;
+        }
+        StartCoroutine(canMoveAgain());
+    }
+
+    IEnumerator canMoveAgain() {
+        yield return new WaitForSeconds(2f);
+        canMove = true;
     }
 }
 

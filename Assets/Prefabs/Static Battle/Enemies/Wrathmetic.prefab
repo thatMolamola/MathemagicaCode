@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 1260556011927268897}
   m_Layer: 0
   m_Name: Wrathmetic
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

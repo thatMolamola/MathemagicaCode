@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9ebd8f2f917284a91af2227cf92df074, type: 3}
-  m_Name: FirstD
+  m_Name: Opening
   m_EditorClassIdentifier: 
-  speakerName: Hoodlum
+  speakerName: Marilyn
   paragraphs:
-  - A ratty old sweater... did it just move?
-  - Something something
+  - Oof... where am I?
+  - When did I put on this goofy hat? I should go look around...

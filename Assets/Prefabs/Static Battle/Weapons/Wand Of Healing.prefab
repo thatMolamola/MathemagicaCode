@@ -43,12 +43,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 181025be6dcfc45fab0f033932a2fcea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentDmgModifier: 3
+  currentDmgModifier: 5
   ModDurationLeft: 0
   modded: 0
   permMod: 0
   modable: 1
-  baseDmgModifier: 3
+  baseDmgModifier: 5
   MaxModDuration: 10
   real: 1
   damagingDown: 0
+  startOnEnemy: 0
