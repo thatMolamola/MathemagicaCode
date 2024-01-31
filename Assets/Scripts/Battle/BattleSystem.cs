@@ -13,18 +13,18 @@ public class BattleSystem : MonoBehaviour
     public BattleState state; 
 
     //battle unit variables
-    public GameObject playerPrefab;
+    public GameObject[] playerTeamPrefabs;
     public GameObject enemyPrefab;
 
-    public Transform playerLoc;
+    public Transform[] playerLocs;
     public Transform enemyLoc;
 
-    PlayerUnit playerUnit;
+    List<PlayerUnit> playerUnits;
     EnemyUnit enemyUnit;
 
     private CombatPrefabRefer combatantReference;
 
-    public BattleHUD playerHUD;
+    public BattleHUD[] playerHUDs;
     public BattleHUD enemyHUD;
 
 
@@ -40,6 +40,7 @@ public class BattleSystem : MonoBehaviour
     {
         state = BattleState.START;
         combatantReference = Resources.Load<CombatPrefabRefer>("SOs/CombatRefer");
+        playerTeamPrefabs = combatantReference.allyTeam;
         enemyPrefab = combatantReference.enemyRefer;
         StartCoroutine(SetupBattle());
     }
@@ -47,14 +48,26 @@ public class BattleSystem : MonoBehaviour
     // Instantiation and Set Up Coroutine
     IEnumerator SetupBattle()
     {
-        GameObject playGO = Instantiate(playerPrefab, playerLoc);
-        playerUnit = playGO.GetComponent<PlayerUnit>();
+        List<PlayerUnit> playerUnits = new List<PlayerUnit>();
+        int playerCount = 0;
+        foreach (var playerPrefab in playerTeamPrefabs) {
+            GameObject playGO = Instantiate(playerPrefab, playerLocs[playerCount]);
+            playerCount += 1;
+            playerUnits.Add(playGO.GetComponent<PlayerUnit>());
+        }
+        
         GameObject enGO = Instantiate(enemyPrefab, enemyLoc);
         enemyUnit = enGO.GetComponent<EnemyUnit>();
 
         dialogueText.text = "From the shadows, a " + enemyUnit.unitName + " has emerged!";
 
-        playerHUD.SetHUD(playerUnit);
+        playerCount = 0;
+        foreach (var allyUnit in playerUnits) {
+            playerHUDs[playerCount].gameObject.SetActive(true);
+            playerHUDs[playerCount].SetHUD(allyUnit);
+            playerCount += 1; 
+        }
+
         enemyHUD.SetHUD(enemyUnit);
 
         yield return new WaitForSeconds(2f);
@@ -73,11 +86,12 @@ public class BattleSystem : MonoBehaviour
         if (state != BattleState.PLAYERT) {
             return;
         }
-        playerUnit.selectedWeapon = weaponNum;
-        StartCoroutine (PlayerAttack());
+        int playerNum = 1;
+        playerUnits[playerNum].selectedWeapon = weaponNum;
+        StartCoroutine (PlayerAttack(playerUnits[playerNum]));
     }
 
-    IEnumerator PlayerAttack() {
+    IEnumerator PlayerAttack(PlayerUnit playerUnit) {
         state = BattleState.WAITING;
         bool isDead = playerUnit.selectedWeaponAttack(enemyUnit);
         // Update VisualDamage to Enemy
@@ -128,6 +142,8 @@ public class BattleSystem : MonoBehaviour
 
     //ENEMY OPTIONS
     IEnumerator EnemyTurn() {
+        int randNum = Random.Range(0, 2);
+        PlayerUnit playerUnit = playerUnits[randNum];
         state = BattleState.WAITING;
         dialogueText.text = enemyUnit.unitName + " attacks!"; 
 
@@ -143,8 +159,8 @@ public class BattleSystem : MonoBehaviour
             dialogueText.text = enemyUnit.secondStandardAttack(enemyUnit);
         } 
 
-        playerHUD.SetHP(playerUnit.currentHPReal);
-        playerHUD.HPSliderAngle(playerUnit);
+        playerHUDs[randNum].SetHP(playerUnit.currentHPReal);
+        playerHUDs[randNum].HPSliderAngle(playerUnit);
 
 
         yield return new WaitForSeconds(2f);
@@ -169,6 +185,8 @@ public class BattleSystem : MonoBehaviour
         }
         sc.CombatSceneUnload();
     }
+
+    
     /*
     private IEnumerator TypeDialogueText(string p)
     {

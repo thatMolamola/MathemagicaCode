@@ -1,16 +1,7 @@
 fileFormatVersion: 2
-guid: 98d5dce8c6a3f40ff90d66d4377d3912
+guid: b9b50bea477d044f6892e23952086c33
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: -912831392383820764
-    second: Health Folder_0
-  - first:
-      213: -2322347370089502886
-    second: Health Folder_1
-  - first:
-      213: 6463361706706618741
-    second: Health Folder_2
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -50,7 +41,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -110,70 +101,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Health Folder_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 315
-        width: 315
-        height: 315
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 42c132d5fa8f453f0800000000000000
-      internalID: -912831392383820764
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Health Folder_1
-      rect:
-        serializedVersion: 2
-        x: 315
-        y: 315
-        width: 315
-        height: 315
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a57a0c80f5d55cfd0800000000000000
-      internalID: -2322347370089502886
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Health Folder_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 315
-        height: 315
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5794c175a3972b950800000000000000
-      internalID: 6463361706706618741
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []

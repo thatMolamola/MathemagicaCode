@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8291449042722411085}
   - component: {fileID: 4150185658239589662}
   m_Layer: 0
-  m_Name: PlayerStatic
+  m_Name: MarilynStatic
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
