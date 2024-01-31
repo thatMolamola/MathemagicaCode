@@ -6,4 +6,5 @@ using UnityEngine;
 public class CombatPrefabRefer : ScriptableObject
 {
     public GameObject enemyRefer;
+    public GameObject[] allyTeam; 
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OverworldCombatInit : MonoBehaviour
+public class OWCombatInit : MonoBehaviour
 {
     public SceneControl sc;
 

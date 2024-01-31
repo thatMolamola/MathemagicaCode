@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: combatRefer
   m_EditorClassIdentifier: 
   enemyRefer: {fileID: 1260556011927268901, guid: 6b4fd1d6f34964f7c81b128dda7227ff, type: 3}
+  allyTeam:
+  - {fileID: 8291449042722411076, guid: 6d93431ae771a41798096c12afe6c1c6, type: 3}
