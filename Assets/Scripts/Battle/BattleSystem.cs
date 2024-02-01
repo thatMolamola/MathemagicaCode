@@ -123,6 +123,9 @@ public class BattleSystem : MonoBehaviour
         yield return new WaitForSeconds(1f);
         int queueCounter = 0;
         while (actionQueue.Count != 0) {
+            float oldRealHP = enemyUnit.currentHPReal;
+            float oldImagHP = enemyUnit.currentHPImag;
+
             int damageDone = playerUnits[queueCounter].executeAction(actionQueue.Dequeue());
             bool isDead = playerUnits[queueCounter].deathCheck(enemyUnit);
             
@@ -132,7 +135,7 @@ public class BattleSystem : MonoBehaviour
 
             Debug.Log(damageDone);
             if (damageDone != 0) {
-                dialogueText.text = enemyUnit.unitName + " took " + damageDone + " damage from " + playerUnits[queueCounter].unitName + "!";
+                dialogueText.text = enemyUnit.unitName + " took " + (oldRealHP - enemyUnit.currentHPReal) + " damage from " + playerUnits[queueCounter].unitName + "!";
             }
             
             queueCounter += 1;
@@ -150,14 +153,16 @@ public class BattleSystem : MonoBehaviour
 
     //ENEMY OPTIONS
     IEnumerator EnemyTurn() {
-        int randNum = Random.Range(0, 2);
+        int randNum = Random.Range(0, playerUnits.Count);
         PlayerUnit playerUnit = playerUnits[randNum];
         state = BattleState.WAITING;
         dialogueText.text = enemyUnit.unitName + " attacks!"; 
-
-        randNum = 1 - randNum;
-        playerHUDs[randNum].setTop(playerHUDs[randNum].transform);
-        randNum = 1 - randNum;
+        
+        if (playerUnits.Count > 1) {
+            randNum = 1 - randNum;
+            playerHUDs[randNum].setTop(playerHUDs[randNum].transform);
+            randNum = 1 - randNum;
+        }
 
         yield return new WaitForSeconds(.5f);
         

@@ -98,6 +98,102 @@ TextureImporter:
   - first:
       213: -2815341889689097288
     second: Marilyn_31
+  - first:
+      213: -5906746008883543840
+    second: Marilyn_32
+  - first:
+      213: -2229999788695117748
+    second: Marilyn_33
+  - first:
+      213: -2895624410418210679
+    second: Marilyn_34
+  - first:
+      213: 5680407642621538359
+    second: Marilyn_35
+  - first:
+      213: -306763538871858461
+    second: Marilyn_36
+  - first:
+      213: 3892563475958426009
+    second: Marilyn_37
+  - first:
+      213: 1414048410569924923
+    second: Marilyn_38
+  - first:
+      213: 6791767113901317133
+    second: Marilyn_39
+  - first:
+      213: 4634188718856222073
+    second: Marilyn_40
+  - first:
+      213: -8728248567827787970
+    second: Marilyn_41
+  - first:
+      213: 2360715914241207243
+    second: Marilyn_42
+  - first:
+      213: -9194420490269095097
+    second: Marilyn_43
+  - first:
+      213: 7129383613934451320
+    second: Marilyn_44
+  - first:
+      213: 5087521662879775993
+    second: Marilyn_45
+  - first:
+      213: -8361386879583154098
+    second: Marilyn_46
+  - first:
+      213: -4048240845714072045
+    second: Marilyn_47
+  - first:
+      213: 4260689655126424520
+    second: Marilyn_48
+  - first:
+      213: -4449792008945122390
+    second: Marilyn_49
+  - first:
+      213: -1538342396125050926
+    second: Marilyn_50
+  - first:
+      213: 3570195929196122209
+    second: Marilyn_51
+  - first:
+      213: 5513822242487700668
+    second: Marilyn_52
+  - first:
+      213: -1761429166958999152
+    second: Marilyn_53
+  - first:
+      213: -564493393904775767
+    second: Marilyn_54
+  - first:
+      213: -9074940699687195943
+    second: Marilyn_55
+  - first:
+      213: 9059132691464703675
+    second: Marilyn_56
+  - first:
+      213: -6981012302934821229
+    second: Marilyn_57
+  - first:
+      213: 1139458080570297167
+    second: Marilyn_58
+  - first:
+      213: -8879618781909756758
+    second: Marilyn_59
+  - first:
+      213: -7594738226403783909
+    second: Marilyn_60
+  - first:
+      213: -1744814394719044698
+    second: Marilyn_61
+  - first:
+      213: -3056774570676122315
+    second: Marilyn_62
+  - first:
+      213: -1717357112689756875
+    second: Marilyn_63
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -142,7 +238,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 320
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -161,7 +257,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 4096
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -173,7 +269,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 4096
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -185,7 +281,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: iPhone
-    maxTextureSize: 4096
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -203,9 +299,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1920
-        width: 320
-        height: 640
+        y: 96
+        width: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -223,10 +319,10 @@ TextureImporter:
       name: Marilyn_1
       rect:
         serializedVersion: 2
-        x: 320
-        y: 1920
-        width: 320
-        height: 640
+        x: 16
+        y: 96
+        width: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -244,10 +340,10 @@ TextureImporter:
       name: Marilyn_2
       rect:
         serializedVersion: 2
-        x: 640
-        y: 1920
-        width: 320
-        height: 640
+        x: 32
+        y: 96
+        width: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -265,10 +361,10 @@ TextureImporter:
       name: Marilyn_3
       rect:
         serializedVersion: 2
-        x: 960
-        y: 1920
-        width: 320
-        height: 640
+        x: 48
+        y: 96
+        width: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -286,10 +382,10 @@ TextureImporter:
       name: Marilyn_4
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 1920
-        width: 320
-        height: 640
+        x: 64
+        y: 96
+        width: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -307,10 +403,10 @@ TextureImporter:
       name: Marilyn_5
       rect:
         serializedVersion: 2
-        x: 1600
-        y: 1920
-        width: 320
-        height: 640
+        x: 80
+        y: 96
+        width: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -328,10 +424,10 @@ TextureImporter:
       name: Marilyn_6
       rect:
         serializedVersion: 2
-        x: 1920
-        y: 1920
-        width: 320
-        height: 640
+        x: 96
+        y: 96
+        width: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -349,10 +445,10 @@ TextureImporter:
       name: Marilyn_7
       rect:
         serializedVersion: 2
-        x: 2240
-        y: 1920
-        width: 320
-        height: 640
+        x: 112
+        y: 96
+        width: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -371,9 +467,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1280
-        width: 320
-        height: 640
+        y: 64
+        width: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -391,10 +487,10 @@ TextureImporter:
       name: Marilyn_9
       rect:
         serializedVersion: 2
-        x: 320
-        y: 1280
-        width: 320
-        height: 640
+        x: 16
+        y: 64
+        width: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -412,10 +508,10 @@ TextureImporter:
       name: Marilyn_10
       rect:
         serializedVersion: 2
-        x: 640
-        y: 1280
-        width: 320
-        height: 640
+        x: 32
+        y: 64
+        width: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -433,10 +529,10 @@ TextureImporter:
       name: Marilyn_11
       rect:
         serializedVersion: 2
-        x: 960
-        y: 1280
-        width: 320
-        height: 640
+        x: 48
+        y: 64
+        width: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -454,10 +550,10 @@ TextureImporter:
       name: Marilyn_12
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 1280
-        width: 320
-        height: 640
+        x: 64
+        y: 64
+        width: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -475,10 +571,10 @@ TextureImporter:
       name: Marilyn_13
       rect:
         serializedVersion: 2
-        x: 1600
-        y: 1280
-        width: 320
-        height: 640
+        x: 80
+        y: 64
+        width: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -496,10 +592,10 @@ TextureImporter:
       name: Marilyn_14
       rect:
         serializedVersion: 2
-        x: 1920
-        y: 1280
-        width: 320
-        height: 640
+        x: 96
+        y: 64
+        width: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -517,10 +613,10 @@ TextureImporter:
       name: Marilyn_15
       rect:
         serializedVersion: 2
-        x: 2240
-        y: 1280
-        width: 320
-        height: 640
+        x: 112
+        y: 64
+        width: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -539,9 +635,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 640
-        width: 320
-        height: 640
+        y: 32
+        width: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -559,10 +655,10 @@ TextureImporter:
       name: Marilyn_17
       rect:
         serializedVersion: 2
-        x: 320
-        y: 640
-        width: 320
-        height: 640
+        x: 16
+        y: 32
+        width: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -580,10 +676,10 @@ TextureImporter:
       name: Marilyn_18
       rect:
         serializedVersion: 2
-        x: 640
-        y: 640
-        width: 320
-        height: 640
+        x: 32
+        y: 32
+        width: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -601,10 +697,10 @@ TextureImporter:
       name: Marilyn_19
       rect:
         serializedVersion: 2
-        x: 960
-        y: 640
-        width: 320
-        height: 640
+        x: 48
+        y: 32
+        width: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -622,10 +718,10 @@ TextureImporter:
       name: Marilyn_20
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 640
-        width: 320
-        height: 640
+        x: 64
+        y: 32
+        width: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -643,10 +739,10 @@ TextureImporter:
       name: Marilyn_21
       rect:
         serializedVersion: 2
-        x: 1600
-        y: 640
-        width: 320
-        height: 640
+        x: 80
+        y: 32
+        width: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -664,10 +760,10 @@ TextureImporter:
       name: Marilyn_22
       rect:
         serializedVersion: 2
-        x: 1920
-        y: 640
-        width: 320
-        height: 640
+        x: 96
+        y: 32
+        width: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -685,10 +781,10 @@ TextureImporter:
       name: Marilyn_23
       rect:
         serializedVersion: 2
-        x: 2240
-        y: 640
-        width: 320
-        height: 640
+        x: 112
+        y: 32
+        width: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -708,8 +804,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 320
-        height: 640
+        width: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -727,10 +823,10 @@ TextureImporter:
       name: Marilyn_25
       rect:
         serializedVersion: 2
-        x: 320
+        x: 16
         y: 0
-        width: 320
-        height: 640
+        width: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -748,10 +844,10 @@ TextureImporter:
       name: Marilyn_26
       rect:
         serializedVersion: 2
-        x: 640
+        x: 32
         y: 0
-        width: 320
-        height: 640
+        width: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -769,10 +865,10 @@ TextureImporter:
       name: Marilyn_27
       rect:
         serializedVersion: 2
-        x: 960
+        x: 48
         y: 0
-        width: 320
-        height: 640
+        width: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -790,10 +886,10 @@ TextureImporter:
       name: Marilyn_28
       rect:
         serializedVersion: 2
-        x: 1280
+        x: 64
         y: 0
-        width: 320
-        height: 640
+        width: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -811,10 +907,10 @@ TextureImporter:
       name: Marilyn_29
       rect:
         serializedVersion: 2
-        x: 1600
+        x: 80
         y: 0
-        width: 320
-        height: 640
+        width: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -832,10 +928,10 @@ TextureImporter:
       name: Marilyn_30
       rect:
         serializedVersion: 2
-        x: 1920
+        x: 96
         y: 0
-        width: 320
-        height: 640
+        width: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -853,10 +949,10 @@ TextureImporter:
       name: Marilyn_31
       rect:
         serializedVersion: 2
-        x: 2240
+        x: 112
         y: 0
-        width: 320
-        height: 640
+        width: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
