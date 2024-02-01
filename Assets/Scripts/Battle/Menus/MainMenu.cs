@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class MainMenu : MonoBehaviour
 {
-
     public void onAttack1Press() {
        MenuManage.OpenMenu(Menu.ATTACK1, gameObject);
     }
