@@ -7,43 +7,28 @@ public enum BattleState { START, PLAYERT, ENEMYT, WON, LOST, FLED, WAITING}
 
 public class BattleSystem : MonoBehaviour
 {
-    public SceneControl sc;
+    //playerside variables
+    [SerializeField] private GameObject[] playerTeamPrefabs;
+    [SerializeField] private Transform[] playerLocs;
+    [SerializeField] private GameObject buttonsAccess;
+    [SerializeField] private List<PlayerUnit> playerUnits = new List<PlayerUnit>();
+    [SerializeField] private BattleHUD[] playerHUDs;
+    [SerializeField] private AttackMenu[] attackSets;
+
+    //Enemyside references
+    [SerializeField] private GameObject enemyPrefab;
+    [SerializeField] private Transform enemyLoc;
+    [SerializeField] private EnemyUnit enemyUnit;
+    [SerializeField] private BattleHUD enemyHUD;
 
     //state change variables
-    public BattleState state; 
-
-    //battle unit variables
-    public GameObject[] playerTeamPrefabs;
-    public GameObject enemyPrefab;
-
-    public Transform[] playerLocs;
-    public Transform enemyLoc;
-
-    public GameObject buttonsAccess;
-
-    public List<PlayerUnit> playerUnits = new List<PlayerUnit>();
-    EnemyUnit enemyUnit;
-    public Unit unitSelect; 
-
+    [SerializeField] private SceneControl sc;
+    [SerializeField] private BattleState state; 
     private CombatPrefabRefer combatantReference;
-
-    public BattleHUD[] playerHUDs;
-    public BattleHUD enemyHUD;
-
-    public Queue<Action> actionQueue = new Queue<Action>();
-    public Action currentAction;
-    public bool setUp;
-
-    public Unit exampleUnit;
-    public string exampleString;
-    public Weapon exampleWeapon;
-
-    //text display variables
-    public Text dialogueText;
-
-    //typing letter by letter variables
-    //public bool isTyping;
-    //public int maxVisibleChars;
+    private Queue<Action> actionQueue = new Queue<Action>();
+    private Action currentAction;
+    private Queue<string> weaponQueue = new Queue<string>();
+    [SerializeField] private Text dialogueText;   
     
 
     void Start()
@@ -67,6 +52,7 @@ public class BattleSystem : MonoBehaviour
     IEnumerator SetupBattle()
     {
         int playerCount = 0;
+        //For every member on the player team, instantiate them and add them to the list
         foreach (var playerPrefab in playerTeamPrefabs) {
             GameObject playGO = Instantiate(playerPrefab, playerLocs[playerCount]);
             playerCount += 1;
@@ -78,7 +64,9 @@ public class BattleSystem : MonoBehaviour
 
         dialogueText.text = "From the shadows, a " + enemyUnit.unitName + " has emerged!";
 
+
         playerCount = 0;
+        //for every member on the player team, set their HUD's data
         foreach (var allyUnit in playerUnits) {
             playerHUDs[playerCount].gameObject.SetActive(true);
             playerHUDs[playerCount].SetHUD(allyUnit);
@@ -90,7 +78,6 @@ public class BattleSystem : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         state = BattleState.PLAYERT;
-        setUp = true;
         PlayerTurn();
     }
 
@@ -119,7 +106,7 @@ public class BattleSystem : MonoBehaviour
         OnActionButton();
     }
 
-    //ATTACK
+    //All options lead to the OnActionButton, which counts the actions and starts the execution once ready
     public void OnActionButton() {
         //Weapon weaponChoice, int target, string actionCategory
         if (state != BattleState.PLAYERT) {
@@ -215,29 +202,5 @@ public class BattleSystem : MonoBehaviour
         yield return new WaitForSeconds(2f);
         sc.CombatSceneUnload();
     }
-
-    
-    /*
-    private IEnumerator TypeDialogueText(string p)
-    {
-        isTyping = true;
-
-        int maxVisibleChars = 0;
-
-        NPCDialogueText.text = p;
-        NPCDialogueText.maxVisibleCharacters = maxVisibleChars;        
-
-        foreach (char c in p.ToCharArray())
-        {
-
-            maxVisibleChars++;
-            NPCDialogueText.maxVisibleCharacters = maxVisibleChars;
-
-            yield return new WaitForSeconds(MAX_TYPE_TIME / typeSpeed);
-        }
-
-        isTyping = false;
-    }
-    */
 }
 
