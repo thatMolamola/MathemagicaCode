@@ -7,12 +7,15 @@ public class DialogueController : MonoBehaviour
 {
     [SerializeField] private Text nameText;
     [SerializeField] private Text dialogueTextObject;
+    [SerializeField] private Image spriteObject;
 
     private Queue<string> paragraphs = new Queue<string>();
+    private Queue<Sprite> sprites = new Queue<Sprite>();
 
     private bool conversationEnded;
 
     private string p;
+    private Sprite s;
 
     public void Start() {
         conversationEnded = false;
@@ -29,8 +32,10 @@ public class DialogueController : MonoBehaviour
         }
 
         p = paragraphs.Dequeue();
+        s = sprites.Dequeue();
 
         dialogueTextObject.text = p; 
+        spriteObject.sprite = s;
 
         if (paragraphs.Count == 0) {
             conversationEnded = true;
@@ -50,6 +55,7 @@ public class DialogueController : MonoBehaviour
 
         for (int i = 0; i < dialogueText.paragraphs.Length; i++) {
             paragraphs.Enqueue(dialogueText.paragraphs[i]);
+            sprites.Enqueue(dialogueText.images[i]);
         }
     }
 

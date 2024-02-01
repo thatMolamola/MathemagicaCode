@@ -16,3 +16,6 @@ MonoBehaviour:
   paragraphs:
   - Oof... where am I?
   - When did I put on this goofy hat? I should go look around...
+  images:
+  - {fileID: -7996422543578698140, guid: 791c5ce7dcc2a493bb1384cbd6e8c1f6, type: 3}
+  - {fileID: 6579909582426063213, guid: 791c5ce7dcc2a493bb1384cbd6e8c1f6, type: 3}
