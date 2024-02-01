@@ -1,37 +1,22 @@
 fileFormatVersion: 2
-guid: a0303bea8797b446faec62d679e6401b
+guid: 95177fd7a14c742d2846ac7606d400f9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8719572925206515024
-    second: Wrathmetic_0
+      213: 4432793351920879750
+    second: Hearts_0
   - first:
-      213: 8921931686299965239
-    second: Wrathmetic_1
+      213: 5642012044021194823
+    second: Hearts_1
   - first:
-      213: -6146628706200051444
-    second: Wrathmetic_2
+      213: 8124259339964715380
+    second: Hearts_2
   - first:
-      213: -5186878751073344466
-    second: Wrathmetic_3
+      213: 7685371531485235544
+    second: Hearts_3
   - first:
-      213: -6763044699813439628
-    second: Wrathmetic_4
-  - first:
-      213: -7485284679639732927
-    second: Wrathmetic_5
-  - first:
-      213: -2322291741228321096
-    second: Wrathmetic_6
-  - first:
-      213: 4753734453228318198
-    second: Wrathmetic_7
-  - first:
-      213: 5948634550059435030
-    second: Wrathmetic_8
-  - first:
-      213: -1595106236807162693
-    second: Wrathmetic_9
+      213: 4160753575623616581
+    second: Hearts_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -98,7 +83,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -110,7 +95,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -122,7 +107,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -133,139 +118,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Wrathmetic_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 96
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 05d4c009065220970800000000000000
-      internalID: 8719572925206515024
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Wrathmetic_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 96
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7371638299111db70800000000000000
-      internalID: 8921931686299965239
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Wrathmetic_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 96
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c012ab802c9c2baa0800000000000000
-      internalID: -6146628706200051444
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Wrathmetic_3
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e246045d1418408b0800000000000000
-      internalID: -5186878751073344466
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Wrathmetic_4
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 477188b7da6d422a0800000000000000
-      internalID: -6763044699813439628
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Wrathmetic_5
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 14d666b1e3dee1890800000000000000
-      internalID: -7485284679639732927
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Wrathmetic_6
+      name: Hearts_0
       rect:
         serializedVersion: 2
         x: 0
         y: 32
-        width: 32
-        height: 32
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -273,20 +132,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8b6334327ff85cfd0800000000000000
-      internalID: -2322291741228321096
+      spriteID: 68805ff4112748d30800000000000000
+      internalID: 4432793351920879750
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wrathmetic_7
+      name: Hearts_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 16
         y: 32
-        width: 32
-        height: 32
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -294,20 +153,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6fda5318c48a8f140800000000000000
-      internalID: 4753734453228318198
+      spriteID: 740eb56bf047c4e40800000000000000
+      internalID: 5642012044021194823
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wrathmetic_8
+      name: Hearts_2
       rect:
         serializedVersion: 2
-        x: 64
-        y: 32
-        width: 32
-        height: 32
+        x: 0
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -315,20 +174,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 61488e62b9bcd8250800000000000000
-      internalID: 5948634550059435030
+      spriteID: 4711fb553da2fb070800000000000000
+      internalID: 8124259339964715380
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wrathmetic_9
+      name: Hearts_3
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 859c31560bce7aa60800000000000000
+      internalID: 7685371531485235544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hearts_4
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -336,8 +216,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bb45910345b0dd9e0800000000000000
-      internalID: -1595106236807162693
+      spriteID: 5486bf81557fdb930800000000000000
+      internalID: 4160753575623616581
       vertices: []
       indices: 
       edges: []

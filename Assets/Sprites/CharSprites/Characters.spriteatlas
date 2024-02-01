@@ -1,0 +1,148 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Characters
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 535eb96bcbf484bde8d2db2fed29055a, type: 3}
+    - {fileID: 2800000, guid: 791e5685044684deba453d95af605549, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: -3618905500287390523, guid: 791e5685044684deba453d95af605549, type: 3}
+  - {fileID: -4438063113925949284, guid: 791e5685044684deba453d95af605549, type: 3}
+  - {fileID: 657641260772080802, guid: 791e5685044684deba453d95af605549, type: 3}
+  - {fileID: -7244603627494634230, guid: 791e5685044684deba453d95af605549, type: 3}
+  - {fileID: 5444861953748032341, guid: 791e5685044684deba453d95af605549, type: 3}
+  - {fileID: -3903305448827585058, guid: 791e5685044684deba453d95af605549, type: 3}
+  - {fileID: 7009048038667988266, guid: 791e5685044684deba453d95af605549, type: 3}
+  - {fileID: 7505849638330598163, guid: 791e5685044684deba453d95af605549, type: 3}
+  - {fileID: -4665218765805370030, guid: 791e5685044684deba453d95af605549, type: 3}
+  - {fileID: 4922638146907377745, guid: 791e5685044684deba453d95af605549, type: 3}
+  - {fileID: 3101463801239109629, guid: 791e5685044684deba453d95af605549, type: 3}
+  - {fileID: 2003043926562834524, guid: 791e5685044684deba453d95af605549, type: 3}
+  - {fileID: -5343815273919082959, guid: 791e5685044684deba453d95af605549, type: 3}
+  - {fileID: 7467205396802839949, guid: 791e5685044684deba453d95af605549, type: 3}
+  - {fileID: -7225961112721171272, guid: 791e5685044684deba453d95af605549, type: 3}
+  - {fileID: -5368003540643683916, guid: 791e5685044684deba453d95af605549, type: 3}
+  - {fileID: 954316443254060293, guid: 791e5685044684deba453d95af605549, type: 3}
+  - {fileID: -6571958372626812052, guid: 791e5685044684deba453d95af605549, type: 3}
+  - {fileID: 836396185132873613, guid: 791e5685044684deba453d95af605549, type: 3}
+  - {fileID: -2348813083399763240, guid: 791e5685044684deba453d95af605549, type: 3}
+  - {fileID: -1588843036396373760, guid: 791e5685044684deba453d95af605549, type: 3}
+  - {fileID: 1545528405160087959, guid: 791e5685044684deba453d95af605549, type: 3}
+  - {fileID: -526956931919698228, guid: 791e5685044684deba453d95af605549, type: 3}
+  - {fileID: -5100350548731326093, guid: 791e5685044684deba453d95af605549, type: 3}
+  - {fileID: -1329365074668945707, guid: 791e5685044684deba453d95af605549, type: 3}
+  - {fileID: -2815341889689097288, guid: 791e5685044684deba453d95af605549, type: 3}
+  - {fileID: -7676204660543114046, guid: 791e5685044684deba453d95af605549, type: 3}
+  - {fileID: -6758567215800708060, guid: 791e5685044684deba453d95af605549, type: 3}
+  - {fileID: 1449869261210867214, guid: 791e5685044684deba453d95af605549, type: 3}
+  - {fileID: -6295778461193771665, guid: 791e5685044684deba453d95af605549, type: 3}
+  - {fileID: 3408027197040898014, guid: 791e5685044684deba453d95af605549, type: 3}
+  - {fileID: -7769493137379518904, guid: 791e5685044684deba453d95af605549, type: 3}
+  - {fileID: -4261415073580936788, guid: 535eb96bcbf484bde8d2db2fed29055a, type: 3}
+  - {fileID: -5183013959834176254, guid: 535eb96bcbf484bde8d2db2fed29055a, type: 3}
+  - {fileID: 9056136956271531159, guid: 535eb96bcbf484bde8d2db2fed29055a, type: 3}
+  - {fileID: 4645643046406505295, guid: 535eb96bcbf484bde8d2db2fed29055a, type: 3}
+  - {fileID: 2486171756150920392, guid: 535eb96bcbf484bde8d2db2fed29055a, type: 3}
+  - {fileID: 4332699861303674857, guid: 535eb96bcbf484bde8d2db2fed29055a, type: 3}
+  - {fileID: 206525009501212676, guid: 535eb96bcbf484bde8d2db2fed29055a, type: 3}
+  - {fileID: -7494196283509339599, guid: 535eb96bcbf484bde8d2db2fed29055a, type: 3}
+  - {fileID: -7440051622098883262, guid: 535eb96bcbf484bde8d2db2fed29055a, type: 3}
+  - {fileID: 2564858003129855408, guid: 535eb96bcbf484bde8d2db2fed29055a, type: 3}
+  - {fileID: -1821530089202626996, guid: 535eb96bcbf484bde8d2db2fed29055a, type: 3}
+  - {fileID: -9195539811992289206, guid: 535eb96bcbf484bde8d2db2fed29055a, type: 3}
+  - {fileID: -6758112612673688594, guid: 535eb96bcbf484bde8d2db2fed29055a, type: 3}
+  - {fileID: 392851249294182959, guid: 535eb96bcbf484bde8d2db2fed29055a, type: 3}
+  - {fileID: -8280831017789187535, guid: 535eb96bcbf484bde8d2db2fed29055a, type: 3}
+  - {fileID: -8400599964547447784, guid: 535eb96bcbf484bde8d2db2fed29055a, type: 3}
+  - {fileID: 1212518429973380827, guid: 535eb96bcbf484bde8d2db2fed29055a, type: 3}
+  - {fileID: 4270014966915887121, guid: 535eb96bcbf484bde8d2db2fed29055a, type: 3}
+  - {fileID: -2338396863640405758, guid: 535eb96bcbf484bde8d2db2fed29055a, type: 3}
+  - {fileID: 3953533237794006785, guid: 535eb96bcbf484bde8d2db2fed29055a, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Marilyn_12
+  - Marilyn_15
+  - Marilyn_14
+  - Marilyn_17
+  - Marilyn_16
+  - Marilyn_19
+  - Marilyn_18
+  - Marilyn_8
+  - Marilyn_9
+  - Marilyn_2
+  - Marilyn_3
+  - Marilyn_0
+  - Marilyn_1
+  - Marilyn_6
+  - Marilyn_7
+  - Marilyn_4
+  - Marilyn_5
+  - Marilyn_28
+  - Marilyn_29
+  - Marilyn_20
+  - Marilyn_21
+  - Marilyn_22
+  - Marilyn_23
+  - Marilyn_24
+  - Marilyn_25
+  - Marilyn_31
+  - Marilyn_26
+  - Marilyn_30
+  - Marilyn_27
+  - Marilyn_11
+  - Marilyn_10
+  - Marilyn_13
+  - Hoodlum_0
+  - Hoodlum_1
+  - Hoodlum_2
+  - Hoodlum_3
+  - Hoodlum_4
+  - Hoodlum_5
+  - Hoodlum_6
+  - Hoodlum_7
+  - Hoodlum_8
+  - Hoodlum_9
+  - Hoodlum_13
+  - Hoodlum_12
+  - Hoodlum_11
+  - Hoodlum_10
+  - Hoodlum_17
+  - Hoodlum_16
+  - Hoodlum_15
+  - Hoodlum_14
+  - Hoodlum_19
+  - Hoodlum_18
+  m_RenderDataMap: {}
+  m_Tag: Characters
+  m_IsVariant: 0
