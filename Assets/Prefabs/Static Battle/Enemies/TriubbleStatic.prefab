@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 6522600416181277764, guid: f363637d41ba141d5b49c659393890f8, type: 3}
+  m_Sprite: {fileID: -4787102518277170278, guid: 7cbdd53b6cbc74ab5a0eef9e750f7dc4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -174,7 +174,11 @@ MonoBehaviour:
   sprites:
   - {fileID: 4432793351920879750, guid: 95177fd7a14c742d2846ac7606d400f9, type: 3}
   standardDmg: 3
+  hasSecondStand: 0
   specialDmg: 9
   darkMultiplier: 2
+  numTurnsToStandardTwo: 0
+  numTurnsLeftStandardTwo: 0
   numTurnsToSpecial: 3
-  numTurnsLeft: 3
+  numTurnsLeftSpecial: 0
+  unitPrefab: {fileID: 0}
