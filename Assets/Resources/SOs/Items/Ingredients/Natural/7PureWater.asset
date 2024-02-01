@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 0}
-  m_Name: 9BombayBlessing
+  m_Name: 7PureWater
   m_EditorClassIdentifier: Assembly-CSharp::NPItemClass
-  name: 
+  name: Pure Water
   itemIcon: {fileID: 0}
-  itemFunDescription: 
-  NPValue: 0
-  itemUseDescription: 
+  itemFunDescription: I said it's not a basic drink.
+  NPValue: 7
+  itemUseDescription: Use this wisely to strengthen your spells and potions.
   special: 0
   specialValue: 0

@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 0}
-  m_Name: 7PureWater
+  m_Name: 9BombayBlessing
   m_EditorClassIdentifier: Assembly-CSharp::NPItemClass
-  name: Pure Water
+  name: Bombay Blessing
   itemIcon: {fileID: 0}
-  itemFunDescription: 
-  NPValue: 0
-  itemUseDescription: 
+  itemFunDescription: Don't call it love.
+  NPValue: 9
+  itemUseDescription: Use this wisely to strengthen your spells and potions.
   special: 0
   specialValue: 0

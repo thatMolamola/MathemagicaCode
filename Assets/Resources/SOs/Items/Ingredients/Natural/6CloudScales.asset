@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 0}
-  m_Name: MagicEye
+  m_Name: 6CloudScales
   m_EditorClassIdentifier: Assembly-CSharp::NPItemClass
-  name: 
+  name: Cloud Scales
   itemIcon: {fileID: 0}
-  itemFunDescription: 
-  NPValue: 0
+  itemFunDescription: Be glad it has 6 sides instead of 9.
+  NPValue: 6
   itemUseDescription: 
   special: 0
   specialValue: 0

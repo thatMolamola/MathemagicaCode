@@ -10,10 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 0}
-  m_Name: Ectoplasm
+  m_Name: 5StarfishWish
   m_EditorClassIdentifier: Assembly-CSharp::NPItemClass
-  name: 
+  name: Starfish Wish
   itemIcon: {fileID: 0}
-  itemFunDescription: 
-  itemUseDescription: 
-  NPValue: 0
+  itemFunDescription: One pentadirectional pony, please.
+  NPValue: 5
+  itemUseDescription: Use this wisely to strengthen your spells and potions.
+  special: 0
+  specialValue: 0

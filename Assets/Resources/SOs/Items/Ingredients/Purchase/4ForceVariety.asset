@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: 4ForceVariety
   m_EditorClassIdentifier: Assembly-CSharp::NPItemClass
-  name: 
+  name: Fundamental Force (Variety Pack)
   itemIcon: {fileID: 0}
-  itemFunDescription: 
-  NPValue: 0
-  itemUseDescription: 
+  itemFunDescription: Put this in your microwave to destroy your home in four unique
+    ways!
+  NPValue: 4
+  itemUseDescription: Use this wisely to strengthen your spells and potions.
   special: 0
   specialValue: 0

@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 0}
-  m_Name: 2MagneticMist
+  m_Name: AlephKnoll
   m_EditorClassIdentifier: Assembly-CSharp::NPItemClass
-  name: Magnetic Mist
+  name: Aleph Knoll
   itemIcon: {fileID: 0}
-  itemFunDescription: 
+  itemFunDescription: Teeny tiny fraction of the smallest infinity. Beyond your comprehension
   NPValue: 0
-  itemUseDescription: 
-  special: 0
+  itemUseDescription: Use at your own risk.
+  special: 1
   specialValue: 0

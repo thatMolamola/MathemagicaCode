@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 0}
-  m_Name: PieCrust
+  m_Name: 2MagneticMist
   m_EditorClassIdentifier: Assembly-CSharp::NPItemClass
-  name: 
+  name: Magnetic Mist
   itemIcon: {fileID: 0}
-  itemFunDescription: 
-  NPValue: 0
-  itemUseDescription: 
+  itemFunDescription: 'It seems to like your fridge. '
+  NPValue: 2
+  itemUseDescription: Use this wisely to strengthen your spells and potions.
   special: 0
   specialValue: 0

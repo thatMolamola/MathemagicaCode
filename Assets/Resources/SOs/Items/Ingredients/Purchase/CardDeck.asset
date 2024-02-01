@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 0}
-  m_Name: 5StarfishWish
+  m_Name: CardDeck
   m_EditorClassIdentifier: Assembly-CSharp::NPItemClass
-  name: 
+  name: Card Deck
   itemIcon: {fileID: 0}
-  itemFunDescription: 
+  itemFunDescription: Do you believe in the heart of the cards?
   NPValue: 0
-  itemUseDescription: 
-  special: 0
+  itemUseDescription: This will draw on the power of one card randomly drawn. New
+    shuffle each use.
+  special: 1
   specialValue: 0
