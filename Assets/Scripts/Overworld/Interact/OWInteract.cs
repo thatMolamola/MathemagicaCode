@@ -8,7 +8,6 @@ public abstract class OWInteract : MonoBehaviour, IInteractable
     [SerializeField] private SpriteRenderer interactSprite;
 
     private Transform playerTransform;
-
     private const float interactDist = 2f; 
 
     private void Start()

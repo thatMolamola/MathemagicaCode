@@ -6,6 +6,7 @@ public abstract class ItemClass: ScriptableObject
 {
     public string name;
     public Sprite itemIcon;
+    public string itemFunDescription;
 
     public abstract void useItem();
     public abstract void useConsumeItem();

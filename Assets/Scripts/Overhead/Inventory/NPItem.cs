@@ -7,6 +7,9 @@ using UnityEngine;
 public class NPItemClass : ItemClass
 {
     public int NPValue;
+    public string itemUseDescription;
+    public bool special;
+    public int specialValue;
 
     public override void useItem() {}
     public override void useConsumeItem() {}

@@ -23,7 +23,7 @@ public class BattleSystem : MonoBehaviour
 
     //state change variables
     [SerializeField] private SceneControl sc;
-    [SerializeField] private BattleState state; 
+    private BattleState state; 
     private CombatPrefabRefer combatantReference;
     public Queue<Action> actionQueue = new Queue<Action>();
     private Action currentAction;
