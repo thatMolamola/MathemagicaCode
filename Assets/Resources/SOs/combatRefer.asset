@@ -15,3 +15,4 @@ MonoBehaviour:
   enemyRefer: {fileID: 5914489324446710646, guid: b1de9d949b79247e2bf01b7470cbc7f8, type: 3}
   allyTeam:
   - {fileID: 8291449042722411076, guid: 6d93431ae771a41798096c12afe6c1c6, type: 3}
+  - {fileID: 2990508073700350346, guid: a2fea85a7c80c4573a1a11be2d2c27b4, type: 3}

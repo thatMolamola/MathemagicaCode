@@ -131,9 +131,9 @@ MonoBehaviour:
   withImaginary: 1
   negative: 0
   weaponList:
-  - {fileID: 7196327990663489514, guid: a9b681a0782aa4d4687fdc5632f79b7a, type: 3}
   - {fileID: 4322550110215045233, guid: a8826e186730647debfec15cbef617a9, type: 3}
-  - {fileID: 5980977254805807801, guid: 01e93b9778312495294485d868a40b3e, type: 3}
+  - {fileID: 4322550110215045233, guid: a8826e186730647debfec15cbef617a9, type: 3}
+  - {fileID: 4322550110215045233, guid: a8826e186730647debfec15cbef617a9, type: 3}
   selectedWeapon: 0
 --- !u!95 &2990508073700350455
 Animator:

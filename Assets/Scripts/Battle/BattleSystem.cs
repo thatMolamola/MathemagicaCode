@@ -25,7 +25,7 @@ public class BattleSystem : MonoBehaviour
     [SerializeField] private SceneControl sc;
     [SerializeField] private BattleState state; 
     private CombatPrefabRefer combatantReference;
-    private Queue<Action> actionQueue = new Queue<Action>();
+    public Queue<Action> actionQueue = new Queue<Action>();
     private Action currentAction;
     private Queue<string> weaponQueue = new Queue<string>();
     [SerializeField] private Text dialogueText;   
