@@ -109,7 +109,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 65
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -128,7 +128,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 8192
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -140,7 +140,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 8192
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -152,7 +152,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: iPhone
-    maxTextureSize: 8192
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -170,9 +170,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 2400
-        width: 600
-        height: 600
+        y: 220
+        width: 50
+        height: 55
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -190,10 +190,10 @@ TextureImporter:
       name: MarilynSleep_1
       rect:
         serializedVersion: 2
-        x: 600
-        y: 2400
-        width: 600
-        height: 600
+        x: 50
+        y: 220
+        width: 50
+        height: 55
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -211,10 +211,10 @@ TextureImporter:
       name: MarilynSleep_2
       rect:
         serializedVersion: 2
-        x: 1200
-        y: 2400
-        width: 600
-        height: 600
+        x: 100
+        y: 220
+        width: 50
+        height: 55
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -232,10 +232,10 @@ TextureImporter:
       name: MarilynSleep_3
       rect:
         serializedVersion: 2
-        x: 1800
-        y: 2400
-        width: 600
-        height: 600
+        x: 150
+        y: 220
+        width: 50
+        height: 55
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -253,10 +253,10 @@ TextureImporter:
       name: MarilynSleep_4
       rect:
         serializedVersion: 2
-        x: 2400
-        y: 2400
-        width: 600
-        height: 600
+        x: 200
+        y: 220
+        width: 50
+        height: 55
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -275,9 +275,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1800
-        width: 600
-        height: 600
+        y: 165
+        width: 50
+        height: 55
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -295,10 +295,10 @@ TextureImporter:
       name: MarilynSleep_6
       rect:
         serializedVersion: 2
-        x: 600
-        y: 1800
-        width: 600
-        height: 600
+        x: 50
+        y: 165
+        width: 50
+        height: 55
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -316,10 +316,10 @@ TextureImporter:
       name: MarilynSleep_7
       rect:
         serializedVersion: 2
-        x: 1200
-        y: 1800
-        width: 600
-        height: 600
+        x: 100
+        y: 165
+        width: 50
+        height: 55
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -337,10 +337,10 @@ TextureImporter:
       name: MarilynSleep_8
       rect:
         serializedVersion: 2
-        x: 1800
-        y: 1800
-        width: 600
-        height: 600
+        x: 150
+        y: 165
+        width: 50
+        height: 55
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -358,10 +358,10 @@ TextureImporter:
       name: MarilynSleep_9
       rect:
         serializedVersion: 2
-        x: 2400
-        y: 1800
-        width: 600
-        height: 600
+        x: 200
+        y: 165
+        width: 50
+        height: 55
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -380,9 +380,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1200
-        width: 600
-        height: 600
+        y: 110
+        width: 50
+        height: 55
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -400,10 +400,10 @@ TextureImporter:
       name: MarilynSleep_11
       rect:
         serializedVersion: 2
-        x: 600
-        y: 1200
-        width: 600
-        height: 600
+        x: 50
+        y: 110
+        width: 50
+        height: 55
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -421,10 +421,10 @@ TextureImporter:
       name: MarilynSleep_12
       rect:
         serializedVersion: 2
-        x: 1200
-        y: 1200
-        width: 600
-        height: 600
+        x: 100
+        y: 110
+        width: 50
+        height: 55
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -442,10 +442,10 @@ TextureImporter:
       name: MarilynSleep_13
       rect:
         serializedVersion: 2
-        x: 1800
-        y: 1200
-        width: 600
-        height: 600
+        x: 150
+        y: 110
+        width: 50
+        height: 55
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -463,10 +463,10 @@ TextureImporter:
       name: MarilynSleep_14
       rect:
         serializedVersion: 2
-        x: 2400
-        y: 1200
-        width: 600
-        height: 600
+        x: 200
+        y: 110
+        width: 50
+        height: 55
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -485,9 +485,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 600
-        width: 600
-        height: 600
+        y: 55
+        width: 50
+        height: 55
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -505,10 +505,10 @@ TextureImporter:
       name: MarilynSleep_16
       rect:
         serializedVersion: 2
-        x: 600
-        y: 600
-        width: 600
-        height: 600
+        x: 50
+        y: 55
+        width: 50
+        height: 55
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -526,10 +526,10 @@ TextureImporter:
       name: MarilynSleep_17
       rect:
         serializedVersion: 2
-        x: 1200
-        y: 600
-        width: 600
-        height: 600
+        x: 100
+        y: 55
+        width: 50
+        height: 55
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -547,10 +547,10 @@ TextureImporter:
       name: MarilynSleep_18
       rect:
         serializedVersion: 2
-        x: 1800
-        y: 600
-        width: 600
-        height: 600
+        x: 150
+        y: 55
+        width: 50
+        height: 55
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -568,10 +568,10 @@ TextureImporter:
       name: MarilynSleep_19
       rect:
         serializedVersion: 2
-        x: 2400
-        y: 600
-        width: 600
-        height: 600
+        x: 200
+        y: 55
+        width: 50
+        height: 55
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -591,8 +591,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 600
-        height: 600
+        width: 50
+        height: 55
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

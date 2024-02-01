@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 //this script controls the player movement.
-public class PlayerController : MonoBehaviour
+public class InputSystemController : MonoBehaviour
 {
     private Rigidbody2D rb;
     private Vector2 moveBy;
@@ -47,6 +47,24 @@ public class PlayerController : MonoBehaviour
             } 
         }     
     }
+
+    public void HandlePause(InputAction.CallbackContext context)
+    {
+        print(context.phase);
+
+        if (context.performed)
+        {  
+            print("Attack performed");
+        }
+        else if (context.started)
+        {
+            print("Attack started");
+        }
+        else if (context.canceled)
+        {
+            print("Attack canceled");
+        }
+}
     
     private void Facing (){  
         if (moveBy.x > 0) {

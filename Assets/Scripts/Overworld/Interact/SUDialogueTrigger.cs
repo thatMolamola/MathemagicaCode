@@ -8,7 +8,7 @@ public class SUDialogueTrigger : MonoBehaviour
 {
     [SerializeField] private DialogueText dialogueText;
     [SerializeField] private DialogueController dialogueController;
-    [SerializeField] private PlayerController playerController;
+    [SerializeField] private InputSystemController playerController;
 
     [SerializeField] private bool triggered, runOnce;
 
