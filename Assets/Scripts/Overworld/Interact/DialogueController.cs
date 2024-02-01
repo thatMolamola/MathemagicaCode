@@ -37,6 +37,10 @@ public class DialogueController : MonoBehaviour
         }
     }
 
+    public bool getConvEnded() {
+        return conversationEnded;
+    }
+
     private void StartConversation(DialogueText dialogueText){
         if (!gameObject.activeSelf) {
             gameObject.SetActive(true);

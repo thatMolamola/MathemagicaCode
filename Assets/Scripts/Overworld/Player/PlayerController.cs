@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb;
 
-    private bool canMove;
+    public bool canMove;
 
     Vector2 moveBy;
 
@@ -29,7 +29,6 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        canMove = true;
     }
 
     void OnEnable() {
