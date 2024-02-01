@@ -7,16 +7,15 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb;
-
-    public bool canMove;
-
-    Vector2 moveBy;
+    private Vector2 moveBy;
+    private Controls pControls;
 
     private float moveFactor = 5f;
 
-    public Animator animator;
+    public bool canMove;
+    [SerializeField] private Animator animator;
 
-    Controls pControls;
+    
 
 
     void Awake() {
@@ -49,7 +48,7 @@ public class PlayerController : MonoBehaviour
         }     
     }
     
-    void Facing (){  
+    private void Facing (){  
         if (moveBy.x > 0) {
             animator.SetFloat("Facing", 4);
         } else if (moveBy.x < 0) {

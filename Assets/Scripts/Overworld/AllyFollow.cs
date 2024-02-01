@@ -6,20 +6,20 @@ using UnityEngine;
 public class AllyFollow : MonoBehaviour
 {
     private bool close;
-    public Transform player;
-    public int moveSpeed = 2;
+    private int moveSpeed = 2;
 
-    public Animator animator;
-    public Vector2 dir;
+    [SerializeField] private Transform player;
+    [SerializeField] private Animator animator;
+    [SerializeField] private Vector2 dir;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         close = true;
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (Vector3.Distance (player.transform.position, transform.position) > 2) {
             close = false;
@@ -35,12 +35,12 @@ public class AllyFollow : MonoBehaviour
         } 
     }
 
-    void Follow() {
+    private void Follow() {
         transform.position = Vector2.MoveTowards(transform.position, player.transform.position, moveSpeed*Time.deltaTime);
         dir = (this.transform.position - player.transform.position).normalized;  
     }
 
-    void Facing (){  
+    private void Facing (){  
         if (Mathf.Abs(dir.x) > Mathf.Abs(dir.y)) {
             if (dir.x > 0) {
                 animator.SetFloat("Facing", 2);
