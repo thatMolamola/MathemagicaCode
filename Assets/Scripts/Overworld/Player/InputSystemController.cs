@@ -54,15 +54,15 @@ public class InputSystemController : MonoBehaviour
 
         if (context.performed)
         {  
-            print("Attack performed");
+            Debug.Log("Attack performed");
         }
         else if (context.started)
         {
-            print("Attack started");
+            Debug.Log("Attack started");
         }
         else if (context.canceled)
         {
-            print("Attack canceled");
+            Debug.Log("Attack canceled");
         }
 }
     

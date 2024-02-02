@@ -9,13 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 2cef170aa342348eeb017f7c6c4a7099, type: 3}
   m_Name: AlephKnoll
   m_EditorClassIdentifier: Assembly-CSharp::NPItemClass
   name: Aleph Knoll
   itemIcon: {fileID: 0}
-  itemFunDescription: Teeny tiny fraction of the smallest infinity. Beyond your comprehension
+  itemFunDescription: A teeny tiny piece of the smallest infinity. Completely beyond
+    your comprehension.
   NPValue: 0
-  itemUseDescription: Use at your own risk.
+  itemUseDescription: There are good and bad ways to use this.
   special: 1
   specialValue: 0

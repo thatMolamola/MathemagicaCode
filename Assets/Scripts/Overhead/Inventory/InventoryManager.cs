@@ -9,16 +9,11 @@ public class InventoryManager : MonoBehaviour
     public ItemClass itemToRemove;
     private GameObject inventorySlot;
 
-    private GameObject[] inventoryItemNameList;
-
-    public void Start() {
-        //inventoryItemNameList = 
-    }
-
-
+    private ItemClass[] inventoryItemNameList;
 
     public void Add(ItemClass item) {
         items.Add(item);
+
     }
 
     public void Remove(ItemClass item) {

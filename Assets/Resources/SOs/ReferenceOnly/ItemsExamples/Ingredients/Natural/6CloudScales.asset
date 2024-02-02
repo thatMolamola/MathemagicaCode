@@ -16,6 +16,6 @@ MonoBehaviour:
   itemIcon: {fileID: 0}
   itemFunDescription: Be glad it has 6 sides instead of 9.
   NPValue: 6
-  itemUseDescription: 
+  itemUseDescription: Use this wisely to greatly strengthen your spells or potions.
   special: 0
   specialValue: 0

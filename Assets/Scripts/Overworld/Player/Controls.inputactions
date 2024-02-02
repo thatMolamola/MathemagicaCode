@@ -194,7 +194,7 @@
                     "path": "<Keyboard>/p",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "GC",
                     "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false

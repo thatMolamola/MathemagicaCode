@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NPItemClass
   name: Cyclops Monobrow
   itemIcon: {fileID: 0}
-  itemFunDescription: This will grow back, unlike what you were thinking of.
+  itemFunDescription: This will grow back, unlike what you were expecting.
   NPValue: 1
-  itemUseDescription: Use this wisely to strengthen your spells and potions.
+  itemUseDescription: Use this wisely to greatly strengthen your spells or potions.
   special: 0
   specialValue: 0

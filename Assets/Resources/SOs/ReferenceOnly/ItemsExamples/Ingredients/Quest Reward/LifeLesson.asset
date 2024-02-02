@@ -9,13 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 2cef170aa342348eeb017f7c6c4a7099, type: 3}
   m_Name: LifeLesson
   m_EditorClassIdentifier: Assembly-CSharp::NPItemClass
   name: Life Lesson
   itemIcon: {fileID: 0}
   itemFunDescription: That's too much, man.
   NPValue: 0
-  itemUseDescription: Will set everyone's Imaginary HP to 0.
+  itemUseDescription: Never goes away. Use this to destroy the imaginary values and
+    keep the real.
   special: 1
   specialValue: 0

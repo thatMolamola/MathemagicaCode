@@ -9,13 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 2cef170aa342348eeb017f7c6c4a7099, type: 3}
   m_Name: 3TriubbleRubble
   m_EditorClassIdentifier: Assembly-CSharp::NPItemClass
   name: Triubble Rubble
   itemIcon: {fileID: 0}
-  itemFunDescription: Save it for your third attack, it's what they would've wanted.
+  itemFunDescription: 'Use this on your third attack in their honor. '
   NPValue: 3
-  itemUseDescription: Use this wisely to strengthen your spells and potions.
+  itemUseDescription: Use this wisely to greatly strengthen your spells or potions.
   special: 0
   specialValue: 0
