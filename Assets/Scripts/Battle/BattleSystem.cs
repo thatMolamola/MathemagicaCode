@@ -102,6 +102,7 @@ public class BattleSystem : MonoBehaviour
 
     public void onFleeButton(){
         Action currentAction = new Action(null, null, "FLEE");
+        dialogueText.text = "It's too soon to run away!";
         actionQueue.Enqueue(currentAction);
         OnActionButton();
     }

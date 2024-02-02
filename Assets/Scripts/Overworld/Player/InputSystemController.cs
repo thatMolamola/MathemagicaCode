@@ -88,7 +88,7 @@ public class InputSystemController : MonoBehaviour
     }
 
     IEnumerator canMoveAgain() {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1.99f);
         canMove = true;
     }
 }
