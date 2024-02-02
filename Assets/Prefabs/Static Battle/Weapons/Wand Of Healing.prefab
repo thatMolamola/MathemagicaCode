@@ -54,5 +54,6 @@ MonoBehaviour:
   MaxModDuration: 10
   real: 1
   damagingDown: 0
-  startOnEnemy: 0
-  weaponDescription: 
+  special: 0
+  weaponDescription: "Gentle light that bathes the wounded, restoring vitality with
+    its serene glow. Increases target\u2019s HP by "

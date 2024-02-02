@@ -22,6 +22,7 @@ public static class MenuManage
     }
 
     public static void OpenMenu(Menu menu, GameObject callingMenu) {
+        int firstWeapon = 0;
         if (!IsInitialized) {
             Init();
         }
@@ -32,9 +33,11 @@ public static class MenuManage
                 break;
             case Menu.ATTACK1:
                 attackMenu1.SetActive(true);
+                attackMenu1.GetComponent<AttackMenu>().mouseOnWeaponButton(firstWeapon);
                 break;
             case Menu.ATTACK2:
                 attackMenu2.SetActive(true);
+                attackMenu2.GetComponent<AttackMenu>().mouseOnWeaponButton(firstWeapon);
                 break;
             case Menu.CRAFT:
                 craftMenu.SetActive(true);

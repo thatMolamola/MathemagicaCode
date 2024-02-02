@@ -66,6 +66,7 @@ public class BattleSystem : MonoBehaviour
         foreach (var allyUnit in playerUnits) {
             playerHUDs[playerCount].gameObject.SetActive(true);
             playerHUDs[playerCount].SetHUD(allyUnit);
+            attackSets[playerCount].characterWeapons = allyUnit.weaponList;
             playerCount += 1; 
         }
 
