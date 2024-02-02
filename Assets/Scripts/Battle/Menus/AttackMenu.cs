@@ -14,6 +14,7 @@ public class AttackMenu : MonoBehaviour
     }
 
     public void mouseOnWeaponButton(int buttonNum) {
+        Debug.Log("onButton");
         string damage = characterWeapons[buttonNum].currentRealDmgModifier.ToString();
         if (characterWeapons[buttonNum].special) {
             attackDesc.text = characterWeapons[buttonNum].weaponDescription; 

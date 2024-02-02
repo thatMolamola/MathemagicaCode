@@ -8,7 +8,7 @@ public enum BattleState { START, PLAYERT, ENEMYT, WON, LOST, FLED, WAITING}
 public class BattleSystem : MonoBehaviour
 {
     //playerside variables
-    [SerializeField] private GameObject[] playerTeamPrefabs;
+    private GameObject[] playerTeamPrefabs;
     [SerializeField] private Transform[] playerLocs;
     [SerializeField] private GameObject buttonsAccess;
     [SerializeField] private List<PlayerUnit> playerUnits = new List<PlayerUnit>();
@@ -16,7 +16,7 @@ public class BattleSystem : MonoBehaviour
     [SerializeField] private AttackMenu[] attackSets;
 
     //Enemyside references
-    [SerializeField] private GameObject enemyPrefab;
+    private GameObject enemyPrefab;
     [SerializeField] private Transform enemyLoc;
     [SerializeField] private EnemyUnit enemyUnit;
     [SerializeField] private BattleHUD enemyHUD;
@@ -28,10 +28,14 @@ public class BattleSystem : MonoBehaviour
     private Action currentAction;
     private Queue<string> weaponQueue = new Queue<string>();
     [SerializeField] private Text dialogueText;   
+    private CombatPrefabRefer combatantReference;
     
 
     void Start()
     {
+        combatantReference = Resources.Load<CombatPrefabRefer>("SOs/CombatRefer");
+        playerTeamPrefabs = combatantReference.allyTeam;
+        enemyPrefab = combatantReference.enemyRefer;
         state = BattleState.START;
         StartCoroutine(SetupBattle());
     }
@@ -48,6 +52,7 @@ public class BattleSystem : MonoBehaviour
     IEnumerator SetupBattle()
     {
         int playerCount = 0;
+        
         //For every member on the player team, instantiate them and add them to the list
         foreach (var playerPrefab in playerTeamPrefabs) {
             GameObject playGO = Instantiate(playerPrefab, playerLocs[playerCount]);

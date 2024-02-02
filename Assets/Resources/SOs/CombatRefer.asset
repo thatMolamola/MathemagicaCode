@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b2fdd2bf481d4d0c8b76bd5f0a30392, type: 3}
   m_Name: CombatRefer
   m_EditorClassIdentifier: 
-  enemyRefer: {fileID: 0}
+  enemyRefer: {fileID: 5914489324446710646, guid: b1de9d949b79247e2bf01b7470cbc7f8, type: 3}
   allyTeam:
   - {fileID: 8291449042722411076, guid: 6d93431ae771a41798096c12afe6c1c6, type: 3}
-  - {fileID: 0}
+  - {fileID: 2990508073700350346, guid: a2fea85a7c80c4573a1a11be2d2c27b4, type: 3}
