@@ -23,7 +23,7 @@ public class BattleSystem : MonoBehaviour
 
     //state change variables
     [SerializeField] private SceneControl sc;
-    private BattleState state; 
+    public BattleState state; 
     public Queue<Action> actionQueue = new Queue<Action>();
     private Action currentAction;
     private Queue<string> weaponQueue = new Queue<string>();
@@ -55,7 +55,10 @@ public class BattleSystem : MonoBehaviour
             playerUnits.Add(playGO.GetComponent<PlayerUnit>());
         }
         
+        Vector3 offset = new Vector3(0f, .5f, 0f);
         GameObject enGO = Instantiate(enemyPrefab, enemyLoc);
+        
+        enGO.transform.position += offset;
         enemyUnit = enGO.GetComponent<EnemyUnit>();
 
         dialogueText.text = "From the shadows, a " + enemyUnit.unitName + " has emerged!";
@@ -143,6 +146,23 @@ public class BattleSystem : MonoBehaviour
                 StartCoroutine(EndBattle());
                 yield break;
             } 
+
+            if (oldRealHP > 0) {
+                if (enemyUnit.currentHPReal < 0) {
+                    Debug.Log("flip triggered");
+                    enemyLoc.GetComponent<Animator>().Play("flipSprite",  -1, 0f);
+                    enemyUnit.animChange();
+                    dialogueText.text = "The " + enemyUnit.unitName + " grew enraged!";
+                    yield return new WaitForSeconds(1f);
+                }
+            } else if (oldRealHP < 0) {
+                if (enemyUnit.currentHPReal > 0) {
+                    enemyLoc.GetComponent<Animator>().Play("flipSprite",  -1, 0f);
+                    enemyUnit.animChange();
+                    dialogueText.text = "The " + enemyUnit.unitName + " grew enraged!";
+                    yield return new WaitForSeconds(1f);
+                }
+            } 
         }
         state = BattleState.ENEMYT;
         StartCoroutine(EnemyTurn());
@@ -172,9 +192,9 @@ public class BattleSystem : MonoBehaviour
         dialogueText.text = playerUnit.unitName + " took damage from " + enemyUnit.unitName + "!";
 
 
-        if (enemyUnit.numTurnsLeftStandardTwo == 0) {
-            dialogueText.text = enemyUnit.secondStandardAttack(enemyUnit);
-        } 
+        //if (enemyUnit.numTurnsLeftStandardTwo == 0) {
+        //    dialogueText.text = enemyUnit.secondStandardAttack(enemyUnit);
+        //} 
 
         
         playerHUDs[randNum].SetHP(playerUnit.currentHPReal);
@@ -185,7 +205,7 @@ public class BattleSystem : MonoBehaviour
 
         if (isDead) {
             state = BattleState.LOST;
-            EndBattle();
+            StartCoroutine(EndBattle());
         } else {
             state = BattleState.PLAYERT;
             PlayerTurn();
@@ -196,6 +216,7 @@ public class BattleSystem : MonoBehaviour
     IEnumerator EndBattle() {
         if (state == BattleState.WON) {
             dialogueText.text = "You won the Battle!";
+            //add battle reward items to inventory
         } else if (state == BattleState.LOST) {
             dialogueText.text = "You lost the Battle...";
         } else if (state == BattleState.FLED) {

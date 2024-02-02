@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class EnemyUnit : Unit
 {
     private int enemyID;
+    private bool flipped;
 
     public GameObject heartRender;
     private Image heartImage;
@@ -31,10 +32,16 @@ public class EnemyUnit : Unit
         Image heartImage = heartRender.GetComponent<Image>();
         numTurnsLeftSpecial = numTurnsToSpecial;
         numTurnsLeftStandardTwo = numTurnsToStandardTwo;
+        flipped = false;
+    }
+
+    public void animChange() {
+        flipped = !flipped;
+        gameObject.GetComponent<Animator>().SetBool("Flipped", flipped);
     }
 
     public void HealthFlip() {
-        if (negative) {
+        if (flipped) {
             heartImage.sprite = sprites[2];
         } else {
             heartImage.sprite = sprites[1];
@@ -49,6 +56,9 @@ public class EnemyUnit : Unit
     }
 
     public bool standardAttack(Unit enemyUnit){
+        if (flipped) {
+            enemyUnit.currentHPReal -= standardDmg * darkMultiplier;
+        }
         enemyUnit.currentHPReal -= standardDmg;
         numTurnsLeftSpecial -= 1;
         numTurnsLeftStandardTwo -= 1;
