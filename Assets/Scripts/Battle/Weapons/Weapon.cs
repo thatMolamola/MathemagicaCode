@@ -20,7 +20,7 @@ public abstract class Weapon : MonoBehaviour
     public bool real;
     public bool damagingDown;
 
-    public bool startOnEnemy;
+    public bool special;
 
     public string weaponDescription;
 

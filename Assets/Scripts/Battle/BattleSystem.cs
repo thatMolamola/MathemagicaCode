@@ -24,7 +24,6 @@ public class BattleSystem : MonoBehaviour
     //state change variables
     [SerializeField] private SceneControl sc;
     private BattleState state; 
-    private CombatPrefabRefer combatantReference;
     public Queue<Action> actionQueue = new Queue<Action>();
     private Action currentAction;
     private Queue<string> weaponQueue = new Queue<string>();
@@ -34,9 +33,6 @@ public class BattleSystem : MonoBehaviour
     void Start()
     {
         state = BattleState.START;
-        combatantReference = Resources.Load<CombatPrefabRefer>("SOs/CombatRefer");
-        playerTeamPrefabs = combatantReference.allyTeam;
-        enemyPrefab = combatantReference.enemyRefer;
         StartCoroutine(SetupBattle());
     }
 

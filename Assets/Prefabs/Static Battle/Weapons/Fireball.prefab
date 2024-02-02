@@ -55,4 +55,5 @@ MonoBehaviour:
   real: 1
   damagingDown: 1
   startOnEnemy: 0
-  weaponDescription: 
+  weaponDescription: 'A swirling sphere of flames eager to engulf anything with searing
+    destruction. Reduces target''s HP by '
