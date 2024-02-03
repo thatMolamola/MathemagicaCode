@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cef170aa342348eeb017f7c6c4a7099, type: 3}
   m_Name: 4BismuthPride
   m_EditorClassIdentifier: Assembly-CSharp::NPItemClass
-  name: Pride of Bismuth
-  itemIcon: {fileID: 0}
-  itemFunDescription: Slowly growing rainbow tower that may someday reach the Heavens
+  itemName: Pride of Bismuth
+  itemCount: 1
+  useDesc: Use this wisely to greatly strengthen your spells or potions.
+  funDesc: Slowly growing rainbow tower that believes it might someday reach the
+    Heavens.
+  itemSprite: {fileID: 0}
   NPValue: 4
-  itemUseDescription: Use this wisely to greatly strengthen your spells or potions.
   special: 0
-  specialValue: 0
+  specialNPValue: 0

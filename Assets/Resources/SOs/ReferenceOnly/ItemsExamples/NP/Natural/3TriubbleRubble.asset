@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cef170aa342348eeb017f7c6c4a7099, type: 3}
   m_Name: 3TriubbleRubble
   m_EditorClassIdentifier: Assembly-CSharp::NPItemClass
-  name: Triubble Rubble
-  itemIcon: {fileID: 0}
-  itemFunDescription: 'Use this on your third attack in their honor. '
+  itemName: Triubble Rubble
+  itemCount: 1
+  useDesc: Use this wisely to greatly strengthen your spells or potions.
+  funDesc: When crushed, it only forms smaller and smaller triangles.
+  itemSprite: {fileID: 0}
   NPValue: 3
-  itemUseDescription: Use this wisely to greatly strengthen your spells or potions.
   special: 0
-  specialValue: 0
+  specialNPValue: 0

@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cef170aa342348eeb017f7c6c4a7099, type: 3}
   m_Name: Ectoplasm
   m_EditorClassIdentifier: Assembly-CSharp::NPItemClass
-  name: Ectoplasm
-  itemIcon: {fileID: 0}
-  itemFunDescription: Spread this on toast and drop it to send the Devil a snack.
+  itemName: Ectoplasm
+  itemCount: 0
+  useDesc: Use this to temporary flip the signs on your spells.
+  funDesc: Slather this on toast and drop it to send the Devil a snack.
+  itemSprite: {fileID: 0}
   NPValue: 0
-  itemUseDescription: Use this to temporarily reverse the sign of your spell.
   special: 1
-  specialValue: -1
+  specialNPValue: 0

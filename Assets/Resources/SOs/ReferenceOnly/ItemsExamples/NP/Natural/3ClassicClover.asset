@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cef170aa342348eeb017f7c6c4a7099, type: 3}
   m_Name: 3ClassicClover
   m_EditorClassIdentifier: 
-  itemName: 
-  itemUseDescription: 
-  funDescription: 
+  itemName: Classic Clover
+  itemCount: 1
+  useDesc: Use this wisely to greatly strengthen your spells or potions.
+  funDesc: 99,999 out of 100,000 odds. Lucky you!
   itemSprite: {fileID: 0}
-  NPValue: 0
+  NPValue: 3
   special: 0
   specialNPValue: 0

@@ -33,7 +33,7 @@ public class BattleSystem : MonoBehaviour
 
     void Start()
     {
-        combatantReference = Resources.Load<CombatPrefabRefer>("SOs/CombatRefer");
+        combatantReference = Resources.Load<CombatPrefabRefer>("SOs/Dynamic/CombatRefer");
         playerTeamPrefabs = combatantReference.allyTeam;
         enemyPrefab = combatantReference.enemyRefer;
         state = BattleState.START;

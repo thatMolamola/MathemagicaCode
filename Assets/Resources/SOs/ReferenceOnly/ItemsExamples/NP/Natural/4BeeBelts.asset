@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cef170aa342348eeb017f7c6c4a7099, type: 3}
   m_Name: 4BeeBelts
   m_EditorClassIdentifier: Assembly-CSharp::NPItemClass
-  name: Bee Belts
-  itemIcon: {fileID: 0}
-  itemFunDescription: They're masters of martial arts.
+  itemName: Bee Belts
+  itemCount: 1
+  useDesc: Use this wisely to greatly strengthen your spells or potions.
+  funDesc: Don't mess with the bees, they're clearly masters of the martial arts.
+  itemSprite: {fileID: 0}
   NPValue: 4
-  itemUseDescription: Use this wisely to greatly strengthen your spells or potions.
   special: 0
-  specialValue: 0
+  specialNPValue: 0

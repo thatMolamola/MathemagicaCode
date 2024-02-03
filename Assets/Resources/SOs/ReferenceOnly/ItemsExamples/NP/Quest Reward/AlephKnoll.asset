@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cef170aa342348eeb017f7c6c4a7099, type: 3}
   m_Name: AlephKnoll
   m_EditorClassIdentifier: Assembly-CSharp::NPItemClass
-  name: Aleph Knoll
-  itemIcon: {fileID: 0}
-  itemFunDescription: A teeny tiny piece of the smallest infinity. Completely beyond
-    your comprehension.
+  itemName: Aleph Knoll Portion
+  itemCount: 0
+  useDesc: Sets any spell to its maximum potency.
+  funDesc: A teeny tiny portion of the smallest infinity. Completely beyond your
+    comprehension.
+  itemSprite: {fileID: 0}
   NPValue: 0
-  itemUseDescription: There are good and bad ways to use this.
   special: 1
-  specialValue: 0
+  specialNPValue: 0

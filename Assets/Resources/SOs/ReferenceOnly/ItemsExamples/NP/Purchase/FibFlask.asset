@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cef170aa342348eeb017f7c6c4a7099, type: 3}
   m_Name: FibFlask
   m_EditorClassIdentifier: 
-  itemName: 
-  itemUseDescription: 
-  funDescription: 
+  itemName: Fib's Flask
+  itemCount: 0
+  useDesc: 
+  funDesc: Fashioned from sea shells, coated in gold.
   itemSprite: {fileID: 0}
   NPValue: 0
-  special: 0
-  specialNPValue: 0
+  special: 1
+  specialNPValue: 1

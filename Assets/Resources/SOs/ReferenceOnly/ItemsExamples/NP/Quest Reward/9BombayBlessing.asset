@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cef170aa342348eeb017f7c6c4a7099, type: 3}
   m_Name: 9BombayBlessing
   m_EditorClassIdentifier: 
-  itemName: 
-  itemUseDescription: 
-  funDescription: 
+  itemName: Bombay Blessing
+  itemCount: 0
+  useDesc: Use this wisely to greatly strengthen your spells or potions.
+  funDesc: A genuine sign of gratitude. You deserve to receive this more often.
   itemSprite: {fileID: 0}
-  NPValue: 0
-  special: 0
+  NPValue: 9
+  special: 1
   specialNPValue: 0

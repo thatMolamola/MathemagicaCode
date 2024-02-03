@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2cef170aa342348eeb017f7c6c4a7099, type: 3}
-  m_Name: 8SpiderSocks
-  m_EditorClassIdentifier: Assembly-CSharp::NPItemClass
-  itemName: Spider Socks
+  m_Name: Keleven
+  m_EditorClassIdentifier: 
+  itemName: The Number Keleven
   itemCount: 0
-  useDesc: Use this wisely to greatly strengthen your spells or potions.
-  funDesc: 1 pair? 4 pairs? You tell me...
+  useDesc: ?????????
+  funDesc: ?????????
   itemSprite: {fileID: 0}
-  NPValue: 8
-  special: 0
+  NPValue: 0
+  special: 1
   specialNPValue: 0

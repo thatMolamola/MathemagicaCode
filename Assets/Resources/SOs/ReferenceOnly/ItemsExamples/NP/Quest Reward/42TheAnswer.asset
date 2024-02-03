@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cef170aa342348eeb017f7c6c4a7099, type: 3}
   m_Name: 42TheAnswer
   m_EditorClassIdentifier: Assembly-CSharp::NPItemClass
-  name: The Answer
-  itemIcon: {fileID: 0}
-  itemFunDescription: It always had to be here.
-  NPValue: 0
-  itemUseDescription: It would be a shame to never use this.
-  special: 1
-  specialValue: 42
+  itemName: The Answer
+  itemCount: 0
+  useDesc: Use this wisely to greatly strengthen your spells or potions.
+  funDesc: It always had to be here.
+  itemSprite: {fileID: 0}
+  NPValue: 42
+  special: 0
+  specialNPValue: 0

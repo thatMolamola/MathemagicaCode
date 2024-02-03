@@ -12,10 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cef170aa342348eeb017f7c6c4a7099, type: 3}
   m_Name: Decimulberry
   m_EditorClassIdentifier: 
-  itemName: 
-  itemUseDescription: 
-  funDescription: 
+  itemName: Decimulberry
+  itemCount: 0
+  useDesc: 'Its essence will erode that of any other, then reduce spell potency by
+    10. '
+  funDesc: Potently sweet and poisonous. 9 doctors recommended not eating these as
+    their last words.
   itemSprite: {fileID: 0}
   NPValue: 0
-  special: 0
+  special: 1
   specialNPValue: 0
