@@ -43,14 +43,30 @@ public static class PauseMenuManage
                 saveMenu.SetActive(true);
                 break;
         }
-        callingMenu.SetActive(false);
     }
      
-    public static void CloseMenu(GameObject callingMenu) {
+    public static void CloseSubmenu(OWMenu menu, GameObject callingMenu) {
         if (!IsInitialized) {
             Init();
         }
         pauseMenu.SetActive(true);
-        callingMenu.SetActive(false);
+        switch (menu) 
+        {
+            case OWMenu.PAUSE_MENU:
+                pauseMenu.SetActive(false);
+                break;
+            case OWMenu.TEAM:
+                teamMenu.SetActive(false);
+                break;
+            case OWMenu.BAG:
+                bagMenu.SetActive(false);
+                break;
+            case OWMenu.CRAFT:
+                craftMenu.SetActive(false);
+                break;
+            case OWMenu.SAVE:
+                saveMenu.SetActive(false);
+                break;
+        }
     }
 }

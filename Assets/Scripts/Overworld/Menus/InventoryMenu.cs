@@ -36,6 +36,15 @@ public class InventoryMenu : MonoBehaviour
                         child.GetComponent<Text>().text = "x" + NPItems[index].itemCount;
                     }
                 }
+            } else {
+                foreach (Transform child in listEntry){
+                    if (child.name == "ItemName"){
+                        child.GetComponent<Text>().text = "";
+                    }
+                    if (child.name == "ItemQuant"){
+                        child.GetComponent<Text>().text = "";
+                    }
+                }
             }
         }
         if (NPItems.Count > 0) {
@@ -47,9 +56,11 @@ public class InventoryMenu : MonoBehaviour
     }
 
     public void mouseOnInventorySlot(int buttonNum) {
-        itemNameP.text = NPItems[buttonNum].itemName;
-        funInfo.text = NPItems[buttonNum].funDesc;
-        useText.text = NPItems[buttonNum].useDesc;
-        NPText.text = "NP:" + NPItems[buttonNum].NPValue;
+        if (buttonNum < NPItems.Count) {
+            itemNameP.text = NPItems[buttonNum].itemName;
+            funInfo.text = NPItems[buttonNum].funDesc;
+            useText.text = NPItems[buttonNum].useDesc;
+            NPText.text = "NP:" + NPItems[buttonNum].NPValue;
+        }
     }
 }
