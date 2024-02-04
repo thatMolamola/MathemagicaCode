@@ -6,14 +6,14 @@ public class OWCombatInit : MonoBehaviour
 {
     public SceneControl sc;
 
-    private GameObject combatant;
-    private CombatPrefabRefer combatantReference;
+    public GameObject combatant;
+    public CombatPrefabRefer combatantReference;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        combatantReference = Resources.Load<CombatPrefabRefer>("SOs/CombatRefer");
+        combatantReference = Resources.Load<CombatPrefabRefer>("SOs/Dynamic/CombatRefer");
         combatant = this.gameObject;
     }
 
