@@ -10,7 +10,7 @@ public class PlayerUnit : Unit
     public int executeAction(Action selectAction) {
         if (selectAction.actionChoice == "ATTACK") {
             selectedWeaponAttack(selectAction.weaponChoice, selectAction.targetUnit);
-            return selectAction.weaponChoice.currentRealDmgModifier;  //will need to be fixed later
+            return selectAction.weaponChoice.thisWeapon.currentRealDmgModifier;  //will need to be fixed later
         }
 
         if (selectAction.actionChoice == "CRAFT") {

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7136274773283870416}
   - component: {fileID: 2990508073700350455}
   m_Layer: 0
-  m_Name: HoodlumStatic
+  m_Name: StitchStatic
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 611d405b3a8c04fbf810f3999a55da76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitName: Hoodlum
+  unitName: Stitch
   currentHPReal: 0
   currentHPImag: 5
   initialHPReal: 0
@@ -132,7 +132,7 @@ MonoBehaviour:
   negative: 0
   weaponList:
   - {fileID: 4322550110215045233, guid: a8826e186730647debfec15cbef617a9, type: 3}
-  - {fileID: 4322550110215045233, guid: a8826e186730647debfec15cbef617a9, type: 3}
+  - {fileID: 3322067147149694455, guid: fddf795639fa64b7fb21e59978e70853, type: 3}
   - {fileID: 4322550110215045233, guid: a8826e186730647debfec15cbef617a9, type: 3}
   selectedWeapon: 0
 --- !u!95 &2990508073700350455

@@ -5,24 +5,9 @@ using UnityEngine.UI;
 
 public abstract class Weapon : MonoBehaviour
 {
-    //Weapon-Specific Variable stats
-    public int currentRealDmgModifier;
-    public int currentImagDmgModifier;
-    public int ModDurationLeft;
-    public bool modded;
+    public WeaponItem thisWeapon;
 
-    //Weapon-Specific Constant Stats
-    public bool permMod;
-    public bool modable;
-    public int baseRealDmgModifier;
-    public int baseImagDmgModifier;
-    public int MaxModDuration;
-    public bool real;
-    public bool damagingDown;
-
-    public bool special;
-
-    public string weaponDescription;
+    public virtual void loadValues(){}
 
     //TO-DO Weapons should be able to affect enemy Unit HP in many ways more than addition and subtraction
     public virtual void Attack(Unit enemyUnit){}

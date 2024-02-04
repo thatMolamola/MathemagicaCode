@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class OWCraftMenu : MonoBehaviour
 {
+    private CombatPrefabRefer allies;
+    private Inventory ingredients;
+    
     // Start is called before the first frame update
     void Start()
     {

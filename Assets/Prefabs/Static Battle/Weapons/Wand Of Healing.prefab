@@ -43,17 +43,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 181025be6dcfc45fab0f033932a2fcea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentRealDmgModifier: 5
-  currentImagDmgModifier: 0
-  ModDurationLeft: 0
-  modded: 0
-  permMod: 0
-  modable: 1
-  baseRealDmgModifier: 5
-  baseImagDmgModifier: 0
-  MaxModDuration: 10
-  real: 1
-  damagingDown: 0
-  special: 0
-  weaponDescription: "Gentle light that bathes the wounded, restoring vitality with
-    its serene glow. Increases target\u2019s HP by "
+  thisWeapon: {fileID: 11400000, guid: dd34c014ab2af4511a366e7aa46cfaea, type: 2}

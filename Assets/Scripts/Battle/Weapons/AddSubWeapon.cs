@@ -4,41 +4,28 @@ using UnityEngine;
 
 public class AddSubWeapon : Weapon
 {
-    public void Start () {
-        //set Weapon Specific Constants
-        //Modable conditions
-        permMod = false;
-        MaxModDuration = 5; 
-        modable = true;
-
-        //Weapon Attack Variety
-        baseRealDmgModifier = 5;
-        damagingDown = false; 
-        real = true;
-    }
-
     public override void Attack (Unit enemyUnit){
-        if (real) {
-            if (!damagingDown) {
-                enemyUnit.currentHPReal += currentRealDmgModifier;
+        if (thisWeapon.real) {
+            if (!thisWeapon.damagingDown) {
+                enemyUnit.currentHPReal += thisWeapon.currentRealDmgModifier;
             } else {
-                enemyUnit.currentHPReal -= currentRealDmgModifier;
+                enemyUnit.currentHPReal -= thisWeapon.currentRealDmgModifier;
             }
         } else {
-            if (!damagingDown) {
-                enemyUnit.currentHPImag += currentImagDmgModifier;
+            if (!thisWeapon.damagingDown) {
+                enemyUnit.currentHPImag += thisWeapon.currentImagDmgModifier;
             } else {
-                enemyUnit.currentHPImag -= currentImagDmgModifier;
+                enemyUnit.currentHPImag -= thisWeapon.currentImagDmgModifier;
             }
         }
 
-        if (!permMod) {
-            if (modded) {
-                ModDurationLeft -= 1; 
-                if (ModDurationLeft == 0) {
-                    currentRealDmgModifier = baseRealDmgModifier;
-                    ModDurationLeft = MaxModDuration;
-                    modded = false;
+        if (!thisWeapon.permMod) {
+            if (thisWeapon.modded) {
+                thisWeapon.ModDurationLeft -= 1; 
+                if (thisWeapon.ModDurationLeft == 0) {
+                    thisWeapon.currentRealDmgModifier = thisWeapon.baseRealDmgModifier;
+                    thisWeapon.ModDurationLeft = thisWeapon.MaxModDuration;
+                    thisWeapon.modded = false;
                 }
             }
         }

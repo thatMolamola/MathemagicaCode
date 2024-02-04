@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7923824958188324685}
   - component: {fileID: 7923824958188324686}
   m_Layer: 0
-  m_Name: Hammer of Floor
+  m_Name: Gravitation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,17 +43,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9af6345324b184cd38d303fbe4054128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentRealDmgModifier: 0
-  currentImagDmgModifier: 0
-  ModDurationLeft: 0
-  modded: 0
-  permMod: 0
-  modable: 0
-  baseRealDmgModifier: 0
-  baseImagDmgModifier: 0
-  MaxModDuration: 0
-  real: 0
-  damagingDown: 0
-  special: 1
-  weaponDescription: 'Mystical force bends reality, its irresistible pull drawing
-    targets toward quantum points. Reduces target HP to whole numbers. '
+  thisWeapon: {fileID: 11400000, guid: 8cb39062f2c754b7ead5f067f36a8f6d, type: 2}
