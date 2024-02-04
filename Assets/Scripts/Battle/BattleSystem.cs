@@ -60,6 +60,7 @@ public class BattleSystem : MonoBehaviour
             playerUnits.Add(playGO.GetComponent<PlayerUnit>());
         }
         
+        //Offset to allow for the sprite flipping
         Vector3 offset = new Vector3(0f, .5f, 0f);
         GameObject enGO = Instantiate(enemyPrefab, enemyLoc);
         
@@ -106,15 +107,14 @@ public class BattleSystem : MonoBehaviour
     }
 
     public void onFleeButton(){
-        Action currentAction = new Action(null, null, "FLEE");
-        dialogueText.text = "It's too soon to run away!";
+        Action currentAction = new Action(null, enemyUnit, "FLEE");
         actionQueue.Enqueue(currentAction);
         OnActionButton();
     }
 
     //All options lead to the OnActionButton, which counts the actions and starts the execution once ready
     public void OnActionButton() {
-        //Weapon weaponChoice, int target, string actionCategory
+        //Format of Weapon weaponChoice, int target, string actionCategory
         if (state != BattleState.PLAYERT) {
             return;
         }
@@ -129,19 +129,32 @@ public class BattleSystem : MonoBehaviour
         yield return new WaitForSeconds(1f);
         int queueCounter = 0;
         while (actionQueue.Count != 0) {
+            
             float oldRealHP = enemyUnit.currentHPReal;
             float oldImagHP = enemyUnit.currentHPImag;
-
-            int damageDone = playerUnits[queueCounter].executeAction(actionQueue.Dequeue());
+            playerUnits[queueCounter].executeAction(actionQueue.Dequeue());
+            float damageDone = oldRealHP - enemyUnit.currentHPReal;
             bool isDead = playerUnits[queueCounter].deathCheck(enemyUnit);
+            
+            //On Flee Attempt
+            if (playerUnits[queueCounter].fleeFlag) {
+                playerUnits[queueCounter].fleeFlag = false;
+                if (playerUnits[queueCounter].fledSuccess) {
+                    state = BattleState.FLED;
+                    playerUnits[queueCounter].fledSuccess = false;
+                    StartCoroutine(EndBattle());
+                    yield break;
+                } else {
+                    dialogueText.text = "Flee attempt was unsuccessful!";
+                } 
+            }
             
             // Update VisualDamage to Enemy
             enemyHUD.SetHP(enemyUnit.currentHPReal);
             enemyHUD.HPSliderAngle(enemyUnit);
 
-            Debug.Log(damageDone);
-            if (damageDone != 0) {
-                dialogueText.text = enemyUnit.unitName + " took " + (oldRealHP - enemyUnit.currentHPReal) + " damage from " + playerUnits[queueCounter].unitName + "!";
+            if (damageDone != 0f) {
+                dialogueText.text = enemyUnit.unitName + " took " + damageDone + " damage from " + playerUnits[queueCounter].unitName + "!";
             }
             
             queueCounter += 1;
@@ -153,9 +166,9 @@ public class BattleSystem : MonoBehaviour
                 yield break;
             } 
 
+            //check Sign flip
             if (oldRealHP > 0) {
                 if (enemyUnit.currentHPReal < 0) {
-                    Debug.Log("flip triggered");
                     enemyLoc.GetComponent<Animator>().Play("flipSprite",  -1, 0f);
                     enemyUnit.animChange();
                     dialogueText.text = "The " + enemyUnit.unitName + " grew enraged!";
@@ -169,7 +182,7 @@ public class BattleSystem : MonoBehaviour
                     yield return new WaitForSeconds(1f);
                 }
             } 
-        }
+        } //Queue Loop End
         state = BattleState.ENEMYT;
         StartCoroutine(EnemyTurn());
     }
@@ -188,19 +201,26 @@ public class BattleSystem : MonoBehaviour
         }
 
         yield return new WaitForSeconds(.5f);
-        
+
+        float oldRealHP = enemyUnit.currentHPReal;
+        float oldImagHP = enemyUnit.currentHPImag;
         bool isDead = false;
+
         if (enemyUnit.numTurnsLeftSpecial == 0) {
             isDead = enemyUnit.specialAttack(playerUnit);
         } else {
             isDead = enemyUnit.standardAttack(playerUnit);
         }
-        dialogueText.text = playerUnit.unitName + " took damage from " + enemyUnit.unitName + "!";
 
+        float damageDone = oldRealHP - enemyUnit.currentHPReal;
+        if (damageDone != 0) {
+            dialogueText.text = playerUnit.unitName + " took damage from " + enemyUnit.unitName + "!";
+        }
 
-        //if (enemyUnit.numTurnsLeftStandardTwo == 0) {
-        //    dialogueText.text = enemyUnit.secondStandardAttack(enemyUnit);
-        //} 
+        if (enemyUnit.numTurnsLeftStandardTwo == 0) {
+            dialogueText.text = enemyUnit.secondStandardAttack(enemyUnit);
+            enemyUnit.numTurnsLeftStandardTwo = enemyUnit.numTurnsToStandardTwo;
+        } 
 
         
         playerHUDs[randNum].SetHP(playerUnit.currentHPReal);
@@ -232,4 +252,3 @@ public class BattleSystem : MonoBehaviour
         sc.CombatSceneUnload();
     }
 }
-

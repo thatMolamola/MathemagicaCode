@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 866717af23069418da64bddba5f7372a, type: 3}
   m_Name: LooseThread
   m_EditorClassIdentifier: 
-  currentRealDmgModifier: 10
+  currentRealDmgModifier: 5
   currentImagDmgModifier: 0
   ModDurationLeft: 0
   modded: 0
   permMod: 0
   modable: 0
-  baseRealDmgModifier: 10
+  baseRealDmgModifier: 5
   baseImagDmgModifier: 0
   MaxModDuration: 0
   real: 1

@@ -6,24 +6,20 @@ public class PlayerUnit : Unit
 {
     public Weapon[] weaponList;
     public int selectedWeapon;
+    public bool fleeFlag, fledSuccess;
 
-    public int executeAction(Action selectAction) {
+    public void executeAction(Action selectAction) {
         if (selectAction.actionChoice == "ATTACK") {
             selectedWeaponAttack(selectAction.weaponChoice, selectAction.targetUnit);
-            return selectAction.weaponChoice.thisWeapon.currentRealDmgModifier;  //will need to be fixed later
         }
 
         if (selectAction.actionChoice == "CRAFT") {
             selectedCraft();
-            return 0;
         }
 
         if (selectAction.actionChoice == "FLEE") {
-            selectedFlee();
-            return 0;
+            selectedFlee(selectAction.targetUnit);
         }
-
-        return 0;
     }
 
     public void selectedWeaponAttack(Weapon weapon, Unit enemyUnit){
@@ -34,8 +30,11 @@ public class PlayerUnit : Unit
         //TODO
     }
 
-    public void selectedFlee(){
-        //TODO
+    public void selectedFlee(Unit enemyUnit){
+        fleeFlag = true;
+        if (enemyUnit.unitName == "Door") {
+            fledSuccess = true;
+        }
     }
 
     public override bool deathCheck(Unit enemyUnit) {

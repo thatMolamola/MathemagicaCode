@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class EnemyUnit : Unit
 {
-    private int enemyID;
     private bool flipped;
 
     public GameObject heartRender;
@@ -67,15 +66,16 @@ public class EnemyUnit : Unit
 
     public string secondStandardAttack(Unit enemyUnit){
         numTurnsLeftStandardTwo = numTurnsToStandardTwo;
-        if (enemyID == 2) {
+        if (unitName == "Wrathmetic") {
             float randValue1 = Random.value;
             float randHeal = Mathf.FloorToInt(100 * randValue1) / 100;
             enemyUnit.currentHPReal += randHeal;
-            return "The Wraithmetic blurs its form!";
+            return "The Wrathmetic blurs its form!";
+        } else if (unitName == "Door") {
+            return "The door just sits there and takes it!";
         } else {
             return "";
         }
-
     }
 
     public bool specialAttack(Unit enemyUnit){
@@ -87,7 +87,7 @@ public class EnemyUnit : Unit
     public void specialDmgCalc(Unit enemyUnit){
         float randValue1 = Random.value;
         float randValue2 = Random.value;
-        if (enemyID == 1) {
+        if (unitName == "Triubble") {
             if (randValue1 < .037037) {
                 enemyUnit.currentHPReal -= 15;
                 return;
@@ -98,7 +98,7 @@ public class EnemyUnit : Unit
                 enemyUnit.currentHPReal -= 9;
                 return;
                 }
-        } else if (enemyID == 2) {
+        } else if (unitName == "Wrathmetic") {
             float randDamage = Mathf.FloorToInt(100 * randValue2) / 100;
             if (randValue1 < .25) {
                 enemyUnit.currentHPReal -= randDamage;

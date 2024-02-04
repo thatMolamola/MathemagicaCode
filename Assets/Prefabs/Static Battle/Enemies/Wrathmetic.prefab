@@ -162,6 +162,8 @@ MonoBehaviour:
   initialHPImag: 0
   withImaginary: 0
   negative: 1
+  trueName: 
+  falseName: 
   heartRender: {fileID: 6178750986825258416, guid: 52d41eadee2e14d10af116cc0bfcbc50, type: 3}
   EnemySprite: {fileID: 1260556011927268899}
   sprites: []

@@ -6,8 +6,8 @@ public class OWCombatInit : MonoBehaviour
 {
     public SceneControl sc;
 
-    public GameObject combatant;
-    public CombatPrefabRefer combatantReference;
+    private GameObject combatant;
+    private CombatPrefabRefer combatantReference;
 
 
     // Start is called before the first frame update

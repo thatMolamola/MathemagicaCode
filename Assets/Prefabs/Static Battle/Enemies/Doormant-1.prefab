@@ -168,8 +168,8 @@ MonoBehaviour:
   hasSecondStand: 0
   specialDmg: 0
   darkMultiplier: 0
-  numTurnsToStandardTwo: 0
-  numTurnsLeftStandardTwo: 0
-  numTurnsToSpecial: 0
-  numTurnsLeftSpecial: 0
+  numTurnsToStandardTwo: 1
+  numTurnsLeftStandardTwo: 1
+  numTurnsToSpecial: 100
+  numTurnsLeftSpecial: 100
   unitPrefab: {fileID: 1430402411746013425}

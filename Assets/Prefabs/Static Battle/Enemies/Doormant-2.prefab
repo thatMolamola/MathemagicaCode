@@ -172,4 +172,4 @@ MonoBehaviour:
   numTurnsLeftStandardTwo: 0
   numTurnsToSpecial: 0
   numTurnsLeftSpecial: 0
-  unitPrefab: {fileID: 1430402411746013425, guid: 214f5f14f096f4e50ab65df26562d20b, type: 3}
+  unitPrefab: {fileID: 5512902461931978636}
