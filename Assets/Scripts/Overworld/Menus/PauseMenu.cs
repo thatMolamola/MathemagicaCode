@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class PauseMenu : MonoBehaviour
 {
     bool pausedOpen;
+    public SceneControl sc;
 
     void Start () {
         pausedOpen = false;
@@ -49,5 +50,10 @@ public class PauseMenu : MonoBehaviour
 
     public void onSavePress(){
         PauseMenuManage.OpenPauseMenu(OWMenu.SAVE, gameObject);
+    }
+
+    public void onQuitPress(){
+        PauseMenuManage.OpenPauseMenu(OWMenu.QUIT, gameObject);
+        sc.SceneLoad("MMMenu");
     }
 }

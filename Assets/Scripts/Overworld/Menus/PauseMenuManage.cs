@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum OWMenu {LOADBEARING, PAUSE_MENU, TEAM, BAG, CRAFT, SAVE}
+public enum OWMenu {LOADBEARING, PAUSE_MENU, TEAM, BAG, CRAFT, SAVE, QUIT}
 
 public static class PauseMenuManage
 {
@@ -22,26 +22,32 @@ public static class PauseMenuManage
     }
 
     public static void OpenPauseMenu(OWMenu menu, GameObject callingMenu) {
-        if (!IsInitialized) {
-            Init();
-        }
-        switch (menu) 
-        {
-            case OWMenu.PAUSE_MENU:
-                pauseMenu.SetActive(true);
-                break;
-            case OWMenu.TEAM:
-                teamMenu.SetActive(true);
-                break;
-            case OWMenu.BAG:
-                bagMenu.SetActive(true);
-                break;
-            case OWMenu.CRAFT:
-                craftMenu.SetActive(true);
-                break;
-            case OWMenu.SAVE:
-                saveMenu.SetActive(true);
-                break;
+        if (callingMenu != null){
+            if (!IsInitialized) {
+                Init();
+            }
+            pauseMenu.SetActive(false);
+            switch (menu) 
+            {
+                case OWMenu.PAUSE_MENU:
+                    pauseMenu.SetActive(true);
+                    break;
+                case OWMenu.TEAM:
+                    teamMenu.SetActive(true);
+                    break;
+                case OWMenu.BAG:
+                    bagMenu.SetActive(true);
+                    break;
+                case OWMenu.CRAFT:
+                    craftMenu.SetActive(true);
+                    break;
+                case OWMenu.SAVE:
+                    saveMenu.SetActive(true);
+                    break;
+                case OWMenu.QUIT:
+                    IsInitialized = false;
+                    break;
+            }
         }
     }
      
