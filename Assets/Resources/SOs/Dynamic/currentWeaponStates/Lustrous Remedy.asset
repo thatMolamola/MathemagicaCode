@@ -22,7 +22,7 @@ MonoBehaviour:
   baseImagDmgModifier: 0
   MaxModDuration: 3
   real: 1
-  damagingDown: 1
+  damagingDown: 0
   special: 0
   weaponName: Rejuvenation
   weaponDescription: "Gentle light that bathes the wounded, restoring vitality with

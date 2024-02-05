@@ -32,4 +32,10 @@ public class OWCraftMenu : MonoBehaviour
     public void onBookSelect(int bookNum) {
         openBookParent.GetChild(bookNum).gameObject.SetActive(true);
     }
+
+    public void leaveCraft() {
+        foreach (Transform child in openBookParent) {
+            child.gameObject.SetActive(false);
+        }
+    }
 }
