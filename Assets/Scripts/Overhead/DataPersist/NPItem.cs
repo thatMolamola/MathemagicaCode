@@ -7,6 +7,9 @@ using UnityEngine;
 [CreateAssetMenu (fileName = "NPItem", menuName = "Item/NP")]
 public class NPItem: ScriptableObject
 {
+    //For battle spawns
+    public float spawnChance;
+
     //On Inventory
     public string itemName;
     public int itemCount;

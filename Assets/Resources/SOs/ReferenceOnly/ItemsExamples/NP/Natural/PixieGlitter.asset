@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cef170aa342348eeb017f7c6c4a7099, type: 3}
   m_Name: PixieGlitter
   m_EditorClassIdentifier: Assembly-CSharp::NPItemClass
+  spawnChance: 2
   itemName: Pixie Glitter
   itemCount: 0
   useDesc: You can collect this until you use it. You can only use it all at once.

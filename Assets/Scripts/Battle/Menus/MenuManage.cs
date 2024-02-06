@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Menu {MAIN_MENU, ATTACK1, ATTACK2, CRAFT, DIALOGUE}
+public enum Menu {MAIN_MENU, ATTACK1, ATTACK2, CRAFT, DIALOGUE, REWARD, DONE}
 
 public static class MenuManage
 {
     public static bool IsInitialized { get; private set;}
 
-    public static GameObject mainMenu, attackMenu1, attackMenu2, craftMenu, dialogueMenu;
+    public static GameObject mainMenu, attackMenu1, attackMenu2, craftMenu, dialogueMenu, rewardMenu;
 
     public static void Init() {
         GameObject canvas = GameObject.Find("HUDs");
@@ -17,6 +17,7 @@ public static class MenuManage
         attackMenu2 = canvas.transform.Find("AttackMenu2").gameObject;
         craftMenu = canvas.transform.Find("CraftMenu").gameObject;
         dialogueMenu = canvas.transform.Find("DialogueMenu").gameObject;
+        rewardMenu = canvas.transform.Find("RewardMenu").gameObject;
 
         IsInitialized = true;
     }
@@ -44,6 +45,12 @@ public static class MenuManage
                 break;
             case Menu.DIALOGUE:
                 craftMenu.SetActive(true);
+                break;
+            case Menu.REWARD:
+                rewardMenu.SetActive(true);
+                break;
+            case Menu.DONE:
+                IsInitialized = false;
                 break;
         }
         callingMenu.SetActive(false);

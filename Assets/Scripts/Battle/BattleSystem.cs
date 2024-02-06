@@ -14,6 +14,7 @@ public class BattleSystem : MonoBehaviour
     [SerializeField] private List<PlayerUnit> playerUnits = new List<PlayerUnit>();
     [SerializeField] private BattleHUD[] playerHUDs;
     [SerializeField] private AttackMenu[] attackSets;
+    [SerializeField] private RewardsMenu onWinRewards;
 
     //Enemyside references
     private GameObject enemyPrefab;
@@ -154,7 +155,7 @@ public class BattleSystem : MonoBehaviour
             enemyHUD.HPSliderAngle(enemyUnit);
 
             if (damageDone != 0f) {
-                dialogueText.text = enemyUnit.unitName + " took " + damageDone + " damage from " + playerUnits[queueCounter].unitName + "!";
+                dialogueText.text = enemyUnit.unitName + " took " + (Mathf.Round(damageDone*1000)/1000) + " damage from " + playerUnits[queueCounter].unitName + "!";
             }
             
             queueCounter += 1;
@@ -202,8 +203,8 @@ public class BattleSystem : MonoBehaviour
 
         yield return new WaitForSeconds(.5f);
 
-        float oldRealHP = enemyUnit.currentHPReal;
-        float oldImagHP = enemyUnit.currentHPImag;
+        float oldRealHP = playerUnit.currentHPReal;
+        float oldImagHP = playerUnit.currentHPImag;
         bool isDead = false;
 
         if (enemyUnit.numTurnsLeftSpecial == 0) {
@@ -212,9 +213,9 @@ public class BattleSystem : MonoBehaviour
             isDead = enemyUnit.standardAttack(playerUnit);
         }
 
-        float damageDone = oldRealHP - enemyUnit.currentHPReal;
+        float damageDone = oldRealHP - playerUnit.currentHPReal;
         if (damageDone != 0) {
-            dialogueText.text = playerUnit.unitName + " took damage from " + enemyUnit.unitName + "!";
+            dialogueText.text = playerUnit.unitName + " took " + (Mathf.Round(damageDone*1000)/1000) + " damage from " + enemyUnit.unitName + "!";
         }
 
         if (enemyUnit.numTurnsLeftStandardTwo == 0) {
@@ -242,6 +243,9 @@ public class BattleSystem : MonoBehaviour
     IEnumerator EndBattle() {
         if (state == BattleState.WON) {
             dialogueText.text = "You won the Battle!";
+            onWinRewards.displayRewards(enemyUnit);
+            yield return new WaitForSeconds(2f);
+            onWinRewards.onLeave();
             //add battle reward items to inventory
         } else if (state == BattleState.LOST) {
             dialogueText.text = "You lost the Battle...";

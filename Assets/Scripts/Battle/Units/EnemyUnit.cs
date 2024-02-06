@@ -27,6 +27,9 @@ public class EnemyUnit : Unit
 
     public GameObject unitPrefab;
 
+    //Item spawns
+    public NPItem[] dropTable;
+
     public void Start() {
         Image heartImage = heartRender.GetComponent<Image>();
         numTurnsLeftSpecial = numTurnsToSpecial;
