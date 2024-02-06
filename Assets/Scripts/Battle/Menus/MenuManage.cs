@@ -8,7 +8,7 @@ public static class MenuManage
 {
     public static bool IsInitialized { get; private set;}
 
-    public static GameObject mainMenu, attackMenu1, attackMenu2, craftMenu, dialogueMenu, rewardMenu;
+    public static GameObject mainMenu, attackMenu1, attackMenu2, craftMenu, rewardMenu;
 
     public static void Init() {
         GameObject canvas = GameObject.Find("HUDs");
@@ -16,7 +16,6 @@ public static class MenuManage
         attackMenu1 = canvas.transform.Find("AttackMenu1").gameObject;
         attackMenu2 = canvas.transform.Find("AttackMenu2").gameObject;
         craftMenu = canvas.transform.Find("CraftMenu").gameObject;
-        dialogueMenu = canvas.transform.Find("DialogueMenu").gameObject;
         rewardMenu = canvas.transform.Find("RewardMenu").gameObject;
 
         IsInitialized = true;
@@ -41,9 +40,6 @@ public static class MenuManage
                 attackMenu2.GetComponent<AttackMenu>().mouseOnWeaponButton(firstWeapon);
                 break;
             case Menu.CRAFT:
-                craftMenu.SetActive(true);
-                break;
-            case Menu.DIALOGUE:
                 craftMenu.SetActive(true);
                 break;
             case Menu.REWARD:

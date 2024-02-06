@@ -50,7 +50,7 @@ public class BattleSystem : MonoBehaviour
     }
 
     // Instantiation and Set Up Coroutine
-    IEnumerator SetupBattle()
+    private IEnumerator SetupBattle()
     {
         int playerCount = 0;
         
@@ -89,7 +89,7 @@ public class BattleSystem : MonoBehaviour
     }
 
     // PLAYER TURN OPTIONS 
-    void PlayerTurn() {
+    private void PlayerTurn() {
         dialogueText.text = "Choose an action!"; 
     }
 
@@ -114,7 +114,7 @@ public class BattleSystem : MonoBehaviour
     }
 
     //All options lead to the OnActionButton, which counts the actions and starts the execution once ready
-    public void OnActionButton() {
+    private void OnActionButton() {
         //Format of Weapon weaponChoice, int target, string actionCategory
         if (state != BattleState.PLAYERT) {
             return;
@@ -125,7 +125,7 @@ public class BattleSystem : MonoBehaviour
         } 
     }
 
-    IEnumerator PlayerActs() {
+    private IEnumerator PlayerActs() {
         state = BattleState.WAITING;
         yield return new WaitForSeconds(1f);
         int queueCounter = 0;
@@ -189,7 +189,7 @@ public class BattleSystem : MonoBehaviour
     }
 
     //ENEMY OPTIONS
-    IEnumerator EnemyTurn() {
+    private IEnumerator EnemyTurn() {
         int randNum = Random.Range(0, playerUnits.Count);
         PlayerUnit playerUnit = playerUnits[randNum];
         state = BattleState.WAITING;
@@ -240,7 +240,7 @@ public class BattleSystem : MonoBehaviour
     }
 
     //End Battle Conditions
-    IEnumerator EndBattle() {
+    private IEnumerator EndBattle() {
         if (state == BattleState.WON) {
             dialogueText.text = "You won the Battle!";
             onWinRewards.displayRewards(enemyUnit);
@@ -249,6 +249,8 @@ public class BattleSystem : MonoBehaviour
             //add battle reward items to inventory
         } else if (state == BattleState.LOST) {
             dialogueText.text = "You lost the Battle...";
+            yield return new WaitForSeconds(2f);
+            sc.SceneLoad("MMMenu");
         } else if (state == BattleState.FLED) {
             dialogueText.text = "You fled the Battle...";
         }

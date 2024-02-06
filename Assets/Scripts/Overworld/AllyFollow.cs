@@ -10,7 +10,7 @@ public class AllyFollow : MonoBehaviour
 
     [SerializeField] private Transform player;
     [SerializeField] private Animator animator;
-    [SerializeField] private Vector2 dir;
+    private Vector2 dir;
 
     // Start is called before the first frame update
     private void Start()

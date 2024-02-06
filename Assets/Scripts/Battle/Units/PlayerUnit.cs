@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerUnit : Unit
 {
     public Weapon[] weaponList;
-    public int selectedWeapon;
     public bool fleeFlag, fledSuccess;
 
     public void executeAction(Action selectAction) {
@@ -22,15 +21,15 @@ public class PlayerUnit : Unit
         }
     }
 
-    public void selectedWeaponAttack(Weapon weapon, Unit enemyUnit){
+    private void selectedWeaponAttack(Weapon weapon, Unit enemyUnit){
         weapon.Attack(enemyUnit);
     }
 
-    public void selectedCraft(){
+    private void selectedCraft(){
         //TODO
     }
 
-    public void selectedFlee(Unit enemyUnit){
+    private void selectedFlee(Unit enemyUnit){
         fleeFlag = true;
         if (enemyUnit.unitName == "Door") {
             fledSuccess = true;

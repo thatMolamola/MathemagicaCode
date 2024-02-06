@@ -9,13 +9,13 @@ public class InventoryMenu : MonoBehaviour
     private List<NPItem> NPItems = new List<NPItem>();
 
     //List references
-    public Transform listParent;
+    [SerializeField] private Transform listParent;
 
     //Panel references
-    public Text itemNameP;
-    public Text funInfo;
-    public Text useText;
-    public Text NPText;
+    [SerializeField] private Text itemNameP;
+    [SerializeField] private Text funInfo;
+    [SerializeField] private Text useText;
+    [SerializeField] private Text NPText;
 
     void Start()
     {
@@ -24,7 +24,7 @@ public class InventoryMenu : MonoBehaviour
         ListLoad();
     }
 
-    public void ListLoad(){
+    private void ListLoad(){
         foreach (Transform listEntry in listParent) {
             int index = listEntry.GetSiblingIndex();
             if (NPItems.Count > index) {

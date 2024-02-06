@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class RewardsMenu : MonoBehaviour
 {
-    public string[] battleRewards;
+    [SerializeField] private string[] battleRewards;
     private Inventory playerInv;
     [SerializeField] private Text rewardsList;
     private GameObject rewardDisplay;

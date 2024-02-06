@@ -5,9 +5,9 @@ using UnityEngine.InputSystem;
 
 public class PauseMenu : MonoBehaviour
 {
-    bool pausedOpen;
-    public SceneControl sc;
-    public InputSystemController ISC;
+    private bool pausedOpen;
+    [SerializeField] private SceneControl sc;
+    [SerializeField] private InputSystemController ISC;
 
     void Start () {
         pausedOpen = false;
@@ -27,7 +27,7 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-    IEnumerator SetPauseState (bool pauseState) {
+    private IEnumerator SetPauseState (bool pauseState) {
         yield return new WaitForSeconds(1f);
         pausedOpen = pauseState;
     }

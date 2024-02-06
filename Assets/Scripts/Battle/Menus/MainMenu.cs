@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MainMenu : MonoBehaviour
 {
-    public BattleSystem system;
+    [SerializeField] private BattleSystem system;
 
     public void onAttackPress() {
         if (system.actionQueue.Count == 0) {

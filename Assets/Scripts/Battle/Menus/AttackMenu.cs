@@ -10,7 +10,7 @@ public class AttackMenu : MonoBehaviour
     public Text attackValue;
     public Transform buttonParent;
 
-    public void Start() {
+    void Start() {
         nameAttackButtons();
     }
 
@@ -28,7 +28,7 @@ public class AttackMenu : MonoBehaviour
         attackValue.text = damage;
     }
 
-    public void nameAttackButtons() {
+    private void nameAttackButtons() {
         foreach (Transform button in buttonParent) {
             Text weaponName = button.GetComponentInChildren<Text>();
             weaponName.text = characterWeapons[button.GetSiblingIndex()].thisWeapon.weaponName;

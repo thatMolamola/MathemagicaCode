@@ -10,7 +10,7 @@ public class OWCraftMenu : MonoBehaviour
     private Inventory ingredients;
     private Button bookButton;
     private EnchantMenu[] charBooks =  new EnchantMenu [3];
-    public Transform openBookParent, closedBookParent;
+    [SerializeField] private Transform openBookParent, closedBookParent;
     
 
     void Start() {
@@ -18,7 +18,7 @@ public class OWCraftMenu : MonoBehaviour
         booksSetup();
     }
 
-    public void booksSetup() {
+    private void booksSetup() {
         foreach (Transform book in closedBookParent) {
             int bookIndex = book.GetSiblingIndex();
             bookButton = book.GetComponent<Button>();
