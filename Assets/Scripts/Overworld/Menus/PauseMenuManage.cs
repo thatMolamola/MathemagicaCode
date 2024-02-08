@@ -13,7 +13,6 @@ public static class PauseMenuManage
     public static void Init() {
         GameObject canvas = GameObject.Find("PSubMenus");
         pauseMenu = canvas.transform.Find("PauseMenu").gameObject;
-        teamMenu = canvas.transform.Find("Team").gameObject;
         bagMenu = canvas.transform.Find("Bag").gameObject;
         craftMenu = canvas.transform.Find("Craft").gameObject;
         saveMenu = canvas.transform.Find("Save").gameObject;
@@ -31,9 +30,6 @@ public static class PauseMenuManage
             {
                 case OWMenu.PAUSE_MENU:
                     pauseMenu.SetActive(true);
-                    break;
-                case OWMenu.TEAM:
-                    teamMenu.SetActive(true);
                     break;
                 case OWMenu.BAG:
                     bagMenu.SetActive(true);
@@ -60,9 +56,6 @@ public static class PauseMenuManage
         {
             case OWMenu.PAUSE_MENU:
                 pauseMenu.SetActive(false);
-                break;
-            case OWMenu.TEAM:
-                teamMenu.SetActive(false);
                 break;
             case OWMenu.BAG:
                 bagMenu.SetActive(false);

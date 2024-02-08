@@ -12,7 +12,7 @@ public class InputSystemController : MonoBehaviour
 
     private float moveFactor = 5f;
 
-    public bool canMove;
+    public bool canMove = true;
     [SerializeField] private Animator animator;
 
     
