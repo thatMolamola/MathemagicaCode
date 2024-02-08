@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cef170aa342348eeb017f7c6c4a7099, type: 3}
   m_Name: PieCrust
   m_EditorClassIdentifier: 
+  spawnChance: 0
   itemName: Pie Crust
-  itemCount: 0
+  itemID: 16
   useDesc: Will summon the power of the digits of pi, one at a time.
   funDesc: A pastry honoring the irrational number defined by a ratio. Cherry flavored.
   itemSprite: {fileID: 0}

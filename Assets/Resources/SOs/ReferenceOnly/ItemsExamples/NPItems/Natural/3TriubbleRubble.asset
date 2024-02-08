@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NPItemClass
   spawnChance: 1
   itemName: Triubble Rubble
-  itemCount: 1
+  itemID: 4
   useDesc: Use this wisely to greatly strengthen your spells or potions.
   funDesc: When crushed, it only forms smaller and smaller triangles.
   itemSprite: {fileID: 0}

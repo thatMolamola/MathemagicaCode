@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cef170aa342348eeb017f7c6c4a7099, type: 3}
   m_Name: 2MagneticMist
   m_EditorClassIdentifier: 
+  spawnChance: 0
   itemName: Magnetic Mist
-  itemCount: 1
+  itemID: 3
   useDesc: Use this wisely to greatly strengthen your spells or potions.
   funDesc: This seems to like your fridge... Hungry??
   itemSprite: {fileID: 0}

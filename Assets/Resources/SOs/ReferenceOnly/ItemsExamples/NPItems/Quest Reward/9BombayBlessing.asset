@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cef170aa342348eeb017f7c6c4a7099, type: 3}
   m_Name: 9BombayBlessing
   m_EditorClassIdentifier: 
+  spawnChance: 0
   itemName: Bombay Blessing
-  itemCount: 0
+  itemID: 18
   useDesc: Use this wisely to greatly strengthen your spells or potions.
   funDesc: A genuine sign of gratitude. You deserve to receive this more often.
   itemSprite: {fileID: 0}

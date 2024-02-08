@@ -1542,7 +1542,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &345554251
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1643,7 +1643,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 345554252}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1545382635}
+        m_TargetAssemblyTypeName: OWCraftMenu, Assembly-CSharp
+        m_MethodName: onBookSelect
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1343309795}
+        m_TargetAssemblyTypeName: EnchantMenu, Assembly-CSharp
+        m_MethodName: ListLoad
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 7136274773283870416, guid: a2fea85a7c80c4573a1a11be2d2c27b4, type: 3}
+          m_ObjectArgumentAssemblyTypeName: PlayerUnit, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &353077408
 GameObject:
   m_ObjectHideFlags: 0
@@ -13370,7 +13394,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1354860622
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13472,7 +13496,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1354860623}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1545382635}
+        m_TargetAssemblyTypeName: OWCraftMenu, Assembly-CSharp
+        m_MethodName: onBookSelect
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1212271133}
+        m_TargetAssemblyTypeName: EnchantMenu, Assembly-CSharp
+        m_MethodName: ListLoad
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 4150185658239589662, guid: 6d93431ae771a41798096c12afe6c1c6, type: 3}
+          m_ObjectArgumentAssemblyTypeName: PlayerUnit, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1391525263
 GameObject:
   m_ObjectHideFlags: 0
@@ -17542,7 +17590,7 @@ MonoBehaviour:
   numTurnsToSpecial: 0
   numTurnsLeftSpecial: 0
   unitPrefab: {fileID: 1430402411746013425, guid: 214f5f14f096f4e50ab65df26562d20b, type: 3}
-  dropTable: []
+  dropTable: 
 --- !u!50 &1430402411987000167
 Rigidbody2D:
   serializedVersion: 4

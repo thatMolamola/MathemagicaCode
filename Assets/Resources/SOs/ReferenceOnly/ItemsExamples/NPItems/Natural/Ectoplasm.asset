@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cef170aa342348eeb017f7c6c4a7099, type: 3}
   m_Name: Ectoplasm
   m_EditorClassIdentifier: Assembly-CSharp::NPItemClass
+  spawnChance: 0
   itemName: Ectoplasm
-  itemCount: 0
+  itemID: 12
   useDesc: Use this to temporary flip the signs on your spells.
   funDesc: Slather this on toast and drop it to send the Devil a snack.
   itemSprite: {fileID: 0}

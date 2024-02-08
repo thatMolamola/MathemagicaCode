@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class OWCraftMenu : MonoBehaviour
 {
+    private int bookIndex;
     private CombatPrefabRefer allies;
     private PlayerUnit selectedPlayer;
     private Inventory ingredients;
@@ -19,13 +20,9 @@ public class OWCraftMenu : MonoBehaviour
     }
 
     private void booksSetup() {
-        foreach (Transform book in closedBookParent) {
-            int bookIndex = book.GetSiblingIndex();
-            bookButton = book.GetComponent<Button>();
-            bookButton.onClick.AddListener(() => onBookSelect(book.GetSiblingIndex()));
-            PlayerUnit selectedPlayer = allies.allyTeam[bookIndex].GetComponent<PlayerUnit>();
-            charBooks[bookIndex] = openBookParent.GetChild(bookIndex).GetComponent<EnchantMenu>();
-            bookButton.onClick.AddListener(() => charBooks[bookIndex].ListLoad(selectedPlayer));
+        for (int bookIndex = 0; bookIndex < allies.allyTeam.Count; bookIndex++) {
+            Transform book = closedBookParent.GetChild(bookIndex);
+            book.gameObject.SetActive(true);
         }
     }
     

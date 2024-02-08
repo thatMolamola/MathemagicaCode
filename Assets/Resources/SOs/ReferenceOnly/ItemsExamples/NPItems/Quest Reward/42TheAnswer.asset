@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cef170aa342348eeb017f7c6c4a7099, type: 3}
   m_Name: 42TheAnswer
   m_EditorClassIdentifier: Assembly-CSharp::NPItemClass
+  spawnChance: 0
   itemName: The Answer
-  itemCount: 0
+  itemID: 19
   useDesc: Use this wisely to greatly strengthen your spells or potions.
   funDesc: It always had to be here.
   itemSprite: {fileID: 0}

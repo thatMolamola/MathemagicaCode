@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cef170aa342348eeb017f7c6c4a7099, type: 3}
   m_Name: AlephKnoll
   m_EditorClassIdentifier: Assembly-CSharp::NPItemClass
+  spawnChance: 0
   itemName: Aleph Knoll Portion
-  itemCount: 0
+  itemID: 20
   useDesc: Sets any spell to its maximum potency.
   funDesc: A teeny tiny portion of the smallest infinity. Completely beyond your
     comprehension.

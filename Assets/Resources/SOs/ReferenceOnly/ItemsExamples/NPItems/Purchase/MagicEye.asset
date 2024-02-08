@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cef170aa342348eeb017f7c6c4a7099, type: 3}
   m_Name: MagicEye
   m_EditorClassIdentifier: 
+  spawnChance: 0
   itemName: Magic Eye
-  itemUseDescription: Use this to temporarily make your real spell effects imaginary.
-  funDescription: 
+  itemID: 15
+  useDesc: 
+  funDesc: 
   itemSprite: {fileID: 0}
   NPValue: 0
   special: 1

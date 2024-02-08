@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cef170aa342348eeb017f7c6c4a7099, type: 3}
   m_Name: LifeLesson
   m_EditorClassIdentifier: Assembly-CSharp::NPItemClass
+  spawnChance: 0
   itemName: Life Lesson
-  itemCount: 0
+  itemID: 22
   useDesc: Use this to eliminate imaginary values and only see the real.
   funDesc: That's too much, man.
   itemSprite: {fileID: 0}

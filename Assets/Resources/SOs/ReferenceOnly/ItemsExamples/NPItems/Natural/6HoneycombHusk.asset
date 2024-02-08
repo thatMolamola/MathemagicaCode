@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cef170aa342348eeb017f7c6c4a7099, type: 3}
   m_Name: 6HoneycombHusk
   m_EditorClassIdentifier: Assembly-CSharp::NPItemClass
+  spawnChance: 0
   itemName: Honeycomb Husk
-  itemCount: 0
+  itemID: 7
   useDesc: Use this wisely to greatly strengthen your spells or potions.
   funDesc: If you ever get the urge to eat a crayon, you can eat this instead.
   itemSprite: {fileID: 0}

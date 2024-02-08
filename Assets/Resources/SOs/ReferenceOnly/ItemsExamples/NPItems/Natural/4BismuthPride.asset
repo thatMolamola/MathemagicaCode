@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cef170aa342348eeb017f7c6c4a7099, type: 3}
   m_Name: 4BismuthPride
   m_EditorClassIdentifier: Assembly-CSharp::NPItemClass
+  spawnChance: 0
   itemName: Pride of Bismuth
-  itemCount: 1
+  itemID: 6
   useDesc: Use this wisely to greatly strengthen your spells or potions.
   funDesc: Slowly growing rainbow tower that believes it might someday reach the
     Heavens.

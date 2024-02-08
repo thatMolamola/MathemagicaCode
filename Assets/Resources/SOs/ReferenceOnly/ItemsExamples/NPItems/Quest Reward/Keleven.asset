@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cef170aa342348eeb017f7c6c4a7099, type: 3}
   m_Name: Keleven
   m_EditorClassIdentifier: 
+  spawnChance: 0
   itemName: The Number Keleven
-  itemCount: 0
+  itemID: 21
   useDesc: ?????????
   funDesc: ?????????
   itemSprite: {fileID: 0}
