@@ -134,7 +134,8 @@ MonoBehaviour:
   - {fileID: 4322550110215045233, guid: a8826e186730647debfec15cbef617a9, type: 3}
   - {fileID: 3322067147149694455, guid: fddf795639fa64b7fb21e59978e70853, type: 3}
   - {fileID: 4322550110215045233, guid: a8826e186730647debfec15cbef617a9, type: 3}
-  selectedWeapon: 0
+  fleeFlag: 0
+  fledSuccess: 0
 --- !u!95 &2990508073700350455
 Animator:
   serializedVersion: 3
@@ -145,7 +146,7 @@ Animator:
   m_GameObject: {fileID: 2990508073700350346}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b1c9a0ee5e94749b384a986cccdd3705, type: 2}
+  m_Controller: {fileID: 9100000, guid: b9a6001b102a44da983183849d43c342, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

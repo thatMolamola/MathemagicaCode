@@ -13,11 +13,20 @@ MonoBehaviour:
   m_Name: Stitch-1
   m_EditorClassIdentifier: 
   speakerNames:
-  - 
-  - 
+  - ???????
+  - Marilyn
+  - Stitch
+  - Marilyn
+  - Stitch
   paragraphs:
-  - 
-  - 
+  - Ooooo... do I smell a Mushrum? Can I have it?
+  - Oh my! A talking sweater! Uhhhh... sure! It's all yours!
+  - Yay thanks! Ohhh... were you trying to get out? I can help!
+  - Yeah... the door is too strong for me alone...
+  - Let's do it together!
   images:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1365816278526432831, guid: 60ac6cbe48cd24e809333a324531def0, type: 3}
+  - {fileID: -7996422543578698140, guid: 791c5ce7dcc2a493bb1384cbd6e8c1f6, type: 3}
+  - {fileID: -6502645484390380040, guid: 60ac6cbe48cd24e809333a324531def0, type: 3}
+  - {fileID: -7996422543578698140, guid: 791c5ce7dcc2a493bb1384cbd6e8c1f6, type: 3}
+  - {fileID: -6502645484390380040, guid: 60ac6cbe48cd24e809333a324531def0, type: 3}

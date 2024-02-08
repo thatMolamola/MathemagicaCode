@@ -9,6 +9,8 @@ public class OWKeyDepend : OWInteract, ITalkable, IAnimateControl
     [SerializeField] private Inventory playerInv;
     [SerializeField] private Animator interactible;
     [SerializeField] private int KeyItemNum;
+    [SerializeField] private CombatPrefabRefer CPR;
+    [SerializeField] private GameObject allyCombatPrefab;
 
     public override void Interact() {
         if (playerInv.KeyItems.Contains(KeyItemNum)) {
@@ -34,5 +36,6 @@ public class OWKeyDepend : OWInteract, ITalkable, IAnimateControl
         this.GetComponent<AllyFollow>().enabled = true;
         Destroy(this.gameObject.transform.GetChild(0).gameObject);
         this.enabled = false;
+        CPR.allyTeam.Add(allyCombatPrefab);
     }
 }

@@ -8,7 +8,7 @@ public enum BattleState { START, PLAYERT, ENEMYT, WON, LOST, FLED, WAITING}
 public class BattleSystem : MonoBehaviour
 {
     //playerside variables
-    private GameObject[] playerTeamPrefabs;
+    private List<GameObject> playerTeamPrefabs = new List<GameObject>();
     [SerializeField] private Transform[] playerLocs;
     [SerializeField] private GameObject buttonsAccess;
     [SerializeField] private List<PlayerUnit> playerUnits = new List<PlayerUnit>();

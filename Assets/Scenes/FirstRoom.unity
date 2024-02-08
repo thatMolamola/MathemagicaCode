@@ -7828,9 +7828,10 @@ GameObject:
   - component: {fileID: 911215366}
   - component: {fileID: 911215365}
   - component: {fileID: 911215364}
-  - component: {fileID: 911215367}
   - component: {fileID: 911215368}
   - component: {fileID: 911215369}
+  - component: {fileID: 911215370}
+  - component: {fileID: 911215371}
   m_Layer: 0
   m_Name: Stitch
   m_TagString: Untagged
@@ -7923,20 +7924,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &911215367
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 911215363}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4f6ac5dfb04340aeb609900a9fbbab8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 448125463}
-  animator: {fileID: 911215364}
 --- !u!50 &911215368
 Rigidbody2D:
   serializedVersion: 4
@@ -7977,6 +7964,47 @@ MonoBehaviour:
   playerInv: {fileID: 11400000, guid: 04111b0495a22438bb68129a95367cb5, type: 2}
   interactible: {fileID: 911215364}
   KeyItemNum: 1
+  CPR: {fileID: 11400000, guid: 57b3ebccc6795493da9ee24af4e5f261, type: 2}
+  allyCombatPrefab: {fileID: 2990508073700350346, guid: a2fea85a7c80c4573a1a11be2d2c27b4, type: 3}
+--- !u!114 &911215370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 911215363}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4f6ac5dfb04340aeb609900a9fbbab8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 448125463}
+  animator: {fileID: 911215364}
+--- !u!114 &911215371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 911215363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 611d405b3a8c04fbf810f3999a55da76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitName: Stitch
+  currentHPReal: 0
+  currentHPImag: 5
+  initialHPReal: 0
+  initialHPImag: 5
+  withImaginary: 1
+  negative: 0
+  weaponList:
+  - {fileID: 4322550110215045233, guid: a8826e186730647debfec15cbef617a9, type: 3}
+  - {fileID: 3322067147149694455, guid: fddf795639fa64b7fb21e59978e70853, type: 3}
+  - {fileID: 7196327990663489514, guid: a9b681a0782aa4d4687fdc5632f79b7a, type: 3}
+  fleeFlag: 0
+  fledSuccess: 0
 --- !u!1 &933974289
 GameObject:
   m_ObjectHideFlags: 0
