@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class OWCombatInit : MonoBehaviour
 {
-    public SceneControl sc;
+    [SerializeField] private SceneControl sc;
 
     private GameObject combatant;
     private CombatPrefabRefer combatantReference;
@@ -15,12 +15,6 @@ public class OWCombatInit : MonoBehaviour
     {
         combatantReference = Resources.Load<CombatPrefabRefer>("SOs/Dynamic/CombatRefer");
         combatant = this.gameObject;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     void OnTriggerEnter2D (Collider2D col) {
