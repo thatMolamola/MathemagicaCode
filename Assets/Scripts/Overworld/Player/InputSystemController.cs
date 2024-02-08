@@ -15,9 +15,6 @@ public class InputSystemController : MonoBehaviour
     public bool canMove = true;
     [SerializeField] private Animator animator;
 
-    
-
-
     void Awake() {
         pControls = new Controls();
 

@@ -7,12 +7,12 @@ public abstract class OWInteract : MonoBehaviour, IInteractable
 {
     [SerializeField] private SpriteRenderer interactSprite;
 
-    private Transform playerTransform;
+    private GameObject playerTransform;
     private const float interactDist = 2f; 
 
     private void Start()
     {
-        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;    
+        playerTransform = GameObject.FindGameObjectWithTag("Player");    
     }
 
     // Update is called once per frame
@@ -34,7 +34,7 @@ public abstract class OWInteract : MonoBehaviour, IInteractable
 
     private bool IsCloseEnough()
     {
-        if (Vector2.Distance(playerTransform.position, transform.position) < interactDist){
+        if (Vector2.Distance(playerTransform.transform.position, transform.position) < interactDist){
             return true;
         } else {return false;}
     }
