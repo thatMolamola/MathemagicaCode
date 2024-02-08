@@ -12,6 +12,7 @@ public class InventoryMenu : MonoBehaviour
 
     //List references
     [SerializeField] private Transform listParent;
+    [SerializeField] private GameObject enchantPanel;
 
     //Panel references
     [SerializeField] private Text itemNameP;
@@ -19,16 +20,20 @@ public class InventoryMenu : MonoBehaviour
     [SerializeField] private Text useText;
     [SerializeField] private Text NPText;
 
+    private NPItem selectItem;
+    private int invCursorNum;
+
     void Start()
     {
         inventoryRfr = Resources.Load<Inventory>("SOs/Dynamic/Inventory");
         NPItems = inventoryRfr.NPItems;
         NPItemCounts = inventoryRfr.NPItemCounts;
         NPItemsIndex = inventoryRfr.NPItemsIndex;
+        invCursorNum = 0;
         ListLoad();
     }
 
-    private void ListLoad(){
+    public void ListLoad(){
         foreach (Transform listEntry in listParent) {
             int index = listEntry.GetSiblingIndex();
             if (NPItemsIndex.Count > index) {
@@ -56,15 +61,28 @@ public class InventoryMenu : MonoBehaviour
             funInfo.text = NPItems[NPItemsIndex[0]].funDesc;
             useText.text = NPItems[NPItemsIndex[0]].useDesc;
             NPText.text = "NP:" + NPItems[NPItemsIndex[0]].NPValue;
+            selectItem = NPItems[NPItemsIndex[0]];
         }
     }
 
     public void mouseOnInventorySlot(int buttonNum) {
         if (buttonNum < NPItemsIndex.Count) {
+            listParent.GetChild(invCursorNum).GetChild(2).gameObject.SetActive(false);
             itemNameP.text = NPItems[NPItemsIndex[buttonNum]].itemName;
             funInfo.text = NPItems[NPItemsIndex[buttonNum]].funDesc;
             useText.text = NPItems[NPItemsIndex[buttonNum]].useDesc;
             NPText.text = "NP:" + NPItems[NPItemsIndex[buttonNum]].NPValue;
+            listParent.GetChild(buttonNum).GetChild(2).gameObject.SetActive(true);
+            selectItem = NPItems[NPItemsIndex[buttonNum]];
+            invCursorNum = buttonNum;
         }
+    }
+
+    public NPItem getItem() {
+        return selectItem;
+    }
+
+    public void closeEnchant() {
+        enchantPanel.SetActive(false);
     }
 }

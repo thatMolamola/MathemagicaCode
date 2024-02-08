@@ -9,9 +9,11 @@ public class EnchantMenu : MonoBehaviour
     [SerializeField] private Text weaponDescription;
     [SerializeField] private Text NPText;
     private PlayerUnit chosenPlayer;
+    private Weapon chosenWeapon;
 
     public void ListLoad(PlayerUnit playerUnit){
         chosenPlayer = playerUnit;
+        chosenWeapon = chosenPlayer.weaponList[0];
         foreach (Transform listEntry in listParent) {
             int index = listEntry.GetSiblingIndex();
             listEntry.GetComponent<Text>().text = playerUnit.weaponList[index].thisWeapon.weaponName;
@@ -23,5 +25,10 @@ public class EnchantMenu : MonoBehaviour
     public void mouseOnInventorySlot(int buttonNum) {
         NPText.text = "NP: " + chosenPlayer.weaponList[buttonNum].thisWeapon.currentRealDmgModifier.ToString();
         weaponDescription.text = chosenPlayer.weaponList[buttonNum].thisWeapon.weaponDescription;
+        chosenWeapon = chosenPlayer.weaponList[buttonNum];
+    }
+
+    public Weapon getWeapon() {
+        return chosenWeapon;
     }
 }

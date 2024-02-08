@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5748229487854827429}
   - component: {fileID: 4035840447995326044}
   - component: {fileID: 5858241702659890265}
+  - component: {fileID: -3288542501993225657}
   m_Layer: 0
   m_Name: Doormant-2
   m_TagString: Untagged
@@ -173,3 +174,17 @@ MonoBehaviour:
   numTurnsToSpecial: 0
   numTurnsLeftSpecial: 0
   unitPrefab: {fileID: 5512902461931978636}
+  dropTable: 
+--- !u!114 &-3288542501993225657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5512902461931978636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd926cec9d260450698368ec8cf884f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doormantAnim: {fileID: 8217282553981513387}

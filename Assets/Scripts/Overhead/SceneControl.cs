@@ -30,13 +30,13 @@ public class SceneControl : MonoBehaviour
 
     public void CombatSceneUnload() {
         //tag'd object of other scene to delete
-        combatRootContain = GameObject.FindWithTag("CombatRoot");
-        Destroy(combatRootContain);
+        string combatSceneName = gameObject.scene.name;
         thisScene = SceneManager.GetActiveScene();
         roots = thisScene.GetRootGameObjects();
 
         foreach (GameObject root in roots) {
             root.SetActive(true);
         }
+        SceneManager.UnloadSceneAsync(combatSceneName);
     }
 }
