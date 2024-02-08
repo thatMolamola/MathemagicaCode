@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ebd8f2f917284a91af2227cf92df074, type: 3}
   m_Name: SweaterStatic
   m_EditorClassIdentifier: 
-  speakerName: Hoodlum
+  speakerNames:
+  - 
   paragraphs:
   - A ratty old sweater... did it just move?
+  images:
+  - {fileID: 21300000, guid: cab15a58ae4b14373ade2bbf1483553f, type: 3}

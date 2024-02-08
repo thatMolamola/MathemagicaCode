@@ -16,6 +16,7 @@ public class DialogueController : MonoBehaviour
     private Queue<Sprite> sprites = new Queue<Sprite>();
 
     private bool conversationEnded;
+    private bool permConvEnded;
 
     private string p;
     private Sprite s;
@@ -49,7 +50,7 @@ public class DialogueController : MonoBehaviour
     }
 
     public bool getConvEnded() {
-        return conversationEnded;
+        return permConvEnded;
     }
 
     private void StartConversation(DialogueText dialogueText){
@@ -68,6 +69,7 @@ public class DialogueController : MonoBehaviour
     private void EndConversation(){
         paragraphs.Clear();
         conversationEnded = false;
+        permConvEnded = true;
         ISC.canMove = true;
         if (gameObject.activeSelf) {
             gameObject.SetActive(false);

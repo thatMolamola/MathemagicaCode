@@ -10,8 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9ebd8f2f917284a91af2227cf92df074, type: 3}
-  m_Name: Stitch-1
+  m_Name: Opening
   m_EditorClassIdentifier: 
-  speakerName: 
-  paragraphs: []
-  images: []
+  speakerNames:
+  - Marilyn
+  - Marilyn
+  paragraphs:
+  - Oof... where am I?
+  - When did I put on this goofy hat? I should go look around...
+  images:
+  - {fileID: -7996422543578698140, guid: 791c5ce7dcc2a493bb1384cbd6e8c1f6, type: 3}
+  - {fileID: 6579909582426063213, guid: 791c5ce7dcc2a493bb1384cbd6e8c1f6, type: 3}
