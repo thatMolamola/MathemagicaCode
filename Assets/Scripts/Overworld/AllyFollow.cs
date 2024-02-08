@@ -6,7 +6,7 @@ using UnityEngine;
 public class AllyFollow : MonoBehaviour
 {
     private bool close;
-    private int moveSpeed = 2;
+    private float moveSpeed = 2.2f;
 
     [SerializeField] private Transform player;
     [SerializeField] private Animator animator;

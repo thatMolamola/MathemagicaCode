@@ -5,7 +5,7 @@ using UnityEngine;
 public class OWItem : OWInteract, ITalkable
 {
     [SerializeField] private DialogueText dialogueText;
-    [SerializeField] private KeyItem Item;
+    [SerializeField] private int keyNum;
     [SerializeField] private DialogueController dialogueController;
     [SerializeField] private Inventory playerInventory;
 
@@ -16,7 +16,7 @@ public class OWItem : OWInteract, ITalkable
     public void Talk(DialogueText dialogueText) {
         dialogueController.DisplayNextParagraph(dialogueText);
         if (dialogueController.getConvEnded()) {
-            playerInventory.KeyItems.Add(Item);
+            playerInventory.KeyItems.Add(keyNum);
             Destroy(this.gameObject);
         }
     }

@@ -6,5 +6,5 @@ using UnityEngine;
 public class Inventory : ScriptableObject
 {
     public List<NPItem> NPItems = new List<NPItem>();
-    public List<KeyItem> KeyItems = new List<KeyItem>();
+    public List<int> KeyItems = new List<int>();
 }
