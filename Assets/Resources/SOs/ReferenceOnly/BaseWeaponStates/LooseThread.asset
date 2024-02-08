@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 866717af23069418da64bddba5f7372a, type: 3}
+  m_Name: LooseThread
+  m_EditorClassIdentifier: 
+  currentRealDmgModifier: 5
+  currentImagDmgModifier: 0
+  ModDurationLeft: 0
+  modded: 0
+  permMod: 0
+  modable: 0
+  baseRealDmgModifier: 5
+  baseImagDmgModifier: 0
+  MaxModDuration: 0
+  real: 1
+  damagingDown: 0
+  special: 0
+  weaponName: Loose Thread
+  weaponDescription: 'A precision attack that unravels the fabric of your opponent,
+    reducing their HP to the highest multiple of '
