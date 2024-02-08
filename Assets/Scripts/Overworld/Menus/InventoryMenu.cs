@@ -6,7 +6,9 @@ using UnityEngine.UI;
 public class InventoryMenu : MonoBehaviour
 {
     private Inventory inventoryRfr;
-    private List<NPItem> NPItems = new List<NPItem>();
+    private NPItem[] NPItems = new NPItem[40];
+    private int[] NPItemCounts = new int[40];
+    private List<int> NPItemsIndex = new List<int>();
 
     //List references
     [SerializeField] private Transform listParent;
@@ -21,19 +23,21 @@ public class InventoryMenu : MonoBehaviour
     {
         inventoryRfr = Resources.Load<Inventory>("SOs/Dynamic/Inventory");
         NPItems = inventoryRfr.NPItems;
+        NPItemCounts = inventoryRfr.NPItemCounts;
+        NPItemsIndex = inventoryRfr.NPItemsIndex;
         ListLoad();
     }
 
     private void ListLoad(){
         foreach (Transform listEntry in listParent) {
             int index = listEntry.GetSiblingIndex();
-            if (NPItems.Count > index) {
+            if (NPItemsIndex.Count > index) {
                 foreach (Transform child in listEntry){
                     if (child.name == "ItemName"){
-                        child.GetComponent<Text>().text = NPItems[index].itemName;
+                        child.GetComponent<Text>().text = NPItems[NPItemsIndex[index]].itemName;
                     }
                     if (child.name == "ItemQuant"){
-                        child.GetComponent<Text>().text = "x" + NPItems[index].itemCount;
+                        child.GetComponent<Text>().text = "x" + NPItemCounts[NPItemsIndex[index]];
                     }
                 }
             } else {
@@ -47,20 +51,20 @@ public class InventoryMenu : MonoBehaviour
                 }
             }
         }
-        if (NPItems.Count > 0) {
-            itemNameP.text = NPItems[0].itemName;
-            funInfo.text = NPItems[0].funDesc;
-            useText.text = NPItems[0].useDesc;
-            NPText.text = "NP:" + NPItems[0].NPValue;
+        if (NPItemsIndex.Count > 0) {
+            itemNameP.text = NPItems[NPItemsIndex[0]].itemName;
+            funInfo.text = NPItems[NPItemsIndex[0]].funDesc;
+            useText.text = NPItems[NPItemsIndex[0]].useDesc;
+            NPText.text = "NP:" + NPItems[NPItemsIndex[0]].NPValue;
         }
     }
 
     public void mouseOnInventorySlot(int buttonNum) {
-        if (buttonNum < NPItems.Count) {
-            itemNameP.text = NPItems[buttonNum].itemName;
-            funInfo.text = NPItems[buttonNum].funDesc;
-            useText.text = NPItems[buttonNum].useDesc;
-            NPText.text = "NP:" + NPItems[buttonNum].NPValue;
+        if (buttonNum < NPItemsIndex.Count) {
+            itemNameP.text = NPItems[NPItemsIndex[buttonNum]].itemName;
+            funInfo.text = NPItems[NPItemsIndex[buttonNum]].funDesc;
+            useText.text = NPItems[NPItemsIndex[buttonNum]].useDesc;
+            NPText.text = "NP:" + NPItems[NPItemsIndex[buttonNum]].NPValue;
         }
     }
 }

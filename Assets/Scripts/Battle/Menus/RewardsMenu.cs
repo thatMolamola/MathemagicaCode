@@ -23,11 +23,14 @@ public class RewardsMenu : MonoBehaviour
 
     private void rollRewards(EnemyUnit enemy) {
         rewardsList.text = "You found ";
-        foreach (NPItem reward in enemy.dropTable) {
-            if (oddsRolled(reward)){
-                playerInv.NPItems.Add(reward);
+        foreach (int rewardIndex in enemy.dropTable) {
+            if (oddsRolled(rewardIndex)){
+                playerInv.NPItemCounts[rewardIndex] += 1;
+                if (!playerInv.NPItemsIndex.Contains(rewardIndex)) {
+                    playerInv.NPItemsIndex.Add(rewardIndex);
+                }
             }
-            rewardsList.text += reward.itemName + ", "; 
+            rewardsList.text += playerInv.NPItems[rewardIndex].itemName + ", "; 
         }
         rewardsList.text = rewardsList.text.Substring(0, rewardsList.text.Length - 2);
         rewardsList.text += "!"; 
@@ -37,9 +40,9 @@ public class RewardsMenu : MonoBehaviour
         MenuManage.OpenMenu(Menu.DONE, gameObject);
     }
 
-    private bool oddsRolled(NPItem item) {
+    private bool oddsRolled(int itemIndex) {
         float num = Random.Range(0f, 1f);
-        if (num < 1/item.spawnChance) {
+        if (num < 1/playerInv.NPItems[itemIndex].spawnChance) {
             return true;
         } else {
             return false;

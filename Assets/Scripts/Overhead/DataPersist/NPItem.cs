@@ -12,7 +12,7 @@ public class NPItem: ScriptableObject
 
     //On Inventory
     public string itemName;
-    public int itemCount;
+    public int itemID;
 
     //On Inventory Panel
     public string useDesc;
