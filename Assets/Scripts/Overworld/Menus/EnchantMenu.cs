@@ -18,13 +18,15 @@ public class EnchantMenu : MonoBehaviour
             int index = listEntry.GetSiblingIndex();
             listEntry.GetComponent<Text>().text = playerUnit.weaponList[index].thisWeapon.weaponName;
         }
-        NPText.text = "NP: " + playerUnit.weaponList[0].thisWeapon.currentRealDmgModifier.ToString();
-        weaponDescription.text = playerUnit.weaponList[0].thisWeapon.weaponDescription;
+        string npNum = playerUnit.weaponList[0].thisWeapon.currentRealDmgModifier.ToString();
+        NPText.text = "NP: " + npNum;
+        weaponDescription.text = playerUnit.weaponList[0].thisWeapon.weaponDescription + npNum;
     }
 
     public void mouseOnInventorySlot(int buttonNum) {
-        NPText.text = "NP: " + chosenPlayer.weaponList[buttonNum].thisWeapon.currentRealDmgModifier.ToString();
-        weaponDescription.text = chosenPlayer.weaponList[buttonNum].thisWeapon.weaponDescription;
+        string npNum = chosenPlayer.weaponList[buttonNum].thisWeapon.currentRealDmgModifier.ToString();
+        NPText.text = "NP: " + npNum;
+        weaponDescription.text = chosenPlayer.weaponList[buttonNum].thisWeapon.weaponDescription + npNum;
         chosenWeapon = chosenPlayer.weaponList[buttonNum];
     }
 
