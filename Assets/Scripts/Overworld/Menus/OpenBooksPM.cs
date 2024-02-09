@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//this script updates the open spell book's display based on the player 
+// and the current mouse selection of spell
 public class OpenBooksPM : MonoBehaviour
 {
     [SerializeField] private Transform listParent;

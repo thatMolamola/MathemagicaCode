@@ -15,6 +15,7 @@ public class BookCoversPM : MonoBehaviour
         booksSetup();
     }
 
+    //for as many characters currently on the team, set up as many spellbooks
     private void booksSetup() {
         for (int bookIndex = 0; bookIndex < allies.allyTeam.Count; bookIndex++) {
             Transform book = closedBookParent.GetChild(bookIndex);

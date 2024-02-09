@@ -17,19 +17,18 @@ public class EnchantPanel : MonoBehaviour
     }
 
     public void enchantPanelLoad(int buttonNum) {
-        try {
+        if (this.gameObject.activeInHierarchy){
             if (buttonNum < playerInv.NPItemsIndex.Count) {
                 selectedItem = playerInv.NPItems[playerInv.NPItemsIndex[buttonNum]];
                 enchantPrompt.text = "Enchant " + selectedWeapon.thisWeapon.weaponName + " with the power of " + selectedItem.itemName + "?";
             }
-        }       
-        catch{}
+        }    
     }
 
     public void EnchantWeapon() {
         int ID = selectedItem.itemID;
         if (playerInv.NPItemCounts[ID] > 0) {
-            if (selectedWeapon.thisWeapon.currentRealDmgModifier > 0) {
+            if (selectedWeapon.thisWeapon.real) {
                 selectedWeapon.thisWeapon.currentRealDmgModifier = selectedItem.NPValue;
             } else {
                 selectedWeapon.thisWeapon.currentImagDmgModifier = selectedItem.NPValue;

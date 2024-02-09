@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnChance: 0
   itemName: Classic Clover
-  itemID: 4
+  itemID: 3
   useDesc: Use this wisely to greatly strengthen your spells or potions.
   funDesc: 99,999 out of 100,000 odds. Lucky you!
   itemSprite: {fileID: 0}

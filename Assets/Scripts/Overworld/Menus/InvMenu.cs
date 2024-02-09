@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// this script controls the inventory page display
 public class InvMenu : MonoBehaviour
 {
     private Inventory inventoryRfr;
