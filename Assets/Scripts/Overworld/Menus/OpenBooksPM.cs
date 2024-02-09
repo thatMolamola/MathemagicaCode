@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class EnchantMenu : MonoBehaviour
+public class OpenBooksPM : MonoBehaviour
 {
     [SerializeField] private Transform listParent;
     [SerializeField] private Text weaponDescription;

@@ -5521,6 +5521,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: EnchantPanel, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 4779050982257857943, guid: c63141704ec794f6ca3bb0e43580a90b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6678931789640984354, guid: c63141704ec794f6ca3bb0e43580a90b, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 350
@@ -5634,16 +5638,44 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6678931791296842744, guid: c63141704ec794f6ca3bb0e43580a90b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6678931791296842744, guid: c63141704ec794f6ca3bb0e43580a90b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6678931791296842744, guid: c63141704ec794f6ca3bb0e43580a90b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1617279618}
+    - target: {fileID: 6678931791296842744, guid: c63141704ec794f6ca3bb0e43580a90b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1617279619}
+    - target: {fileID: 6678931791296842744, guid: c63141704ec794f6ca3bb0e43580a90b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6678931791296842744, guid: c63141704ec794f6ca3bb0e43580a90b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: onPressBagClose
       objectReference: {fileID: 0}
     - target: {fileID: 6678931791296842744, guid: c63141704ec794f6ca3bb0e43580a90b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: onBackPress
+      objectReference: {fileID: 0}
+    - target: {fileID: 6678931791296842744, guid: c63141704ec794f6ca3bb0e43580a90b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: BagOpen, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6678931791296842744, guid: c63141704ec794f6ca3bb0e43580a90b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: CombatEnchantMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6678931791296842744, guid: c63141704ec794f6ca3bb0e43580a90b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6678931791370441462, guid: c63141704ec794f6ca3bb0e43580a90b, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -6279,6 +6311,7 @@ GameObject:
   - component: {fileID: 1617279616}
   - component: {fileID: 1617279615}
   - component: {fileID: 1617279618}
+  - component: {fileID: 1617279619}
   m_Layer: 0
   m_Name: EnchantMenu
   m_TagString: Untagged
@@ -6382,6 +6415,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bagObject: {fileID: 1259234753}
   enchantObject: {fileID: 1915326054}
+--- !u!114 &1617279619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1617279613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2bb12705bd464a78b66b461ca989d0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1629733239
 GameObject:
   m_ObjectHideFlags: 0
@@ -6436,12 +6481,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1617279618}
     - target: {fileID: 4801536310310740069, guid: 21c08b13c22d64e8c94ad74a202e9cc7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1617279619}
+    - target: {fileID: 4801536310310740069, guid: 21c08b13c22d64e8c94ad74a202e9cc7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: onPressBagClose
       objectReference: {fileID: 0}
     - target: {fileID: 4801536310310740069, guid: 21c08b13c22d64e8c94ad74a202e9cc7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: onBackPress
+      objectReference: {fileID: 0}
+    - target: {fileID: 4801536310310740069, guid: 21c08b13c22d64e8c94ad74a202e9cc7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: BagOpen, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4801536310310740069, guid: 21c08b13c22d64e8c94ad74a202e9cc7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: CombatEnchantMenu, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4801536310369898081, guid: 21c08b13c22d64e8c94ad74a202e9cc7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

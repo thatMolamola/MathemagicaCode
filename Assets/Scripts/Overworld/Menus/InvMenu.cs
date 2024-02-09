@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InventoryMenu : MonoBehaviour
+public class InvMenu : MonoBehaviour
 {
     private Inventory inventoryRfr;
     private NPItem[] NPItems = new NPItem[40];

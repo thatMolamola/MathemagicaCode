@@ -6,7 +6,7 @@ using UnityEngine.UI;
 //This script should open the Enchant Panel and give it the chosen weapon.
 public class InvFromEnchant : MonoBehaviour
 {    
-    [SerializeField] private EnchantMenu playerBook;
+    [SerializeField] private OpenBooksPM playerBook;
     [SerializeField] private GameObject spellBook, enchantPanelObj;
     [SerializeField] private EnchantPanel enchantPanel;
 

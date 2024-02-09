@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
+// this script controls the Enchant Panel, which appears on the Inventory tab when enchanting
 public class EnchantPanel : MonoBehaviour
 {
     private Weapon selectedWeapon;

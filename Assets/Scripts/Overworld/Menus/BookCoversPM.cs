@@ -3,17 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class OWCraftMenu : MonoBehaviour
+//this Script loads in the closed books as buttons to activate the open books
+public class BookCoversPM : MonoBehaviour
 {
     private int bookIndex;
     private CombatPrefabRefer allies;
-    private PlayerUnit selectedPlayer;
-    private Inventory ingredients;
-    private Button bookButton;
-    private EnchantMenu[] charBooks =  new EnchantMenu [3];
     [SerializeField] private Transform openBookParent, closedBookParent;
     
-
     void Start() {
         allies = Resources.Load<CombatPrefabRefer>("SOs/Dynamic/CombatRefer");
         booksSetup();
