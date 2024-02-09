@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 161322735}
   - component: {fileID: 161322734}
   - component: {fileID: 161322733}
+  - component: {fileID: 161322736}
   m_Layer: 5
   m_Name: New Game Button
   m_TagString: Untagged
@@ -218,6 +219,18 @@ MonoBehaviour:
           m_StringArgument: FirstRoom
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 161322736}
+        m_TargetAssemblyTypeName: NewGameInit, Assembly-CSharp
+        m_MethodName: onNewGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &161322734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -256,6 +269,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 161322731}
   m_CullTransparentMesh: 1
+--- !u!114 &161322736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 161322731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4771260ffa01a4540a4b5c9e33673325, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dynamicTeamState: {fileID: 11400000, guid: 57b3ebccc6795493da9ee24af4e5f261, type: 2}
+  dynamicInvState: {fileID: 11400000, guid: 04111b0495a22438bb68129a95367cb5, type: 2}
+  staticTeamState: {fileID: 11400000, guid: 162620d2377af402d97fb52d083b8e0a, type: 2}
+  staticInvState: {fileID: 11400000, guid: d8584c22bcfa240ea8ce2af36e63dac0, type: 2}
 --- !u!1 &203280270
 GameObject:
   m_ObjectHideFlags: 0

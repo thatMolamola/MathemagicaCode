@@ -151,8 +151,7 @@ public class BattleSystem : MonoBehaviour
             }
             
             // Update VisualDamage to Enemy
-            enemyHUD.SetHP(enemyUnit.currentHPReal);
-            enemyHUD.HPSliderAngle(enemyUnit);
+            enemyHUD.SetHUD(enemyUnit);
 
             if (damageDone != 0f) {
                 dialogueText.text = enemyUnit.unitName + " took " + (Mathf.Round(damageDone*1000)/1000) + " damage from " + playerUnits[queueCounter].unitName + "!";
@@ -223,10 +222,7 @@ public class BattleSystem : MonoBehaviour
             enemyUnit.numTurnsLeftStandardTwo = enemyUnit.numTurnsToStandardTwo;
         } 
 
-        
-        playerHUDs[randNum].SetHP(playerUnit.currentHPReal);
-        playerHUDs[randNum].HPSliderAngle(playerUnit);
-
+        playerHUDs[randNum].SetHUD(playerUnit);
 
         yield return new WaitForSeconds(2f);
 
