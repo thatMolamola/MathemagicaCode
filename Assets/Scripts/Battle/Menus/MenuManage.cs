@@ -2,20 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Menu {MAIN_MENU, ATTACK1, ATTACK2, CRAFT, DIALOGUE, REWARD, DONE}
+public enum Menu {MAIN_MENU, ATTACK1, ATTACK2, ENCHANT, DIALOGUE, REWARD, DONE}
 
 public static class MenuManage
 {
     public static bool IsInitialized { get; private set;}
 
-    public static GameObject mainMenu, attackMenu1, attackMenu2, craftMenu, rewardMenu;
+    public static GameObject mainMenu, attackMenu1, attackMenu2, enchantMenu, rewardMenu;
 
     public static void Init() {
         GameObject canvas = GameObject.Find("HUDs");
         mainMenu = canvas.transform.Find("MainMenu").gameObject;
         attackMenu1 = canvas.transform.Find("AttackMenu1").gameObject;
         attackMenu2 = canvas.transform.Find("AttackMenu2").gameObject;
-        craftMenu = canvas.transform.Find("CraftMenu").gameObject;
+        enchantMenu = canvas.transform.Find("EnchantMenu").gameObject;
         rewardMenu = canvas.transform.Find("RewardMenu").gameObject;
 
         IsInitialized = true;
@@ -39,8 +39,8 @@ public static class MenuManage
                 attackMenu2.SetActive(true);
                 attackMenu2.GetComponent<AttackMenu>().mouseOnWeaponButton(firstWeapon);
                 break;
-            case Menu.CRAFT:
-                craftMenu.SetActive(true);
+            case Menu.ENCHANT:
+                enchantMenu.SetActive(true);
                 break;
             case Menu.REWARD:
                 rewardMenu.SetActive(true);

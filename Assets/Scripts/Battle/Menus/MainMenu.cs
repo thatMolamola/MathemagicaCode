@@ -22,7 +22,7 @@ public class MainMenu : MonoBehaviour
        MenuManage.OpenMenu(Menu.ATTACK2, gameObject);
     }
 
-    public void onCraftPress() {
-        MenuManage.OpenMenu(Menu.CRAFT, gameObject);
+    public void onEnchantPress() {
+        MenuManage.OpenMenu(Menu.ENCHANT, gameObject);
     }
 }

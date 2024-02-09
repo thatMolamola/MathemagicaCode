@@ -8,7 +8,7 @@ public class RewardsMenu : MonoBehaviour
     [SerializeField] private string[] battleRewards;
     private Inventory playerInv;
     [SerializeField] private Text rewardsList;
-    private GameObject rewardDisplay;
+    [SerializeField] private GameObject rewardDisplay;
 
     void Start() {
         playerInv = Resources.Load<Inventory>("SOs/Dynamic/Inventory");
