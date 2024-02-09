@@ -2,19 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum OWMenu {LOADBEARING, PAUSE_MENU, TEAM, BAG, CRAFT, SAVE, QUIT}
+public enum OWMenu {PAUSE_MENU, TEAM, BAG, ENCHANT, SAVE, QUIT}
 
 public static class PauseMenuManage
 {
     public static bool IsInitialized { get; private set;}
 
-    public static GameObject pauseMenu, bagMenu, craftMenu, teamMenu, saveMenu;
+    public static GameObject pauseMenu, bagMenu, enchantMenu, teamMenu, saveMenu;
 
     public static void Init() {
         GameObject canvas = GameObject.Find("PSubMenus");
         pauseMenu = canvas.transform.Find("PauseMenu").gameObject;
         bagMenu = canvas.transform.Find("Bag").gameObject;
-        craftMenu = canvas.transform.Find("Craft").gameObject;
+        enchantMenu = canvas.transform.Find("Enchant").gameObject;
         saveMenu = canvas.transform.Find("Save").gameObject;
 
         IsInitialized = true;
@@ -34,8 +34,8 @@ public static class PauseMenuManage
                 case OWMenu.BAG:
                     bagMenu.SetActive(true);
                     break;
-                case OWMenu.CRAFT:
-                    craftMenu.SetActive(true);
+                case OWMenu.ENCHANT:
+                    enchantMenu.SetActive(true);
                     break;
                 case OWMenu.SAVE:
                     saveMenu.SetActive(true);
@@ -60,8 +60,8 @@ public static class PauseMenuManage
             case OWMenu.BAG:
                 bagMenu.SetActive(false);
                 break;
-            case OWMenu.CRAFT:
-                craftMenu.SetActive(false);
+            case OWMenu.ENCHANT:
+                enchantMenu.SetActive(false);
                 break;
             case OWMenu.SAVE:
                 saveMenu.SetActive(false);

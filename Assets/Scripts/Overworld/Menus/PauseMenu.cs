@@ -52,17 +52,17 @@ public class PauseMenu : MonoBehaviour
         PauseMenuManage.CloseSubmenu(OWMenu.BAG, gameObject);
     }
 
-    public void onCraftPress(){
-        PauseMenuManage.OpenPauseMenu(OWMenu.CRAFT, gameObject);
+    public void onEnchantBooksPress(){
+        PauseMenuManage.OpenPauseMenu(OWMenu.ENCHANT, gameObject);
     }
 
     public void onEnchantPress(){
         PauseMenuManage.OpenPauseMenu(OWMenu.BAG, gameObject);
-        PauseMenuManage.CloseSubmenu(OWMenu.CRAFT, gameObject);
+        PauseMenuManage.CloseSubmenu(OWMenu.ENCHANT, gameObject);
     }
 
-    public void closeCraft(){
-        PauseMenuManage.CloseSubmenu(OWMenu.CRAFT, gameObject);
+    public void closeEnchant(){
+        PauseMenuManage.CloseSubmenu(OWMenu.ENCHANT, gameObject);
     }
 
     public void onSavePress(){

@@ -2101,7 +2101,7 @@ GameObject:
   - component: {fileID: 502926909}
   - component: {fileID: 502926908}
   m_Layer: 5
-  m_Name: Craft
+  m_Name: Enchant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2125,7 +2125,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: -75, y: 0}
-  m_SizeDelta: {x: 160, y: 90}
+  m_SizeDelta: {x: 200, y: 112.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &502926908
 MonoBehaviour:
@@ -2173,7 +2173,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1325592997}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
-        m_MethodName: onCraftPress
+        m_MethodName: onEnchantBooksPress
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3300,7 +3300,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: -75, y: -150}
-  m_SizeDelta: {x: 160, y: 90}
+  m_SizeDelta: {x: 200, y: 112.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &683006924
 MonoBehaviour:
@@ -3700,7 +3700,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Craft
+  m_Text: Enchant
 --- !u!222 &777114311
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12195,7 +12195,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: -75, y: -300}
-  m_SizeDelta: {x: 160, y: 90}
+  m_SizeDelta: {x: 200, y: 112.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1416925572
 MonoBehaviour:
@@ -12744,7 +12744,7 @@ GameObject:
   - component: {fileID: 1545382632}
   - component: {fileID: 1545382635}
   m_Layer: 0
-  m_Name: Craft
+  m_Name: Enchant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14656,7 +14656,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: -75, y: 150}
-  m_SizeDelta: {x: 160, y: 90}
+  m_SizeDelta: {x: 200, y: 112.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1933990123
 MonoBehaviour:
