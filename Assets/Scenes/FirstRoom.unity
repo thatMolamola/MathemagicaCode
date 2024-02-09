@@ -4286,7 +4286,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1325592997}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
-        m_MethodName: closeCraft
+        m_MethodName: closeEnchant
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7695,6 +7695,7 @@ MonoBehaviour:
   listParent: {fileID: 5945576}
   weaponDescription: {fileID: 1630045859}
   NPText: {fileID: 1962616627}
+  enchantButton: {fileID: 814879187}
 --- !u!114 &1212271134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11777,6 +11778,7 @@ MonoBehaviour:
   listParent: {fileID: 2033038626}
   weaponDescription: {fileID: 1242002520}
   NPText: {fileID: 661286568}
+  enchantButton: {fileID: 1119175713}
 --- !u!114 &1343309796
 MonoBehaviour:
   m_ObjectHideFlags: 0

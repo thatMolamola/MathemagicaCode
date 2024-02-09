@@ -8,6 +8,7 @@ public class EnchantMenu : MonoBehaviour
     [SerializeField] private Transform listParent;
     [SerializeField] private Text weaponDescription;
     [SerializeField] private Text NPText;
+    [SerializeField] private GameObject enchantButton;
     private PlayerUnit chosenPlayer;
     private Weapon chosenWeapon;
 
@@ -28,6 +29,11 @@ public class EnchantMenu : MonoBehaviour
         NPText.text = "NP: " + npNum;
         weaponDescription.text = chosenPlayer.weaponList[buttonNum].thisWeapon.weaponDescription + npNum;
         chosenWeapon = chosenPlayer.weaponList[buttonNum];
+        if (!chosenWeapon.thisWeapon.modable) {
+            enchantButton.SetActive(false);
+        } else {
+            enchantButton.SetActive(true);
+        }
     }
 
     public Weapon getWeapon() {
