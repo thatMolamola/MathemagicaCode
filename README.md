@@ -1,4 +1,4 @@
-This is Version 0.61 of my math-fantasy RPG Mathemagica.
+This is the code for Version 0.61 of my math-fantasy RPG Mathemagica, a one-man project by Joaquin Fuenzalida Nunez made with Unity. 
 
 Currently, there's one room implemented, with a couple of battles within. 
 The crafting and battling system has had a lot of development, it's almost fully set up so building on it from here on out should be easier.
