@@ -1,14 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-//this class describes a unit in battle, either primary player, enemy, ally or boss
-public abstract class Unit: MonoBehaviour {
-
-    //Eventually, the goal will be to store all unit data within the UnitData Scriptable Object
-    public UnitData thisUnit;
-
+[CreateAssetMenu (fileName = "UnitData", menuName = "Data Storage/Unit Data")]
+public class UnitData : ScriptableObject
+{
     //General Unit Data
     public string unitName;
 
@@ -21,7 +17,4 @@ public abstract class Unit: MonoBehaviour {
     //Aura Bools
     public bool withImaginary;
     public bool negative;
-
-    public virtual bool deathCheck (Unit enemyUnit) {return false;}
 }
-
