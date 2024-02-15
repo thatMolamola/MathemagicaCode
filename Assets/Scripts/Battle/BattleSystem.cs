@@ -14,6 +14,7 @@ public class BattleSystem : MonoBehaviour
     [SerializeField] private List<PlayerUnit> playerUnits = new List<PlayerUnit>();
     [SerializeField] private BattleHUD[] playerHUDs;
     [SerializeField] private AttackMenu[] attackSets;
+    [SerializeField] private EnchantPanel enchantPanel;
     [SerializeField] private RewardsMenu onWinRewards;
 
     //Enemyside references
@@ -100,9 +101,10 @@ public class BattleSystem : MonoBehaviour
         OnActionButton();
     }
 
-    public void onCraftButton(int weaponNum){
+    public void onEnchantButton(){
         int playerNum = actionQueue.Count;
-        Action currentAction = new Action(playerUnits[playerNum].weaponList[weaponNum], null, "CRAFT");
+        playerUnits[playerNum].setItem(enchantPanel.getItem());  
+        Action currentAction = new Action(enchantPanel.getWeapon(), playerUnits[playerNum], "ENCHANT");
         actionQueue.Enqueue(currentAction);
         OnActionButton();
     }

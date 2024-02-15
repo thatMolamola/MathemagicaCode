@@ -23,6 +23,19 @@ public class MainMenu : MonoBehaviour
     }
 
     public void onEnchantPress() {
-        MenuManage.OpenMenu(Menu.ENCHANT, gameObject);
+        if (system.actionQueue.Count == 0) {
+            onEnchant1Press();
+        } else {
+            onEnchant2Press();
+        }
+    }
+
+    public void onEnchant1Press() {
+        MenuManage.OpenMenu(Menu.ENCHANT1, gameObject);
+    }
+
+    public void onEnchant2Press() {
+        MenuManage.OpenMenu(Menu.ENCHANT2, gameObject);
     }
 }
+

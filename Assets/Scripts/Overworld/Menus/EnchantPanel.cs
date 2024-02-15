@@ -50,4 +50,12 @@ public class EnchantPanel : MonoBehaviour
     public void setWeapon(Weapon weaponChoice) {
         selectedWeapon = weaponChoice;
     }
+
+    public Weapon getWeapon() {
+        return selectedWeapon;
+    }
+
+    public NPItem getItem() {
+        return selectedItem;
+    }
 }

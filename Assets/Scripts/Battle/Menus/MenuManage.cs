@@ -2,20 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Menu {MAIN_MENU, ATTACK1, ATTACK2, ENCHANT, DIALOGUE, REWARD, DONE}
+public enum Menu {MAIN_MENU, ATTACK1, ATTACK2, ENCHANT1, ENCHANT2, BAG, DIALOGUE, REWARD, DONE}
 
 public static class MenuManage
 {
     public static bool IsInitialized { get; private set;}
 
-    public static GameObject mainMenu, attackMenu1, attackMenu2, enchantMenu, rewardMenu;
+    public static GameObject mainMenu, attackMenu1, attackMenu2, enchantMenu1, enchantMenu2, rewardMenu, bagMenu;
 
     public static void Init() {
         GameObject canvas = GameObject.Find("HUDs");
         mainMenu = canvas.transform.Find("MainMenu").gameObject;
         attackMenu1 = canvas.transform.Find("AttackMenu1").gameObject;
         attackMenu2 = canvas.transform.Find("AttackMenu2").gameObject;
-        enchantMenu = canvas.transform.Find("EnchantMenu").gameObject;
+        enchantMenu1 = canvas.transform.Find("EnchantMenu1").gameObject;
+        enchantMenu2 = canvas.transform.Find("EnchantMenu2").gameObject;
+        bagMenu = canvas.transform.Find("BagMenu").gameObject;
         rewardMenu = canvas.transform.Find("RewardMenu").gameObject;
 
         IsInitialized = true;
@@ -39,11 +41,17 @@ public static class MenuManage
                 attackMenu2.SetActive(true);
                 attackMenu2.GetComponent<AttackMenu>().mouseOnWeaponButton(firstWeapon);
                 break;
-            case Menu.ENCHANT:
-                enchantMenu.SetActive(true);
+            case Menu.ENCHANT1:
+                enchantMenu1.SetActive(true);
+                break;
+            case Menu.ENCHANT2:
+                enchantMenu2.SetActive(true);
                 break;
             case Menu.REWARD:
                 rewardMenu.SetActive(true);
+                break;
+            case Menu.BAG:
+                bagMenu.SetActive(true);
                 break;
             case Menu.DONE:
                 IsInitialized = false;

@@ -6,14 +6,15 @@ public class PlayerUnit : Unit
 {
     public Weapon[] weaponList;
     public bool fleeFlag, fledSuccess;
+    private NPItem chosenItem;
 
     public void executeAction(Action selectAction) {
         if (selectAction.actionChoice == "ATTACK") {
             selectedWeaponAttack(selectAction.weaponChoice, selectAction.targetUnit);
         }
 
-        if (selectAction.actionChoice == "CRAFT") {
-            selectedCraft();
+        if (selectAction.actionChoice == "ENCHANT") {
+            selectedEnchant(selectAction.weaponChoice);
         }
 
         if (selectAction.actionChoice == "FLEE") {
@@ -25,8 +26,11 @@ public class PlayerUnit : Unit
         weapon.Attack(enemyUnit);
     }
 
-    private void selectedCraft(){
-        //TODO
+    private void selectedEnchant(Weapon weapon){
+        Debug.Log(weapon.thisWeapon.weaponName);
+        Debug.Log(chosenItem.itemName);
+        weapon.thisWeapon.currentRealDmgModifier = chosenItem.NPValue;
+        weapon.thisWeapon.modded = true;
     }
 
     private void selectedFlee(Unit enemyUnit){
@@ -48,5 +52,9 @@ public class PlayerUnit : Unit
         } else {
             return false;
         }
+    }
+
+    public void setItem(NPItem item) {
+        chosenItem = item;
     }
 }
