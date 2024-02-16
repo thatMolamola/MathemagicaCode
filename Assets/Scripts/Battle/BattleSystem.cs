@@ -155,6 +155,7 @@ public class BattleSystem : MonoBehaviour
             // Update VisualDamage to Enemy
             enemyHUD.SetHUD(enemyUnit);
 
+            //Dialogue Display
             if (damageDone != 0f) {
                 dialogueText.text = enemyUnit.unitName + " took " + (Mathf.Round(damageDone*1000)/1000) + " damage from " + playerUnits[queueCounter].unitName + "!";
             }
