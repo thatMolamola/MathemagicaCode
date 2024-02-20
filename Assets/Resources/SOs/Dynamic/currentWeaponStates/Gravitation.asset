@@ -26,4 +26,4 @@ MonoBehaviour:
   special: 1
   weaponName: Gravitation
   weaponDescription: 'Mystical force bends reality, its irresistible pull drawing
-    targets toward quantum points. Reduces target HP to whole numbers. '
+    targets toward quantum points. Reduces all units of target''s HP to whole numbers. '

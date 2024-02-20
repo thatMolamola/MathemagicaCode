@@ -25,5 +25,5 @@ MonoBehaviour:
   damagingDown: 0
   special: 0
   weaponName: Loose Thread
-  weaponDescription: 'A precision attack that unravels the fabric of your opponent,
-    reducing their HP to the highest multiple of '
+  weaponDescription: 'A precise attack that unravels the incorporeal fabric of your
+    opponent, reducing all of their HP units to the next highest multiple of '
