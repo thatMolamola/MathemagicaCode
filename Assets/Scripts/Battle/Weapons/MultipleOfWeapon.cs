@@ -2,15 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//real-only weapon
 public class MultipleOfWeapon : Weapon
 {
     public override void Attack (Unit enemyUnit){
-        float divided = enemyUnit.currentHPReal / thisWeapon.currentRealDmgModifier;
-        if (divided % 1 == 0) {
-            enemyUnit.currentHPReal = (divided - 1) * thisWeapon.currentRealDmgModifier;
+        float dividedReal = enemyUnit.currentHPReal / thisWeapon.currentRealDmgModifier;
+        float dividedImag = enemyUnit.currentHPImag / thisWeapon.currentRealDmgModifier;
+        if (dividedReal % 1 == 0) {
+            enemyUnit.currentHPReal = (dividedReal - 1) * thisWeapon.currentRealDmgModifier;
         } else {
-            enemyUnit.currentHPReal = thisWeapon.currentRealDmgModifier * Mathf.Floor(divided);
+            enemyUnit.currentHPReal = thisWeapon.currentRealDmgModifier * Mathf.Floor(dividedReal);
         }
+
+        if (dividedImag % 1 == 0) {
+            enemyUnit.currentHPImag = (dividedImag - 1) * thisWeapon.currentRealDmgModifier;
+        } else {
+            enemyUnit.currentHPImag = thisWeapon.currentRealDmgModifier * Mathf.Floor(dividedImag);
+        }
+
         if (!thisWeapon.permMod) {
             if (thisWeapon.modded) {
                 thisWeapon.ModDurationLeft -= 1; 
