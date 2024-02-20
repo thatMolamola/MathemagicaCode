@@ -6,13 +6,7 @@ public class MultDivWeapon : Weapon
 {
     public override void Attack (Unit enemyUnit){
         if (thisWeapon.real) {
-            if (!thisWeapon.damagingDown) {
-                enemyUnit.currentHPReal *= thisWeapon.currentRealDmgModifier;
-                enemyUnit.currentHPImag *= thisWeapon.currentRealDmgModifier;
-            } else {
-                enemyUnit.currentHPReal /= thisWeapon.currentRealDmgModifier;
-                enemyUnit.currentHPImag /= thisWeapon.currentRealDmgModifier;
-            }
+            realMDCalc(enemyUnit);
         } else {
             imaginaryMDCalc(enemyUnit);
         }
@@ -29,14 +23,32 @@ public class MultDivWeapon : Weapon
         }
     }
 
+
+    //TO-DO: this function checks whether the attack value is zero, but does not handle those cases yet
+    private void realMDCalc(Unit enemyUnit) {
+        //complex HP * real attack
+        if (thisWeapon.currentRealDmgModifier != 0) {
+            if (!thisWeapon.damagingDown) {
+                enemyUnit.currentHPReal *= thisWeapon.currentRealDmgModifier;
+                enemyUnit.currentHPImag *= thisWeapon.currentRealDmgModifier;
+            } else {
+                enemyUnit.currentHPReal /= thisWeapon.currentRealDmgModifier;
+                enemyUnit.currentHPImag /= thisWeapon.currentRealDmgModifier;
+            }
+        } else {
+            //Figure out what to do if multiplying or dividing by 0.
+        }
+    }
+
     //TO-DO: For now, this function only handles pure imaginary damage, rather than imaginary and real damage
     private void imaginaryMDCalc(Unit enemyUnit) {
         //complex HP * imaginary attack
-        if (!thisWeapon.damagingDown) {
+        if (thisWeapon.currentImagDmgModifier != 0) {
+            if (!thisWeapon.damagingDown) {
                 float temp = enemyUnit.currentHPImag;
                 enemyUnit.currentHPImag = enemyUnit.currentHPReal * thisWeapon.currentImagDmgModifier;
                 enemyUnit.currentHPReal = temp * thisWeapon.currentImagDmgModifier * -1; 
-        } else { //complex HP / imaginary attack
+            } else { //complex HP / imaginary attack
                 float compConj = -1 * thisWeapon.currentImagDmgModifier;
                 float temp = enemyUnit.currentHPImag;
                 enemyUnit.currentHPImag = enemyUnit.currentHPReal * thisWeapon.currentImagDmgModifier;
@@ -44,5 +56,8 @@ public class MultDivWeapon : Weapon
                 enemyUnit.currentHPImag /= (compConj * thisWeapon.currentImagDmgModifier);
                 enemyUnit.currentHPReal /= (compConj * thisWeapon.currentImagDmgModifier);
             }
+        } else {
+            //Figure out what to do if multiplying or dividing by 0.
+        }
     }
 }
