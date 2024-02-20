@@ -21,7 +21,5 @@ public abstract class Unit: MonoBehaviour {
     //Aura Bools
     public bool withImaginary;
     public bool negative;
-
-    public virtual bool deathCheck (Unit enemyUnit) {return false;}
 }
 

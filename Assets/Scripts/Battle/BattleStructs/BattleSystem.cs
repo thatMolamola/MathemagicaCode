@@ -28,6 +28,8 @@ public class BattleSystem : MonoBehaviour
     public BattleState state; 
     public Queue<Action> actionQueue = new Queue<Action>();
     private Action currentAction;
+
+    private ActionResponse currentResponse;
     private Queue<string> weaponQueue = new Queue<string>();
     [SerializeField] private Text dialogueText;   
     private CombatPrefabRefer combatantReference;
@@ -77,7 +79,7 @@ public class BattleSystem : MonoBehaviour
         foreach (var allyUnit in playerUnits) {
             playerHUDs[playerCount].gameObject.SetActive(true);
             playerHUDs[playerCount].SetHUD(allyUnit);
-            attackSets[playerCount].characterWeapons = allyUnit.weaponList;
+            attackSets[playerCount].characterWeapons = allyUnit.getWeaponList();
             playerCount += 1; 
         }
 
@@ -96,7 +98,7 @@ public class BattleSystem : MonoBehaviour
 
     public void onAttackButton(int weaponNum){
         int playerNum = actionQueue.Count;
-        Action currentAction = new Action(playerUnits[playerNum].weaponList[weaponNum], enemyUnit, "ATTACK");
+        Action currentAction = new Action(playerUnits[playerNum].getWeaponList()[weaponNum], enemyUnit, "ATTACK");
         actionQueue.Enqueue(currentAction);
         OnActionButton();
     }
@@ -132,59 +134,26 @@ public class BattleSystem : MonoBehaviour
         yield return new WaitForSeconds(1f);
         int queueCounter = 0;
         while (actionQueue.Count != 0) {
-            
-            float oldRealHP = enemyUnit.currentHPReal;
-            float oldImagHP = enemyUnit.currentHPImag;
-            playerUnits[queueCounter].executeAction(actionQueue.Dequeue());
-            float damageDone = oldRealHP - enemyUnit.currentHPReal;
-            bool isDead = playerUnits[queueCounter].deathCheck(enemyUnit);
-            
-            //On Flee Attempt
-            if (playerUnits[queueCounter].fleeFlag) {
-                playerUnits[queueCounter].fleeFlag = false;
-                if (playerUnits[queueCounter].fledSuccess) {
-                    state = BattleState.FLED;
-                    playerUnits[queueCounter].fledSuccess = false;
-                    StartCoroutine(EndBattle());
-                    yield break;
-                } else {
-                    dialogueText.text = "Flee attempt was unsuccessful!";
-                } 
-            }
+            currentResponse = playerUnits[queueCounter].executeAction(actionQueue.Dequeue());
+            float damageDone = currentResponse.getDamage();
+            bool success = currentResponse.getSuccess();
+            string action = currentResponse.getAction().getAction();
             
             // Update VisualDamage to Enemy
             enemyHUD.SetHUD(enemyUnit);
-
-            //Dialogue Display
-            if (damageDone != 0f) {
-                dialogueText.text = enemyUnit.unitName + " took " + (Mathf.Round(damageDone*1000)/1000) + " damage from " + playerUnits[queueCounter].unitName + "!";
-            }
-            
+            dialogueText.text = currentResponse.getDialogue();
             queueCounter += 1;
             yield return new WaitForSeconds(2f);
 
-            if (isDead) {
-                state = BattleState.WON;
-                StartCoroutine(EndBattle());
-                yield break;
-            } 
-
-            //check Sign flip
-            if (oldRealHP > 0) {
-                if (enemyUnit.currentHPReal < 0) {
-                    enemyLoc.GetComponent<Animator>().Play("flipSprite",  -1, 0f);
-                    enemyUnit.animChange();
-                    dialogueText.text = "The " + enemyUnit.unitName + " grew enraged!";
-                    yield return new WaitForSeconds(1f);
+            if (success) {
+                if (action == "ATTACK") {
+                    state = BattleState.WON;
+                    StartCoroutine(EndBattle());
+                } else if (action == "FLEE") {
+                    state = BattleState.FLED;
+                    StartCoroutine(EndBattle());
                 }
-            } else if (oldRealHP < 0) {
-                if (enemyUnit.currentHPReal > 0) {
-                    enemyLoc.GetComponent<Animator>().Play("flipSprite",  -1, 0f);
-                    enemyUnit.animChange();
-                    dialogueText.text = "The " + enemyUnit.unitName + " grew enraged!";
-                    yield return new WaitForSeconds(1f);
-                }
-            } 
+            }
         } //Queue Loop End
         state = BattleState.ENEMYT;
         StartCoroutine(EnemyTurn());

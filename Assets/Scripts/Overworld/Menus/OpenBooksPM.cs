@@ -13,24 +13,26 @@ public class OpenBooksPM : MonoBehaviour
     [SerializeField] private GameObject enchantButton;
     private PlayerUnit chosenPlayer;
     private Weapon chosenWeapon;
+    private Weapon[] weaponList;
 
     public void ListLoad(PlayerUnit playerUnit){
         chosenPlayer = playerUnit;
-        chosenWeapon = chosenPlayer.weaponList[0];
+        weaponList = playerUnit.getWeaponList();
+        chosenWeapon = weaponList[0];
         foreach (Transform listEntry in listParent) {
             int index = listEntry.GetSiblingIndex();
-            listEntry.GetComponent<Text>().text = playerUnit.weaponList[index].thisWeapon.weaponName;
+            listEntry.GetComponent<Text>().text = weaponList[index].thisWeapon.weaponName;
         }
-        string npNum = playerUnit.weaponList[0].thisWeapon.currentRealDmgModifier.ToString();
+        string npNum = weaponList[0].thisWeapon.currentRealDmgModifier.ToString();
         NPText.text = "NP: " + npNum;
-        weaponDescription.text = playerUnit.weaponList[0].thisWeapon.weaponDescription + npNum;
+        weaponDescription.text = weaponList[0].thisWeapon.weaponDescription + npNum;
     }
 
     public void mouseOnInventorySlot(int buttonNum) {
-        string npNum = chosenPlayer.weaponList[buttonNum].thisWeapon.currentRealDmgModifier.ToString();
+        string npNum = weaponList[buttonNum].thisWeapon.currentRealDmgModifier.ToString();
         NPText.text = "NP: " + npNum;
-        weaponDescription.text = chosenPlayer.weaponList[buttonNum].thisWeapon.weaponDescription + npNum;
-        chosenWeapon = chosenPlayer.weaponList[buttonNum];
+        weaponDescription.text = weaponList[buttonNum].thisWeapon.weaponDescription + npNum;
+        chosenWeapon = weaponList[buttonNum];
         if (!chosenWeapon.thisWeapon.modable) {
             enchantButton.SetActive(false);
         } else {

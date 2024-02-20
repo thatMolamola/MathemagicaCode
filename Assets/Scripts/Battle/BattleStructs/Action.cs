@@ -4,15 +4,28 @@ using UnityEngine;
 
 public class Action
 {
-    public string actionChoice;
-    public Unit targetUnit;
-    public Weapon weaponChoice;
+    private string actionChoice;
+    private Unit targetUnit;
+    private Weapon weaponChoice;
 
     //ATTACK Constructor
     public Action(Weapon theWeapon, Unit target, string action) {
         setWeapon(theWeapon);
         setTarget(target);
         setAction(action);
+    }
+
+
+    public Weapon getWeapon() {
+        return weaponChoice;
+    }
+
+    public Unit getTarget() {
+        return targetUnit;
+    }
+
+    public string getAction() {
+        return actionChoice;
     }
 
     private void setWeapon(Weapon theWeapon) {

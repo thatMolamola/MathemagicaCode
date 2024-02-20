@@ -50,7 +50,7 @@ public class EnemyUnit : Unit
         }
     }
 
-    public override bool deathCheck(Unit enemyUnit) {
+    public bool deathCheck(Unit enemyUnit) {
         if (enemyUnit.currentHPReal <= 0 && enemyUnit.currentHPImag == 0) {
             return true;
         } else {return false;}
