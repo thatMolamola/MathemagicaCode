@@ -135,7 +135,6 @@ public class BattleSystem : MonoBehaviour
         int queueCounter = 0;
         while (actionQueue.Count != 0) {
             currentResponse = playerUnits[queueCounter].executeAction(actionQueue.Dequeue());
-            float damageDone = currentResponse.getDamage();
             bool success = currentResponse.getSuccess();
             string action = currentResponse.getAction().getAction();
             
@@ -161,9 +160,9 @@ public class BattleSystem : MonoBehaviour
 
     //ENEMY OPTIONS
     private IEnumerator EnemyTurn() {
+        state = BattleState.WAITING;
         int randNum = Random.Range(0, playerUnits.Count);
         PlayerUnit playerUnit = playerUnits[randNum];
-        state = BattleState.WAITING;
         dialogueText.text = enemyUnit.unitName + " attacks!"; 
         
         if (playerUnits.Count > 1) {

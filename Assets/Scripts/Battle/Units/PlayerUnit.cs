@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+//This PlayerUnit Class handles the Actions that are handed to it by the BattleSystem, and 
+// returns the appropriate ActionResponse for the BattleSystem to handle.
 public class PlayerUnit : Unit
 {
     [SerializeField] private Weapon[] weaponList;
@@ -9,6 +12,7 @@ public class PlayerUnit : Unit
     private NPItem chosenItem;
     private ActionResponse reply;
 
+    //executeAction takes an action, and returns an actionResponse after executing said action
     public ActionResponse executeAction(Action selectAction) { 
         string action = selectAction.getAction();
         if (action == "ATTACK") {
@@ -22,8 +26,8 @@ public class PlayerUnit : Unit
         return reply;
     }
 
-
-
+    //selectedWeaponAttack calls the weapon's attack onto the target
+    //Issues: Only handles exclusively real or imaginary damage, rather than both
     private string selectedWeaponAttack(Weapon weapon, Unit enemyUnit){
         float oldRealHP = enemyUnit.currentHPReal;
         float oldImagHP = enemyUnit.currentHPImag;
@@ -37,9 +41,12 @@ public class PlayerUnit : Unit
         }
     }
 
+    //selectedEnchant changes the weapon's damage output
+    //Issues: Only handles changes to the real dmg modifiers for now
     private string selectedEnchant(Weapon weapon){
         weapon.thisWeapon.currentRealDmgModifier = chosenItem.NPValue;
         weapon.thisWeapon.modded = true;
+        weapon.thisWeapon.ModDurationLeft = weapon.thisWeapon.MaxModDuration;
         return unitName + "'s spell " +  weapon.thisWeapon.weaponName + " has been enchanted by " + chosenItem.itemName;
     }
 
@@ -52,10 +59,12 @@ public class PlayerUnit : Unit
         }
     }
 
+    //TO-DO: Implement Flee Checks in some way that makes sense
     private bool fleeCheck(Unit enemyUnit){
         return true;
     }
 
+    //checks whether the enemy has died. Currently has partial implemenetation for the sprite flipping, but this should be relocated
     private bool deathCheck(Unit enemyUnit) {
         if (enemyUnit.currentHPReal == 0 && enemyUnit.currentHPImag == 0) {
             return true;

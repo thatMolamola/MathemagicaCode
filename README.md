@@ -6,8 +6,7 @@ The crafting and battling system has had a lot of development, it's almost fully
 This is my first exploration of using ScriptableObjects to hold data, and it's been semi-successful.
 I've lost a lot of data and time in the learning process. 
 For now, the weapons, enchanting ingredients and combat initiation data is stored in SOs. 
-I'd like to add more of the playerUnit and enemyUnit data as SOs as well, in a similar fashion to how the 
-weapons contain all their data in corresponding SOs. Currently, the playerUnit HP resets between battles due to the prefabs not storing that data.
+I'd like to add more of the playerUnit and enemyUnit data as SOs as well, in a similar fashion to how the weapons contain all their data in corresponding SOs. Currently, the playerUnit HP resets between battles due to the prefabs not storing that data.
 
 The enchanting system in theory works as follows:
   Different spells contain different mathematical operators (+, -, /, *, and more complex functions as well).

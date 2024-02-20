@@ -15,7 +15,6 @@ public class Action
         setAction(action);
     }
 
-
     public Weapon getWeapon() {
         return weaponChoice;
     }
