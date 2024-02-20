@@ -31,9 +31,19 @@ public class AddSubWeapon : Weapon
         }
     }
 
-    //fix for imaginary weapons
     public override void MinAttack (Unit enemyUnit){
-        enemyUnit.currentHPReal += 1;
-        return;
+        if (thisWeapon.real) {
+            if (!thisWeapon.damagingDown) {
+                enemyUnit.currentHPReal += 1;
+            } else {
+                enemyUnit.currentHPReal -= 1;
+            }
+        } else {
+            if (!thisWeapon.damagingDown) {
+                enemyUnit.currentHPImag += 1;
+            } else {
+                enemyUnit.currentHPImag -= 1;
+            }
+        }
     }
 }
