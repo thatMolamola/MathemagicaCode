@@ -8,15 +8,13 @@ public class MultDivWeapon : Weapon
         if (thisWeapon.real) {
             if (!thisWeapon.damagingDown) {
                 enemyUnit.currentHPReal *= thisWeapon.currentRealDmgModifier;
-            } else {
-                enemyUnit.currentHPReal /= thisWeapon.currentRealDmgModifier;
-            }
-        } else {
-            if (!thisWeapon.damagingDown) {
                 enemyUnit.currentHPImag *= thisWeapon.currentRealDmgModifier;
             } else {
+                enemyUnit.currentHPReal /= thisWeapon.currentRealDmgModifier;
                 enemyUnit.currentHPImag /= thisWeapon.currentRealDmgModifier;
             }
+        } else {
+            imaginaryMDCalc(enemyUnit);
         }
 
         if (!thisWeapon.permMod) {
@@ -29,5 +27,22 @@ public class MultDivWeapon : Weapon
                 }
             }
         }
+    }
+
+    //TO-DO: For now, this function only handles pure imaginary damage, rather than imaginary and real damage
+    private void imaginaryMDCalc(Unit enemyUnit) {
+        //complex HP * imaginary attack
+        if (!thisWeapon.damagingDown) {
+                float temp = enemyUnit.currentHPImag;
+                enemyUnit.currentHPImag = enemyUnit.currentHPReal * thisWeapon.currentImagDmgModifier;
+                enemyUnit.currentHPReal = temp * thisWeapon.currentImagDmgModifier * -1; 
+        } else { //complex HP / imaginary attack
+                float compConj = -1 * thisWeapon.currentImagDmgModifier;
+                float temp = enemyUnit.currentHPImag;
+                enemyUnit.currentHPImag = enemyUnit.currentHPReal * thisWeapon.currentImagDmgModifier;
+                enemyUnit.currentHPReal = temp * thisWeapon.currentImagDmgModifier * -1;
+                enemyUnit.currentHPImag /= (compConj * thisWeapon.currentImagDmgModifier);
+                enemyUnit.currentHPReal /= (compConj * thisWeapon.currentImagDmgModifier);
+            }
     }
 }
