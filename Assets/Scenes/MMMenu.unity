@@ -285,18 +285,24 @@ MonoBehaviour:
   dynamicInvState: {fileID: 11400000, guid: 04111b0495a22438bb68129a95367cb5, type: 2}
   staticTeamState: {fileID: 11400000, guid: 162620d2377af402d97fb52d083b8e0a, type: 2}
   staticInvState: {fileID: 11400000, guid: d8584c22bcfa240ea8ce2af36e63dac0, type: 2}
-  _defaults:
+  _defaultW:
   - {fileID: 11400000, guid: cc01dba30f82b4943bb182688a211c2d, type: 2}
   - {fileID: 11400000, guid: cd62cd6cfaa2843719e0446fac4f64c2, type: 2}
   - {fileID: 11400000, guid: f8a7786ea7f5f45a480319c296880a16, type: 2}
   - {fileID: 11400000, guid: 2d8ac565ec3804267873afa5c7c73a6f, type: 2}
   - {fileID: 11400000, guid: bd2168b52869e4c969c95ba7fe1f836f, type: 2}
-  _targets:
+  _targetW:
   - {fileID: 11400000, guid: fc41cabb74ec84263b4cd1ac5daf5310, type: 2}
   - {fileID: 11400000, guid: 8cb39062f2c754b7ead5f067f36a8f6d, type: 2}
   - {fileID: 11400000, guid: c83912731696745a0a98a533808922da, type: 2}
   - {fileID: 11400000, guid: 9d69ef60a72bd46c292db69295774526, type: 2}
   - {fileID: 11400000, guid: dd34c014ab2af4511a366e7aa46cfaea, type: 2}
+  _targetP:
+  - {fileID: 11400000, guid: ab3ad39e12e2b4b6ea12a830542acaf8, type: 2}
+  - {fileID: 11400000, guid: 068d7d476708c4af18e87c8e3d0b38c1, type: 2}
+  _defaultP:
+  - {fileID: 11400000, guid: 13fcca2a15c4d4c36b436150e8a7eb4d, type: 2}
+  - {fileID: 11400000, guid: 6b1def47d8d1d43bbaf1255a9e773bfa, type: 2}
 --- !u!1 &203280270
 GameObject:
   m_ObjectHideFlags: 0

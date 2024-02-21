@@ -7,7 +7,7 @@ public class DoormantAnim : MonoBehaviour
     [SerializeField] Animator doormantAnim;
 
     void Update() {
-        if (this.gameObject.GetComponent<EnemyUnit>().currentHPReal < 1000) {
+        if (this.gameObject.GetComponent<EnemyUnit>().thisUnit.currentHPReal < 1000) {
             doormantAnim.SetBool("Awoken", true);
         }
     }

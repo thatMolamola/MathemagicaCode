@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: MarilynData
   m_EditorClassIdentifier: 
   unitName: Marilyn
-  currentHPReal: 25
+  currentHPReal: 50
   currentHPImag: 0
-  initialHPReal: 25
+  initialHPReal: 50
   initialHPImag: 0
   withImaginary: 0
   negative: 0

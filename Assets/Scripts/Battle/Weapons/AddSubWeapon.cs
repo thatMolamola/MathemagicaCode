@@ -7,15 +7,15 @@ public class AddSubWeapon : Weapon
     public override void Attack (Unit enemyUnit){
         if (thisWeapon.real) {
             if (!thisWeapon.damagingDown) {
-                enemyUnit.currentHPReal += thisWeapon.currentRealDmgModifier;
+                enemyUnit.thisUnit.currentHPReal += thisWeapon.currentRealDmgModifier;
             } else {
-                enemyUnit.currentHPReal -= thisWeapon.currentRealDmgModifier;
+                enemyUnit.thisUnit.currentHPReal -= thisWeapon.currentRealDmgModifier;
             }
         } else {
             if (!thisWeapon.damagingDown) {
-                enemyUnit.currentHPImag += thisWeapon.currentImagDmgModifier;
+                enemyUnit.thisUnit.currentHPImag += thisWeapon.currentImagDmgModifier;
             } else {
-                enemyUnit.currentHPImag -= thisWeapon.currentImagDmgModifier;
+                enemyUnit.thisUnit.currentHPImag -= thisWeapon.currentImagDmgModifier;
             }
         }
 
@@ -34,15 +34,15 @@ public class AddSubWeapon : Weapon
     public override void MinAttack (Unit enemyUnit){
         if (thisWeapon.real) {
             if (!thisWeapon.damagingDown) {
-                enemyUnit.currentHPReal += 1;
+                enemyUnit.thisUnit.currentHPReal += 1;
             } else {
-                enemyUnit.currentHPReal -= 1;
+                enemyUnit.thisUnit.currentHPReal -= 1;
             }
         } else {
             if (!thisWeapon.damagingDown) {
-                enemyUnit.currentHPImag += 1;
+                enemyUnit.thisUnit.currentHPImag += 1;
             } else {
-                enemyUnit.currentHPImag -= 1;
+                enemyUnit.thisUnit.currentHPImag -= 1;
             }
         }
     }

@@ -51,7 +51,7 @@ public class EnemyUnit : Unit
     }
 
     public bool deathCheck(Unit enemyUnit) {
-        if (enemyUnit.currentHPReal <= 0 && enemyUnit.currentHPImag == 0) {
+        if (enemyUnit.thisUnit.currentHPReal <= 0 && enemyUnit.thisUnit.currentHPImag == 0) {
             return true;
         } else {return false;}
     
@@ -59,9 +59,9 @@ public class EnemyUnit : Unit
 
     public bool standardAttack(Unit enemyUnit){
         if (flipped) {
-            enemyUnit.currentHPReal -= standardDmg * darkMultiplier;
+            enemyUnit.thisUnit.currentHPReal -= standardDmg * darkMultiplier;
         }
-        enemyUnit.currentHPReal -= standardDmg;
+        enemyUnit.thisUnit.currentHPReal -= standardDmg;
         numTurnsLeftSpecial -= 1;
         numTurnsLeftStandardTwo -= 1;
         return deathCheck(enemyUnit);
@@ -69,12 +69,12 @@ public class EnemyUnit : Unit
 
     public string secondStandardAttack(Unit enemyUnit){
         numTurnsLeftStandardTwo = numTurnsToStandardTwo;
-        if (unitName == "Wrathmetic") {
+        if (thisUnit.unitName == "Wrathmetic") {
             float randValue1 = Random.value;
             float randHeal = Mathf.FloorToInt(100 * randValue1) / 100;
-            enemyUnit.currentHPReal += randHeal;
+            thisUnit.currentHPReal += randHeal;
             return "The Wrathmetic blurs its form!";
-        } else if (unitName == "Door") {
+        } else if (thisUnit.unitName == "Door") {
             return "The door just sits there and takes it!";
         } else {
             return "";
@@ -90,34 +90,34 @@ public class EnemyUnit : Unit
     public void specialDmgCalc(Unit enemyUnit){
         float randValue1 = Random.value;
         float randValue2 = Random.value;
-        if (unitName == "Triubble") {
+        if (thisUnit.unitName == "Triubble") {
             if (randValue1 < .037037) {
-                enemyUnit.currentHPReal -= 15;
+                enemyUnit.thisUnit.currentHPReal -= 15;
                 return;
             } else if (randValue1 < .111111) {
-                enemyUnit.currentHPReal -= 12;
+                enemyUnit.thisUnit.currentHPReal -= 12;
                 return;
             } else { 
-                enemyUnit.currentHPReal -= 9;
+                enemyUnit.thisUnit.currentHPReal -= 9;
                 return;
                 }
-        } else if (unitName == "Wrathmetic") {
+        } else if (thisUnit.unitName == "Wrathmetic") {
             float randDamage = Mathf.FloorToInt(100 * randValue2) / 100;
             if (randValue1 < .25) {
-                enemyUnit.currentHPReal -= randDamage;
+                enemyUnit.thisUnit.currentHPReal -= randDamage;
                 return;
             } else if (randValue1 < .5) {
-                enemyUnit.currentHPReal += randDamage;
+                enemyUnit.thisUnit.currentHPReal += randDamage;
                 return;
             } else if (randValue1 < .75) {
-                enemyUnit.currentHPReal /= randDamage;
+                enemyUnit.thisUnit.currentHPReal /= randDamage;
                 return;
             } else { 
-                enemyUnit.currentHPReal *= randDamage;
+                enemyUnit.thisUnit.currentHPReal *= randDamage;
                 return;
             }
         } else {
-            enemyUnit.currentHPReal -= 10;
+            enemyUnit.thisUnit.currentHPReal -= 10;
         }
     }
 }

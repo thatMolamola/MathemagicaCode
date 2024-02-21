@@ -29,15 +29,15 @@ public class PlayerUnit : Unit
     //selectedWeaponAttack calls the weapon's attack onto the target
     //Issues: Only handles exclusively real or imaginary damage, rather than both
     private string selectedWeaponAttack(Weapon weapon, Unit enemyUnit){
-        float oldRealHP = enemyUnit.currentHPReal;
-        float oldImagHP = enemyUnit.currentHPImag;
+        float oldRealHP = enemyUnit.thisUnit.currentHPReal;
+        float oldImagHP = enemyUnit.thisUnit.currentHPImag;
         weapon.Attack(enemyUnit);
-        float rDamageDone = oldRealHP - enemyUnit.currentHPReal;
-        float iDamageDone = oldImagHP - enemyUnit.currentHPImag;
+        float rDamageDone = oldRealHP - enemyUnit.thisUnit.currentHPReal;
+        float iDamageDone = oldImagHP - enemyUnit.thisUnit.currentHPImag;
         if (rDamageDone != 0) {
-            return enemyUnit.unitName + " took " + damageRound(rDamageDone) + " damage from " + unitName + "!";
+            return enemyUnit.thisUnit.unitName + " took " + damageRound(rDamageDone) + " damage from " + thisUnit.unitName + "!";
         } else {
-            return enemyUnit.unitName + " took " + damageRound(iDamageDone) + "i damage from " + unitName + "!";
+            return enemyUnit.thisUnit.unitName + " took " + damageRound(iDamageDone) + "i damage from " + thisUnit.unitName + "!";
         }
     }
 
@@ -47,15 +47,15 @@ public class PlayerUnit : Unit
         weapon.thisWeapon.currentRealDmgModifier = chosenItem.NPValue;
         weapon.thisWeapon.modded = true;
         weapon.thisWeapon.ModDurationLeft = weapon.thisWeapon.MaxModDuration;
-        return unitName + "'s spell " +  weapon.thisWeapon.weaponName + " has been enchanted by " + chosenItem.itemName;
+        return thisUnit.unitName + "'s spell " +  weapon.thisWeapon.weaponName + " has been enchanted by " + chosenItem.itemName;
     }
 
     private string selectedFlee(Unit enemyUnit){
         fledSuccess = fleeCheck(enemyUnit);
         if (fledSuccess) {
-            return unitName + " successfully ran from battle!";
+            return thisUnit.unitName + " successfully ran from battle!";
         } else {
-            return unitName + " attempted to flee, but failed!";
+            return thisUnit.unitName + " attempted to flee, but failed!";
         }
     }
 
@@ -66,13 +66,11 @@ public class PlayerUnit : Unit
 
     //checks whether the enemy has died. Currently has partial implemenetation for the sprite flipping, but this should be relocated
     private bool deathCheck(Unit enemyUnit) {
-        if (enemyUnit.currentHPReal == 0 && enemyUnit.currentHPImag == 0) {
+        if (enemyUnit.thisUnit.currentHPReal == 0 && enemyUnit.thisUnit.currentHPImag == 0) {
             return true;
-        } else if (currentHPReal < 0 && enemyUnit.currentHPImag == 0){
-            negative = true;
+        } else if (enemyUnit.thisUnit.currentHPReal < 0 && enemyUnit.thisUnit.currentHPImag == 0){
             return false;
-        } else if (currentHPReal > 0 && enemyUnit.currentHPImag == 0){
-            negative = false;
+        } else if (enemyUnit.thisUnit.currentHPReal > 0 && enemyUnit.thisUnit.currentHPImag == 0){
             return false;
         } else {
             return false;

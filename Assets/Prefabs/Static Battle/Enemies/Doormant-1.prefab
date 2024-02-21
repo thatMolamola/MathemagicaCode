@@ -154,13 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4820ce8ad16984e4fb05ba2511d63297, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitName: Door
-  currentHPReal: 1000
-  currentHPImag: 0
-  initialHPReal: 1000
-  initialHPImag: 0
-  withImaginary: 0
-  negative: 0
+  thisUnit: {fileID: 11400000, guid: d7c052d897b4a4f63a5ba59ec7d463af, type: 2}
   heartRender: {fileID: 6178750986825258416, guid: 52d41eadee2e14d10af116cc0bfcbc50, type: 3}
   EnemySprite: {fileID: 1430402411746013427}
   sprites: []
@@ -173,3 +167,4 @@ MonoBehaviour:
   numTurnsToSpecial: 100
   numTurnsLeftSpecial: 100
   unitPrefab: {fileID: 1430402411746013425}
+  dropTable: 

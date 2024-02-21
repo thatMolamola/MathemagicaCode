@@ -142,6 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 611d405b3a8c04fbf810f3999a55da76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thisUnit: {fileID: 11400000, guid: ab3ad39e12e2b4b6ea12a830542acaf8, type: 2}
   unitName: Marilyn
   currentHPReal: 25
   currentHPImag: 0
@@ -153,4 +154,3 @@ MonoBehaviour:
   - {fileID: 7196327990663489514, guid: a9b681a0782aa4d4687fdc5632f79b7a, type: 3}
   - {fileID: 23352702438610350, guid: 0423c17360bf64606ac2c4ccf00d4567, type: 3}
   - {fileID: 7923824958188324686, guid: 4277fe7064d16444a9430730490debd6, type: 3}
-  selectedWeapon: 0

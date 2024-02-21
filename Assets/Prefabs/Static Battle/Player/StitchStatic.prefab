@@ -123,6 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 611d405b3a8c04fbf810f3999a55da76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thisUnit: {fileID: 11400000, guid: 068d7d476708c4af18e87c8e3d0b38c1, type: 2}
   unitName: Stitch
   currentHPReal: 0
   currentHPImag: 5
@@ -134,8 +135,6 @@ MonoBehaviour:
   - {fileID: 4322550110215045233, guid: a8826e186730647debfec15cbef617a9, type: 3}
   - {fileID: 3322067147149694455, guid: fddf795639fa64b7fb21e59978e70853, type: 3}
   - {fileID: 4322550110215045233, guid: a8826e186730647debfec15cbef617a9, type: 3}
-  fleeFlag: 0
-  fledSuccess: 0
 --- !u!95 &2990508073700350455
 Animator:
   serializedVersion: 3

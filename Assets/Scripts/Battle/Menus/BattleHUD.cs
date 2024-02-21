@@ -20,15 +20,15 @@ public class BattleHUD : MonoBehaviour
     }
 
     public void SetHUD(Unit unit) {
-        nameText.text = unit.unitName;
-        if (unit.currentHPImag == 0) {
-            hpSlider.maxValue = unit.initialHPReal;
-            hpSlider.value = unit.currentHPReal;
-            hpText.text = "HP: " + unit.currentHPReal;
+        nameText.text = unit.thisUnit.unitName;
+        if (unit.thisUnit.currentHPImag == 0) {
+            hpSlider.maxValue = unit.thisUnit.initialHPReal;
+            hpSlider.value = unit.thisUnit.currentHPReal;
+            hpText.text = "HP: " + unit.thisUnit.currentHPReal;
         } else {
-            hpSlider.maxValue = Mathf.Sqrt(Mathf.Pow(unit.initialHPReal, 2) + Mathf.Pow(unit.initialHPImag, 2));
-            hpSlider.value = Mathf.Sqrt(Mathf.Pow(unit.currentHPReal, 2) + Mathf.Pow(unit.currentHPImag, 2));
-            hpText.text = "HP: " + unit.currentHPReal + " + " + unit.currentHPImag + "i";
+            hpSlider.maxValue = Mathf.Sqrt(Mathf.Pow(unit.thisUnit.initialHPReal, 2) + Mathf.Pow(unit.thisUnit.initialHPImag, 2));
+            hpSlider.value = Mathf.Sqrt(Mathf.Pow(unit.thisUnit.currentHPReal, 2) + Mathf.Pow(unit.thisUnit.currentHPImag, 2));
+            hpText.text = "HP: " + unit.thisUnit.currentHPReal + " + " + unit.thisUnit.currentHPImag + "i";
         }
 
         HPSliderAngle(unit);
@@ -36,26 +36,26 @@ public class BattleHUD : MonoBehaviour
     }
 
     private void HPSliderAngle(Unit unit) {
-        if (unit.currentHPImag == 0 && unit.currentHPReal == 0) {
+        if (unit.thisUnit.currentHPImag == 0 && unit.thisUnit.currentHPReal == 0) {
             return;
         }
         float angle = 0f;
-        if (unit.currentHPReal < 0) {
-            angle = 180 - (Mathf.Atan(unit.currentHPImag / -unit.currentHPReal) * 180 / Mathf.PI);
+        if (unit.thisUnit.currentHPReal < 0) {
+            angle = 180 - (Mathf.Atan(unit.thisUnit.currentHPImag / -unit.thisUnit.currentHPReal) * 180 / Mathf.PI);
         } else {
-            angle = (Mathf.Atan(unit.currentHPImag / unit.currentHPReal) * 180 / Mathf.PI);
+            angle = (Mathf.Atan(unit.thisUnit.currentHPImag / unit.thisUnit.currentHPReal) * 180 / Mathf.PI);
         }
         hpSContain.transform.eulerAngles = new Vector3(0,0,angle);
     }
 
     private void setHeartColor(Unit unit) {
-        if (unit.currentHPReal >= 0 && unit.currentHPImag >= 0) {
+        if (unit.thisUnit.currentHPReal >= 0 && unit.thisUnit.currentHPImag >= 0) {
             heartRender.sprite = heartSprite1;
-        } else if (unit.currentHPReal < 0 && unit.currentHPImag >= 0) {
+        } else if (unit.thisUnit.currentHPReal < 0 && unit.thisUnit.currentHPImag >= 0) {
             heartRender.sprite = heartSprite2;
-        } else if (unit.currentHPReal >= 0 && unit.currentHPImag < 0) {
+        } else if (unit.thisUnit.currentHPReal >= 0 && unit.thisUnit.currentHPImag < 0) {
             heartRender.sprite = heartSprite3;
-        } else if (unit.currentHPReal < 0 && unit.currentHPImag >= 0) {
+        } else if (unit.thisUnit.currentHPReal < 0 && unit.thisUnit.currentHPImag >= 0) {
             heartRender.sprite = heartSprite4;
         }
     }

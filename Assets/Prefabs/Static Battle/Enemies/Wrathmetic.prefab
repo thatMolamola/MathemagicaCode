@@ -155,15 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4820ce8ad16984e4fb05ba2511d63297, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitName: Wrathmetic
-  currentHPReal: -40
-  currentHPImag: 0
-  initialHPReal: 0
-  initialHPImag: 0
-  withImaginary: 0
-  negative: 1
-  trueName: 
-  falseName: 
+  thisUnit: {fileID: 11400000, guid: 07fbcdbd9251d4bd7b831042ce9236a6, type: 2}
   heartRender: {fileID: 6178750986825258416, guid: 52d41eadee2e14d10af116cc0bfcbc50, type: 3}
   EnemySprite: {fileID: 1260556011927268899}
   sprites: []
@@ -176,6 +168,7 @@ MonoBehaviour:
   numTurnsToSpecial: 0
   numTurnsLeftSpecial: 0
   unitPrefab: {fileID: 1260556011927268901}
+  dropTable: 
 --- !u!114 &1260556011927268897
 MonoBehaviour:
   m_ObjectHideFlags: 0

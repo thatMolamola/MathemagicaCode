@@ -162,13 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4820ce8ad16984e4fb05ba2511d63297, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitName: Triubble
-  currentHPReal: 13.3
-  currentHPImag: 0
-  initialHPReal: 13.3
-  initialHPImag: 0
-  withImaginary: 0
-  negative: 0
+  thisUnit: {fileID: 11400000, guid: 3ba65da92321f4e2a9f5ebf237e768d2, type: 2}
   heartRender: {fileID: 6178750986825258416, guid: 52d41eadee2e14d10af116cc0bfcbc50, type: 3}
   EnemySprite: {fileID: 5914489324446710644}
   sprites:
@@ -182,9 +176,4 @@ MonoBehaviour:
   numTurnsToSpecial: 3
   numTurnsLeftSpecial: 0
   unitPrefab: {fileID: 5914489324446710646}
-  dropTable:
-  - {fileID: 11400000, guid: 3ce091ea90a74492aa72fb2a9bec5ee6, type: 2}
-  - {fileID: 11400000, guid: 3ce091ea90a74492aa72fb2a9bec5ee6, type: 2}
-  - {fileID: 11400000, guid: 3ce091ea90a74492aa72fb2a9bec5ee6, type: 2}
-  - {fileID: 11400000, guid: a609ca7ab9f8b4c16b70f99d04115aed, type: 2}
-  - {fileID: 11400000, guid: a609ca7ab9f8b4c16b70f99d04115aed, type: 2}
+  dropTable: 0000000000000000000000000000000000000000

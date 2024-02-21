@@ -4,13 +4,19 @@ using UnityEngine;
 
 public class NewGameInit : MonoBehaviour
 {
-    [SerializeField] CombatPrefabRefer dynamicTeamState;
-    [SerializeField] Inventory dynamicInvState;
-    [SerializeField] CombatPrefabRefer staticTeamState;
-    [SerializeField] Inventory staticInvState;
+    [SerializeField] private CombatPrefabRefer dynamicTeamState;
+    [SerializeField] private Inventory dynamicInvState;
+    [SerializeField] private CombatPrefabRefer staticTeamState;
+    [SerializeField] private Inventory staticInvState;
 
-    [SerializeField] WeaponItem[] _defaults;
-    [SerializeField] WeaponItem[] _targets;
+    [SerializeField] private WeaponItem[] _defaultW;
+    [SerializeField] private WeaponItem[] _targetW;
+
+    [SerializeField] private UnitData[] _targetP;
+
+    [SerializeField] private UnitData[] _defaultP;
+
+
 
     public void onNewGame() {
         dynamicTeamState.allyTeam = staticTeamState.allyTeam;
@@ -18,13 +24,23 @@ public class NewGameInit : MonoBehaviour
         dynamicInvState.NPItemsIndex = staticInvState.NPItemsIndex;
         dynamicInvState.KeyItems = staticInvState.KeyItems;
         weaponReset();
+        playersReset();
     }
 
     private void weaponReset() {
-        for (int i = 0; i < _defaults.Length; i++){
-            if (_defaults[i] != null) {
-                var jsonData = JsonUtility.ToJson(_defaults[i]);
-                JsonUtility.FromJsonOverwrite(jsonData, _targets[i]);
+        for (int i = 0; i < _defaultW.Length; i++){
+            if (_defaultW[i] != null) {
+                var jsonData = JsonUtility.ToJson(_defaultW[i]);
+                JsonUtility.FromJsonOverwrite(jsonData, _targetW[i]);
+            }
+        }
+    }
+
+    private void playersReset() {
+        for (int i = 0; i < _defaultP.Length; i++){
+            if (_defaultP[i] != null) {
+                var jsonData = JsonUtility.ToJson(_defaultP[i]);
+                JsonUtility.FromJsonOverwrite(jsonData, _targetP[i]);
             }
         }
     }

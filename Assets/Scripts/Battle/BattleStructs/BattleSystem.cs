@@ -71,7 +71,7 @@ public class BattleSystem : MonoBehaviour
         enGO.transform.position += offset;
         enemyUnit = enGO.GetComponent<EnemyUnit>();
 
-        dialogueText.text = "From the shadows, a " + enemyUnit.unitName + " has emerged!";
+        dialogueText.text = "From the shadows, a " + enemyUnit.thisUnit.unitName + " has emerged!";
 
 
         playerCount = 0;
@@ -148,9 +148,11 @@ public class BattleSystem : MonoBehaviour
                 if (action == "ATTACK") {
                     state = BattleState.WON;
                     StartCoroutine(EndBattle());
+                    yield break;
                 } else if (action == "FLEE") {
                     state = BattleState.FLED;
                     StartCoroutine(EndBattle());
+                    yield break;
                 }
             }
         } //Queue Loop End
@@ -163,7 +165,7 @@ public class BattleSystem : MonoBehaviour
         state = BattleState.WAITING;
         int randNum = Random.Range(0, playerUnits.Count);
         PlayerUnit playerUnit = playerUnits[randNum];
-        dialogueText.text = enemyUnit.unitName + " attacks!"; 
+        dialogueText.text = enemyUnit.thisUnit.unitName + " attacks!"; 
         
         if (playerUnits.Count > 1) {
             randNum = 1 - randNum;
@@ -173,8 +175,8 @@ public class BattleSystem : MonoBehaviour
 
         yield return new WaitForSeconds(.5f);
 
-        float oldRealHP = playerUnit.currentHPReal;
-        float oldImagHP = playerUnit.currentHPImag;
+        float oldRealHP = playerUnit.thisUnit.currentHPReal;
+        float oldImagHP = playerUnit.thisUnit.currentHPImag;
         bool isDead = false;
 
         if (enemyUnit.numTurnsLeftSpecial == 0) {
@@ -183,9 +185,9 @@ public class BattleSystem : MonoBehaviour
             isDead = enemyUnit.standardAttack(playerUnit);
         }
 
-        float damageDone = oldRealHP - playerUnit.currentHPReal;
+        float damageDone = oldRealHP - playerUnit.thisUnit.currentHPReal;
         if (damageDone != 0) {
-            dialogueText.text = playerUnit.unitName + " took " + (Mathf.Round(damageDone*1000)/1000) + " damage from " + enemyUnit.unitName + "!";
+            dialogueText.text = playerUnit.thisUnit.unitName + " took " + (Mathf.Round(damageDone*1000)/1000) + " damage from " + enemyUnit.thisUnit.unitName + "!";
         }
 
         if (enemyUnit.numTurnsLeftStandardTwo == 0) {

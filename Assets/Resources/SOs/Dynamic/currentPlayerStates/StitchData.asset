@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20ababacdd25e49bbbdaedf9e73aaf03, type: 3}
   m_Name: StitchData
   m_EditorClassIdentifier: 
-  unitName: 
+  unitName: Stitch
   currentHPReal: 0
-  currentHPImag: 0
+  currentHPImag: 21
   initialHPReal: 0
-  initialHPImag: 0
-  withImaginary: 0
+  initialHPImag: 21
+  withImaginary: 1
   negative: 0

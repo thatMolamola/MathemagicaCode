@@ -29,11 +29,11 @@ public class MultDivWeapon : Weapon
         //complex HP * real attack
         if (thisWeapon.currentRealDmgModifier != 0) {
             if (!thisWeapon.damagingDown) {
-                enemyUnit.currentHPReal *= thisWeapon.currentRealDmgModifier;
-                enemyUnit.currentHPImag *= thisWeapon.currentRealDmgModifier;
+                enemyUnit.thisUnit.currentHPReal *= thisWeapon.currentRealDmgModifier;
+                enemyUnit.thisUnit.currentHPImag *= thisWeapon.currentRealDmgModifier;
             } else {
-                enemyUnit.currentHPReal /= thisWeapon.currentRealDmgModifier;
-                enemyUnit.currentHPImag /= thisWeapon.currentRealDmgModifier;
+                enemyUnit.thisUnit.currentHPReal /= thisWeapon.currentRealDmgModifier;
+                enemyUnit.thisUnit.currentHPImag /= thisWeapon.currentRealDmgModifier;
             }
         } else {
             //Figure out what to do if multiplying or dividing by 0.
@@ -45,16 +45,16 @@ public class MultDivWeapon : Weapon
         //complex HP * imaginary attack
         if (thisWeapon.currentImagDmgModifier != 0) {
             if (!thisWeapon.damagingDown) {
-                float temp = enemyUnit.currentHPImag;
-                enemyUnit.currentHPImag = enemyUnit.currentHPReal * thisWeapon.currentImagDmgModifier;
-                enemyUnit.currentHPReal = temp * thisWeapon.currentImagDmgModifier * -1; 
+                float temp = enemyUnit.thisUnit.currentHPImag;
+                enemyUnit.thisUnit.currentHPImag = enemyUnit.thisUnit.currentHPReal * thisWeapon.currentImagDmgModifier;
+                enemyUnit.thisUnit.currentHPReal = temp * thisWeapon.currentImagDmgModifier * -1; 
             } else { //complex HP / imaginary attack
                 float compConj = -1 * thisWeapon.currentImagDmgModifier;
-                float temp = enemyUnit.currentHPImag;
-                enemyUnit.currentHPImag = enemyUnit.currentHPReal * thisWeapon.currentImagDmgModifier;
-                enemyUnit.currentHPReal = temp * thisWeapon.currentImagDmgModifier * -1;
-                enemyUnit.currentHPImag /= (compConj * thisWeapon.currentImagDmgModifier);
-                enemyUnit.currentHPReal /= (compConj * thisWeapon.currentImagDmgModifier);
+                float temp = enemyUnit.thisUnit.currentHPImag;
+                enemyUnit.thisUnit.currentHPImag = enemyUnit.thisUnit.currentHPReal * thisWeapon.currentImagDmgModifier;
+                enemyUnit.thisUnit.currentHPReal = temp * thisWeapon.currentImagDmgModifier * -1;
+                enemyUnit.thisUnit.currentHPImag /= (compConj * thisWeapon.currentImagDmgModifier);
+                enemyUnit.thisUnit.currentHPReal /= (compConj * thisWeapon.currentImagDmgModifier);
             }
         } else {
             //Figure out what to do if multiplying or dividing by 0.
