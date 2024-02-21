@@ -15,7 +15,6 @@ MonoBehaviour:
   currentRealDmgModifier: 0
   currentImagDmgModifier: 0
   ModDurationLeft: 0
-  modded: 0
   permMod: 0
   modable: 0
   baseRealDmgModifier: 0
@@ -25,5 +24,7 @@ MonoBehaviour:
   damagingDown: 0
   special: 1
   weaponName: Gravitation
-  weaponDescription: 'Mystical force bends reality, its irresistible pull drawing
-    targets toward quantum points. Reduces target HP to whole numbers. '
+  weaponDescription: 'Mystical force bends reality, irresistibly pulling targets
+    toward quantum points. Reduces target HP to integers. '
+  modder: {fileID: 0}
+  modded: 0

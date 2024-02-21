@@ -11,7 +11,7 @@ public class WeaponItem : ScriptableObject
     public int currentRealDmgModifier;
     public int currentImagDmgModifier;
     public int ModDurationLeft;
-    public bool modded;
+    
 
     //Weapon-Specific Constant Stats
     public bool permMod;
@@ -26,4 +26,7 @@ public class WeaponItem : ScriptableObject
 
     public string weaponName;
     public string weaponDescription;
+
+    public NPItem modder;
+    public bool modded;
 }

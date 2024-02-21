@@ -5556,19 +5556,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 611d405b3a8c04fbf810f3999a55da76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitName: Stitch
-  currentHPReal: 0
-  currentHPImag: 5
-  initialHPReal: 0
-  initialHPImag: 5
-  withImaginary: 1
-  negative: 0
-  weaponList:
-  - {fileID: 4322550110215045233, guid: a8826e186730647debfec15cbef617a9, type: 3}
-  - {fileID: 3322067147149694455, guid: fddf795639fa64b7fb21e59978e70853, type: 3}
-  - {fileID: 7196327990663489514, guid: a9b681a0782aa4d4687fdc5632f79b7a, type: 3}
-  fleeFlag: 0
-  fledSuccess: 0
+  thisUnit: {fileID: 0}
 --- !u!1 &933974289
 GameObject:
   m_ObjectHideFlags: 0
@@ -10399,7 +10387,7 @@ PrefabInstance:
       objectReference: {fileID: 547986354}
     - target: {fileID: 4779050981940357938, guid: c63141704ec794f6ca3bb0e43580a90b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4779050981940357938, guid: c63141704ec794f6ca3bb0e43580a90b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -10420,7 +10408,7 @@ PrefabInstance:
     - target: {fileID: 4779050981940357938, guid: c63141704ec794f6ca3bb0e43580a90b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 1325592997}
+      objectReference: {fileID: 968396633}
     - target: {fileID: 4779050981940357938, guid: c63141704ec794f6ca3bb0e43580a90b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
@@ -10439,7 +10427,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4779050981940357938, guid: c63141704ec794f6ca3bb0e43580a90b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: closeBag
+      value: itemEnchanted
       objectReference: {fileID: 0}
     - target: {fileID: 4779050981940357938, guid: c63141704ec794f6ca3bb0e43580a90b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -10447,11 +10435,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4779050981940357938, guid: c63141704ec794f6ca3bb0e43580a90b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: InventoryMenu, Assembly-CSharp
+      value: InvMenu, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4779050981940357938, guid: c63141704ec794f6ca3bb0e43580a90b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: PauseMenu, Assembly-CSharp
+      value: InvMenu, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4779050981940357938, guid: c63141704ec794f6ca3bb0e43580a90b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -12398,13 +12386,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4820ce8ad16984e4fb05ba2511d63297, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitName: Door
-  currentHPReal: 1000
-  currentHPImag: 0
-  initialHPReal: 1000
-  initialHPImag: 0
-  withImaginary: 0
-  negative: 0
+  thisUnit: {fileID: 0}
   heartRender: {fileID: 6178750986825258416, guid: 52d41eadee2e14d10af116cc0bfcbc50, type: 3}
   EnemySprite: {fileID: 1430402411987000163}
   sprites: []
@@ -12499,6 +12481,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1325592997}
+    - target: {fileID: 4801536310505461276, guid: 21c08b13c22d64e8c94ad74a202e9cc7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4801536310830593362, guid: 21c08b13c22d64e8c94ad74a202e9cc7, type: 3}
       propertyPath: m_Name
       value: Enchant
@@ -12607,10 +12593,22 @@ PrefabInstance:
       propertyPath: enchantPanelObj
       value: 
       objectReference: {fileID: 547986354}
+    - target: {fileID: 4801536311035893165, guid: 21c08b13c22d64e8c94ad74a202e9cc7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4801536311139474327, guid: 21c08b13c22d64e8c94ad74a202e9cc7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1325592997}
+    - target: {fileID: 4801536311683340566, guid: 21c08b13c22d64e8c94ad74a202e9cc7, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 440
+      objectReference: {fileID: 0}
+    - target: {fileID: 4801536311683340566, guid: 21c08b13c22d64e8c94ad74a202e9cc7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 90
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21c08b13c22d64e8c94ad74a202e9cc7, type: 3}
 --- !u!1001 &5914489323542344846

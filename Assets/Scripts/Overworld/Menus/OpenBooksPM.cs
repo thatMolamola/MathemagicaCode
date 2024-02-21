@@ -22,6 +22,11 @@ public class OpenBooksPM : MonoBehaviour
         foreach (Transform listEntry in listParent) {
             int index = listEntry.GetSiblingIndex();
             listEntry.GetComponent<Text>().text = weaponList[index].thisWeapon.weaponName;
+            if (weaponList[index].thisWeapon.modded) {
+                listEntry.GetChild(0).GetComponent<Text>().text = "Enchant: " + weaponList[index].thisWeapon.modder.itemName;
+            } else {
+                listEntry.GetChild(0).GetComponent<Text>().text = "Enchant: None";
+            }
         }
         string npNum = weaponList[0].thisWeapon.currentRealDmgModifier.ToString();
         NPText.text = "NP: " + npNum;

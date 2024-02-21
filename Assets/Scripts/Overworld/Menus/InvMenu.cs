@@ -86,4 +86,13 @@ public class InvMenu : MonoBehaviour
     public void closeEnchant() {
         enchantPanel.SetActive(false);
     }
+
+    public void itemEnchanted() {
+        StartCoroutine (DelayCloseEnchant());
+    }
+
+    private IEnumerator DelayCloseEnchant() {
+        yield return new WaitForSeconds(.25f);
+        enchantPanel.SetActive(false);
+    }
 }

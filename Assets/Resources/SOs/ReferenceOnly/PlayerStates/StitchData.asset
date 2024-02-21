@@ -13,6 +13,10 @@ MonoBehaviour:
   m_Name: StitchData
   m_EditorClassIdentifier: 
   unitName: Stitch
+  weaponList:
+  - {fileID: 3322067147149694455, guid: fddf795639fa64b7fb21e59978e70853, type: 3}
+  - {fileID: 4322550110215045233, guid: a8826e186730647debfec15cbef617a9, type: 3}
+  - {fileID: 4322550110215045233, guid: a8826e186730647debfec15cbef617a9, type: 3}
   currentHPReal: 0
   currentHPImag: 21
   initialHPReal: 0

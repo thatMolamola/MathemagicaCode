@@ -13,6 +13,10 @@ MonoBehaviour:
   m_Name: MarilynData
   m_EditorClassIdentifier: 
   unitName: Marilyn
+  weaponList:
+  - {fileID: 7196327990663489514, guid: a9b681a0782aa4d4687fdc5632f79b7a, type: 3}
+  - {fileID: 23352702438610350, guid: 0423c17360bf64606ac2c4ccf00d4567, type: 3}
+  - {fileID: 7923824958188324686, guid: 4277fe7064d16444a9430730490debd6, type: 3}
   currentHPReal: 50
   currentHPImag: 0
   initialHPReal: 50

@@ -28,6 +28,8 @@ public class EnchantPanel : MonoBehaviour
     public void EnchantWeapon() {
         int ID = selectedItem.itemID;
         if (playerInv.NPItemCounts[ID] > 0) {
+            selectedWeapon.thisWeapon.modder = selectedItem;
+            selectedWeapon.thisWeapon.modded = true;
             if (selectedWeapon.thisWeapon.real) {
                 selectedWeapon.thisWeapon.currentRealDmgModifier = selectedItem.NPValue;
             } else {

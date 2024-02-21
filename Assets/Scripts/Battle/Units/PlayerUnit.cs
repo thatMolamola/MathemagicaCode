@@ -85,7 +85,6 @@ public class PlayerUnit : Unit
     }
 
     public Weapon[] getWeaponList() {
-        Debug.Log(thisUnit.unitName);
         return thisUnit.weaponList;
     }
 }
