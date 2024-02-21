@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3045893111508446041}
   - component: {fileID: 23352702438610350}
   m_Layer: 0
-  m_Name: Wand Of Healing
+  m_Name: Rejuvenation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

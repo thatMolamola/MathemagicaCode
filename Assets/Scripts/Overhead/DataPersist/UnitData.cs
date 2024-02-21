@@ -8,6 +8,8 @@ public class UnitData : ScriptableObject
     //General Unit Data
     public string unitName;
 
+    public Weapon[] weaponList;
+
     //HP Stats
     public float currentHPReal; 
     public float currentHPImag; 

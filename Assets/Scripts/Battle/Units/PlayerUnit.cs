@@ -7,7 +7,6 @@ using UnityEngine;
 // returns the appropriate ActionResponse for the BattleSystem to handle.
 public class PlayerUnit : Unit
 {
-    [SerializeField] private Weapon[] weaponList;
     private bool fledSuccess;
     private NPItem chosenItem;
     private ActionResponse reply;
@@ -86,6 +85,7 @@ public class PlayerUnit : Unit
     }
 
     public Weapon[] getWeaponList() {
-        return weaponList;
+        Debug.Log(thisUnit.unitName);
+        return thisUnit.weaponList;
     }
 }
