@@ -13,13 +13,15 @@ public class OWKeyDepend : OWInteract, ITalkable, IAnimateControl, IKeyAdd
     [SerializeField] private CombatPrefabRefer CPR;
     [SerializeField] private GameObject allyCombatPrefab;
 
+    [SerializeField] private AllyFollow aFollow;
+
     public override void Interact() {
         if (playerInv.KeyItems.Contains(KeyItemNumCheck)) {
-            AnimateChange(interactible);
+            AnimateChange();
             Talk(dialogueTextSuccess);
             if (dialogueController.getConvEnded()) {
-                ComponentsStateChange();
                 KeyItemAdd(KeyItemNumGive);
+                StartCoroutine(ComponentsStateChange());
             }
         } else {
             Talk(dialogueTextFail);
@@ -34,14 +36,20 @@ public class OWKeyDepend : OWInteract, ITalkable, IAnimateControl, IKeyAdd
         dialogueController.DisplayNextParagraph(dialogueText);
     }
 
-    public void AnimateChange(Animator i) {
-        i.SetBool("Triggered", true);
+    public void AnimateChange() {
+        interactible.enabled = true;
+        interactible.SetBool("Triggered", true);
+        aFollow.active = true;
     }
 
-    public void ComponentsStateChange(){
+    private IEnumerator ComponentsStateChange(){
+        yield return new WaitForSeconds(1f);
+        interactible.SetBool("PermaActive", true);
+        interactible.SetBool("Triggered", false);
         this.GetComponent<AllyFollow>().enabled = true;
         Destroy(this.gameObject.transform.GetChild(0).gameObject);
-        this.enabled = false;
         CPR.allyTeam.Add(allyCombatPrefab);
+        this.enabled = false;
+        
     }
 }

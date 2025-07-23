@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IAnimateControl 
 {
-    public void AnimateChange(Animator a); 
+    public void AnimateChange(); 
 }

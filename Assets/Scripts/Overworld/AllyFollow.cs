@@ -5,6 +5,7 @@ using UnityEngine;
 //To-Do: I suspect this will work by chainining one ally to the next when you have more than one ally, but that remains to be tested
 public class AllyFollow : MonoBehaviour
 {
+    public bool active;
     private bool close;
     private float moveSpeed = 3f;
 
@@ -25,6 +26,9 @@ public class AllyFollow : MonoBehaviour
             close = false;
         } else {
             close = true;
+        }
+        if (active) {
+            animator.SetBool("Triggered", true);
         }
         if (!close) {
             Follow();

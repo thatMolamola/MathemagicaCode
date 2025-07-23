@@ -5,12 +5,13 @@ using UnityEngine.InputSystem;
 
 public class PauseMenu : MonoBehaviour
 {
-    private bool pausedOpen;
+    public bool pausedOpen;
     [SerializeField] private SceneControl sc;
     [SerializeField] private InputSystemController ISC;
 
     void Start () {
         pausedOpen = false;
+        Time.timeScale = 1;
     }
 
     void Update () {
