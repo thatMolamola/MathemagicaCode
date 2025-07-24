@@ -230,7 +230,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   battleRewards: []
+  playerInv: {fileID: 11400000, guid: 04111b0495a22438bb68129a95367cb5, type: 2}
   rewardsList: {fileID: 1882546426257567873}
+  rewardDisplay: {fileID: 0}
 --- !u!1 &1882546426257567875
 GameObject:
   m_ObjectHideFlags: 0

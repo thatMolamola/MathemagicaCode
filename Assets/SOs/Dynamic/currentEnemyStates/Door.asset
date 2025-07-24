@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 20ababacdd25e49bbbdaedf9e73aaf03, type: 3}
-  m_Name: Triubble
+  m_Name: Door
   m_EditorClassIdentifier: 
-  unitName: Triubble
-  currentHPReal: 13.3
+  unitName: Door
+  weaponList: []
+  currentHPReal: 488
   currentHPImag: 0
-  initialHPReal: 13.3
+  initialHPReal: 1000
   initialHPImag: 0
   withImaginary: 0
   negative: 0
