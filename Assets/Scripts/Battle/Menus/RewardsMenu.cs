@@ -6,20 +6,14 @@ using UnityEngine.UI;
 public class RewardsMenu : MonoBehaviour
 {
     [SerializeField] private string[] battleRewards;
-    private Inventory playerInv;
+    [SerializeField] private Inventory playerInv;
     [SerializeField] private Text rewardsList;
     [SerializeField] private GameObject rewardDisplay;
-
-    void Start() {
-        playerInv = Resources.Load<Inventory>("SOs/Dynamic/Inventory");
-        rewardDisplay = this.transform.GetChild(0).gameObject;
-    }
     
     public void displayRewards(EnemyUnit enemy) {
         rollRewards(enemy);
         rewardDisplay.SetActive(true);
-        MenuManage.OpenMenu(Menu.DONE, gameObject);
-    }
+        }
 
     private void rollRewards(EnemyUnit enemy) {
         rewardsList.text = "You found ";
