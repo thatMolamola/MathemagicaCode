@@ -6,7 +6,7 @@ using UnityEngine.UI;
 // this script controls the inventory page display
 public class InvMenu : MonoBehaviour
 {
-    private Inventory inventoryRfr;
+    [SerializeField] private Inventory inventoryRfr;
     private NPItem[] NPItems = new NPItem[40];
     private int[] NPItemCounts = new int[40];
     private List<int> NPItemsIndex = new List<int>();
@@ -26,7 +26,7 @@ public class InvMenu : MonoBehaviour
 
     void Start()
     {
-        inventoryRfr = Resources.Load<Inventory>("SOs/Dynamic/Inventory");
+        //inventoryRfr = Resources.Load<Inventory>("SOs/Dynamic/Inventory");
         NPItems = inventoryRfr.NPItems;
         NPItemCounts = inventoryRfr.NPItemCounts;
         NPItemsIndex = inventoryRfr.NPItemsIndex;

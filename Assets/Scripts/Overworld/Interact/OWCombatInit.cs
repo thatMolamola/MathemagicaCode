@@ -7,13 +7,13 @@ public class OWCombatInit : MonoBehaviour
     [SerializeField] private SceneControl sc;
 
     private GameObject combatant;
-    private CombatPrefabRefer combatantReference;
+    [SerializeField] private CombatPrefabRefer combatantReference;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        combatantReference = Resources.Load<CombatPrefabRefer>("SOs/Dynamic/CombatRefer");
+        //combatantReference = Resources.Load<CombatPrefabRefer>("SOs/Dynamic/CombatRefer");
         combatant = this.gameObject;
     }
 

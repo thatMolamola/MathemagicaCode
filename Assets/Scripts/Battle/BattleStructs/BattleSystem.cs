@@ -32,12 +32,12 @@ public class BattleSystem : MonoBehaviour
     private ActionResponse currentResponse;
     private Queue<string> weaponQueue = new Queue<string>();
     [SerializeField] private Text dialogueText;   
-    private CombatPrefabRefer combatantReference;
+    [SerializeField] private CombatPrefabRefer combatantReference;
     
 
     void Start()
     {
-        combatantReference = Resources.Load<CombatPrefabRefer>("SOs/Dynamic/CombatRefer");
+        //combatantReference = Resources.Load<CombatPrefabRefer>("SOs/Dynamic/CombatRefer");
         playerTeamPrefabs = combatantReference.allyTeam;
         enemyPrefab = combatantReference.enemyRefer;
         state = BattleState.START;
@@ -212,8 +212,9 @@ public class BattleSystem : MonoBehaviour
     private IEnumerator EndBattle() {
         if (state == BattleState.WON) {
             dialogueText.text = "You won the Battle!";
-            onWinRewards.displayRewards(enemyUnit);
             yield return new WaitForSeconds(2f);
+            onWinRewards.displayRewards(enemyUnit);
+            yield return new WaitForSeconds(3f);
             onWinRewards.onLeave();
             //add battle reward items to inventory
         } else if (state == BattleState.LOST) {
